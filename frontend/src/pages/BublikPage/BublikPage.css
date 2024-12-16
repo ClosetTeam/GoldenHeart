@@ -1,0 +1,19 @@
+.DefaultDiv{
+    background-color: #E8E8E8;
+    width: 60%;
+    border-top-right-radius: 90px;
+    padding-left: 5%;
+    padding-right: 20%;
+}
+.defaultInfo{
+
+}
+.someInfo{
+    font-size: large;
+}
+.backBut{
+    width: 20%;
+    background-color: #bdbdbd;
+    color: black;
+    margin-top: 10%;
+}

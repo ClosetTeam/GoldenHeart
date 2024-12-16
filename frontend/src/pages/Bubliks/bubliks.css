@@ -1,0 +1,39 @@
+.bubliks{
+    background-color: #006064;
+    width: 90%;
+    height: 90%;
+    margin: 10vh;
+    padding: 5vh;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 360px);
+    justify-content: space-between;
+    flex-flow: wrap;
+
+}
+
+.findbublik{
+    margin: 0;
+    width: 10%;
+    border-radius: 30px;
+    background-color: #C3BAA2;
+    color: black;
+}
+.bodybubliks{
+    text-align: center;
+}
+.urFighter{
+    width: 50%;
+    margin-right: 1vh;
+    border: #C3BAA2 solid 5px;
+    background-color: #C3BAA2;
+    border-radius: 20px;
+    font-size: larger;
+    padding-left: 2vh;
+}
+.findings{
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+}

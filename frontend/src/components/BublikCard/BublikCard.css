@@ -1,0 +1,37 @@
+.bublikCard{
+    width: 80%;
+    height: 90%;
+    border-radius: 10px;
+    border: black solid 3px;
+    background-color: white;
+    text-align: center;
+    overflow: hidden;
+    padding-bottom: 5%;
+    margin-bottom: 5%;
+
+}
+.bodyBublikPage{
+    display: flex;
+    justify-content: normal;
+}
+.fon{
+    display: flex;
+    position: absolute;
+    z-index: 2;
+    margin-left: 50%;
+}
+.bublikCard:hover{
+
+}
+.Description{
+    font-size: large;
+}
+.Name{
+    font-size: 5vh;
+}
+
+.bublikImg{
+    width: 30%;
+    height: 30%;
+
+}

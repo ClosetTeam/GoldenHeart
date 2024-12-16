@@ -1,0 +1,15 @@
+services:
+  postgres:
+    container_name: GoldenHeart
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: "GoldenHeartDb"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "123"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres-data:

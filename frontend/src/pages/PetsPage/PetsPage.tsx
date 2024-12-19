@@ -71,10 +71,10 @@ const PetsPage = () => {
                     ))}
                 </div>
 
-                <footer className="pagination">
-                    <button className="page-button">1</button>
-                    <button className="page-button">2</button>
-                </footer>
+                {/*<footer className="pagination">*/}
+                {/*    <button className="page-button">1</button>*/}
+                {/*    <button className="page-button">2</button>*/}
+                {/*</footer>*/}
             </div>
         </div>
     );

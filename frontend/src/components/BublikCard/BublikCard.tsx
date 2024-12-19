@@ -1,4 +1,4 @@
-import imgbublik from "../../../../../raevichdeath/frontend/hahaton/src/assets/img_2.png"
+import imgbublik from "../../assets/img_2.png"
 import "./BublikCard.css"
 export default function BublikCard(){
     return(

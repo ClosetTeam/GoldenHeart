@@ -9,6 +9,7 @@ import PetChoice from "./pages/PetChoice/PetChoice.tsx";
 import BublikPage from "./pages/BublikPage/BublikPage.tsx";
 import Mainpage from "./pages/mainpage.tsx";
 import PetsPage from "./pages/PetsPage/PetsPage.tsx";
+import PetDetails from "./pages/PetDetails/PetDetails.tsx";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -26,6 +27,9 @@ const router = createBrowserRouter(
                 path="/pets"
                 element={<PetsPage/>}
             />
+
+            {/* Страница с информацией о конкретном питомце */}
+            <Route path="/pet/:id" element={<PetDetails />} />
 
         </>
     )

@@ -4,6 +4,7 @@ import Header from "../../components/header/Header.tsx";
 import catImg from "../../assets/cat_img.png"
 import {useEffect, useState} from "react";
 import axios from "axios";
+import {useNavigate} from "react-router-dom";
 
 // Интерфейс для питомца
 interface Pet {
@@ -24,6 +25,8 @@ const PetsPage = () => {
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 
+    const navigate = useNavigate();
+
     useEffect(() => {
         const fetchPets = async () => {
             try {
@@ -40,8 +43,8 @@ const PetsPage = () => {
         fetchPets();
     }, []);
 
-    // if (loading) return <p>Загрузка...</p>;
-    // if (error) return <p>{error}</p>;
+    if (loading) return <p>Загрузка...</p>;
+    if (error) return <p>{error}</p>;
 
     return (
         <div className="pets-page">
@@ -61,9 +64,7 @@ const PetsPage = () => {
 
                 <div className="pets-grid">
                     {pets.map((pet, index) => (
-                        <div key={index} className="pet-card" style={{cursor: "pointer"}} onClick={() => {
-
-                        }}>
+                        <div key={index} className="pet-card" style={{cursor: "pointer"}} onClick={() => navigate(`/pet/${pet.id}`)}>
                             <img src={pet.image ?? catImg} alt={pet.name} className="pet-image"/>
                             <p className="pet-name">{pet.name}</p>
                         </div>

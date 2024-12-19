@@ -16,24 +16,26 @@
     margin: 0;
     width: 10%;
     border-radius: 30px;
-    background-color: #C3BAA2;
+    background-color: #E8E8E8;
     color: black;
 }
 .bodybubliks{
     text-align: center;
 }
 .urFighter{
-    width: 50%;
-    margin-right: 1vh;
-    border: #C3BAA2 solid 5px;
-    background-color: #C3BAA2;
+    width: 75%;
+    margin-right: 5vw;
+    border: none;
+    background-color: #E8E8E8;
     border-radius: 20px;
     font-size: larger;
     padding-left: 2vh;
 }
 .findings{
     height: 5vh;
+    width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 5vh;
+    margin: 5vh auto;
+    /*margin-top: 5vh;*/
 }

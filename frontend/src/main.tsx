@@ -5,9 +5,10 @@ import {
     RouterProvider,
 } from "react-router-dom";
 import './index.css'
-import Bubliks from "./pages/Bubliks/Bubliks.tsx";
+import PetChoice from "./pages/PetChoice/PetChoice.tsx";
 import BublikPage from "./pages/BublikPage/BublikPage.tsx";
 import Mainpage from "./pages/mainpage.tsx";
+import PetsPage from "./pages/PetsPage/PetsPage.tsx";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -22,8 +23,8 @@ const router = createBrowserRouter(
             />
 
             <Route
-                path="/chooseUrBublik"
-                element={<Bubliks/>}
+                path="/petsPage"
+                element={<PetsPage/>}
             />
 
         </>

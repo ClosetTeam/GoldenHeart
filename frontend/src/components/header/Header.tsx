@@ -9,11 +9,11 @@ export default function Header(){
     return(
         <>
             <header>
-                <div className={"projectName"}>Золотое сердце</div>
+                <div className={"projectName"} onClick={() => navigate("/")}>Золотое сердце</div>
                 <nav>
                     <button className={"btn"}>О фонде</button>
                     <button className={"btn"}>Проекты</button>
-                    <button className={"btn"}>Ищут дом</button>
+                    <button className={"btn"} onClick={() => navigate("/petsPage")}>Ищут дом</button>
                     {/*<button className={"btn"}>Статьи</button>*/}
                     <button className={"btn"}>Статьи</button>
                     <button className={"btn"}>Контакты</button>

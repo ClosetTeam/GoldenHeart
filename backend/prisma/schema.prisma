@@ -14,7 +14,7 @@ datasource db {
 }
 
 model Cat {
-  id          Int      @id @default(autoincrement())
+  id          Int      @id @unique @default(autoincrement())
   name        String
   description String
   age         Int
@@ -22,4 +22,12 @@ model Cat {
   weigth      Float?
   vaccinated  Boolean?
   sterilized  Boolean?
+}
+
+model User {
+  id       Int     @id @unique @default(autoincrement())
+  name     String
+  email    String  @unique
+  password String
+  role     String?
 }

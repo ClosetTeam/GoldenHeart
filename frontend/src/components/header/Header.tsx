@@ -14,14 +14,15 @@ export default function Header(){
                     <button className={"btn"}>О фонде</button>
                     <button className={"btn"}>Проекты</button>
                     <button className={"btn"}>Ищут дом</button>
-                    <button className={"btn"}>Приютам и кураторам</button>
+                    {/*<button className={"btn"}>Статьи</button>*/}
+                    <button className={"btn"}>Статьи</button>
                     <button className={"btn"}>Контакты</button>
 
                 </nav>
                 <div className={"icons"}>
-                    <img className="find" src={myimgfind} onClick={() => {
-                        navigate(`/`);
-                    }}></img>
+                    {/*<img className="find" src={myimgfind} onClick={() => {*/}
+                    {/*    navigate(`/`);*/}
+                    {/*}}></img>*/}
                     <img className="logo" src={myimgprofile} onClick={() => {
                         navigate(`/profile`);
                     }}></img>

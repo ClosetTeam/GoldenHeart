@@ -1,5 +1,4 @@
 import "./mainpage.css"
-import React from 'react';
 import myimg from "../assets/img.png"
 import Header from "../components/header/Header.tsx";
 export default function Mainpage (){

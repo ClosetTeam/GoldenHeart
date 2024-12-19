@@ -1,7 +1,9 @@
 header {
     display: flex;
     justify-content: space-between;
-    padding: 10px 20px 10px 20px;
+    align-items: center;
+    padding: 0 5%;
+    /*padding: 10px 20px 10px 20px;*/
     border-bottom: 1px solid #006064;
 }
 
@@ -36,7 +38,6 @@ nav{
 }
 
 .btn {
-
     border-radius: 30px;
     width: 40%;
     height: 100%;

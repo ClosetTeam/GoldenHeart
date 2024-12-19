@@ -13,7 +13,7 @@ export default function Header(){
                 <nav>
                     <button className={"btn"}>О фонде</button>
                     <button className={"btn"}>Проекты</button>
-                    <button className={"btn"} onClick={() => navigate("/petsPage")}>Ищут дом</button>
+                    <button className={"btn"} onClick={() => navigate("/pets")}>Ищут дом</button>
                     {/*<button className={"btn"}>Статьи</button>*/}
                     <button className={"btn"}>Статьи</button>
                     <button className={"btn"}>Контакты</button>

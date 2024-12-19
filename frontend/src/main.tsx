@@ -23,7 +23,7 @@ const router = createBrowserRouter(
             />
 
             <Route
-                path="/petsPage"
+                path="/pets"
                 element={<PetsPage/>}
             />
 

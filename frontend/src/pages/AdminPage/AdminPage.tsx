@@ -20,7 +20,15 @@ interface LoginResponse {
     access_token: string; // Предполагается, что сервер возвращает токен
 }
 
-async function deleteArticle(id: number) {
+function deleteArticle(id: number) {
+    deleteItem("articles", id)
+}
+
+function deleteCat(id: number) {
+    deleteItem("cats", id)
+}
+
+async function deleteItem(item: string, id: number) {
     try {
         // TODO: Убрать потом добавление токена отсюда
         const loginData:LoginRequest = {
@@ -45,7 +53,7 @@ async function deleteArticle(id: number) {
         // TODO: Убрать потом добавление токена отсюда
 
         const token = localStorage.getItem('token');
-        const response = await axios.delete(`http://localhost:3000/api/articles/` + id, {
+        const response = await axios.delete(`http://localhost:3000/api/${item}/` + id, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
@@ -86,21 +94,44 @@ export default function AdminPage() {
     return (
         <>
             <h1>Admin</h1>
-            <ul>
-                {articles.map((article: Article, id) => (
-                    <li key={id}>
-                        <h3>{article.title}</h3>
-                        <h5>{article.description}</h5>
-                        <div>{article.text}</div>
-                        {article.images.map(image => (
-                            <img key={image} src={image} />
-                        ))}
-                        <button onClick={async () => {
-                            deleteArticle(article.id);
-                        }}>Удалить</button>
-                    </li>
-                ))}
-            </ul>
+            <details>
+                <summary>Cats</summary>
+                <ul>
+                    {cats.map((cat: Cat, id) => (
+                        <li key={id} style={{display: "flex", gap: "10px", marginBottom: "10px"}}>
+                            <h3>{cat.name}</h3>
+                            <h5>{cat.description}</h5>
+                            <h5>{cat.age}</h5>
+                            <h5>{cat.sex}</h5>
+                            <h5>{cat.sterilized}</h5>
+                            <h5>{cat.vaccinated}</h5>
+                            <h5>{cat.weigth}</h5>
+                            <button onClick={async () => {
+                                deleteCat(cat.id);
+                            }} style={{cursor: "pointer"}}>Удалить</button>
+                        </li>
+                    ))}
+                </ul>
+            </details>
+            <details>
+                <summary>Articles</summary>
+                <ul>
+                    {articles.map((article: Article, id) => (
+                        <li key={id}>
+                            <h3>{article.title}</h3>
+                            <h5>{article.description}</h5>
+                            <div>{article.text}</div>
+                            {article.images.map(image => (
+                                <img key={image} src={image} style={{width: '50px', height: '50px'}}/>
+                            ))}
+                            <button onClick={async () => {
+                                deleteArticle(article.id);
+                            }} style={{cursor: "pointer"}}>Удалить
+                            </button>
+                        </li>
+                    ))}
+                </ul>
+            </details>
         </>
     )
 };

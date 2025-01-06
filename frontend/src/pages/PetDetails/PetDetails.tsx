@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import catImg from "../../assets/cat_img.png";
 import Header from "../../components/header/Header.tsx";
 import myimg from "../../assets/img_2.png";
 import myimg2 from "../../assets/img_3.png"; // Картинка по умолчанию
@@ -18,7 +17,7 @@ interface Pet {
     image?: string;
 }
 
-const PetDetails: React.FC = () => {
+const PetDetails = () => {
     const { id } = useParams<{ id: string }>();
     const [pet, setPet] = useState<Pet | null>(null);
 

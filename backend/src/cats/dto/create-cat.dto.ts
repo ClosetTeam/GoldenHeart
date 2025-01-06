@@ -1,4 +1,4 @@
-import {IsBoolean, IsNumber, IsString} from "class-validator";
+import {IsBoolean, IsNumber, IsOptional, IsString} from "class-validator";
 
 export class CreateCatDto {
 
@@ -15,11 +15,14 @@ export class CreateCatDto {
     sex: string
 
     @IsNumber()
+    @IsOptional()
     weigth?: number
 
     @IsBoolean()
+    @IsOptional()
     vaccinated?: boolean
 
     @IsBoolean()
+    @IsOptional()
     sterilized?: boolean
 }

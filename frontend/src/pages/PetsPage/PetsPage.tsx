@@ -7,7 +7,7 @@ import axios from "axios";
 import {useNavigate} from "react-router-dom";
 
 // Интерфейс для питомца
-interface Pet {
+export interface Cat {
     id: number;
     name: string;
     description: string;
@@ -21,7 +21,7 @@ interface Pet {
 
 const PetsPage = () => {
 
-    const [pets, setPets] = useState<Pet[]>([]);
+    const [pets, setPets] = useState<Cat[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 
@@ -30,7 +30,7 @@ const PetsPage = () => {
     useEffect(() => {
         const fetchPets = async () => {
             try {
-                const response = await axios.get<Pet[]>("http://localhost:3000/api/cats/");
+                const response = await axios.get<Cat[]>("http://localhost:3000/api/cats/");
                 setPets(response.data);
             } catch (err) {
                 setError("Не удалось загрузить данные о питомцах");

@@ -1,6 +1,5 @@
 import "./header.css"
 import myimgprofile from "../../assets/logo.png"
-import myimgfind from "../../assets/img_1.png"
 import {useNavigate} from "react-router-dom";
 
 

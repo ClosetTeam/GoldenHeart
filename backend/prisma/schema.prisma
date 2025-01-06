@@ -31,3 +31,13 @@ model User {
   password String
   role     String?
 }
+
+model Article {
+  id          Int      @id @unique @default(autoincrement())
+  title       String
+  description String?
+  text        String
+  images      String[] // Массив строк для хранения URL картинок
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

@@ -5,11 +5,12 @@ import {
     RouterProvider,
 } from "react-router-dom";
 import './index.css'
-import PetChoice from "./pages/PetChoice/PetChoice.tsx";
+// import PetChoice from "./pages/PetChoice/PetChoice.tsx";
 // import BublikPage from "./pages/BublikPage/BublikPage.tsx";
 import Mainpage from "./pages/mainpage.tsx";
 import PetsPage from "./pages/PetsPage/PetsPage.tsx";
 import PetDetails from "./pages/PetDetails/PetDetails.tsx";
+import AdminPage from "./pages/AdminPage/AdminPage.tsx";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -30,6 +31,13 @@ const router = createBrowserRouter(
 
             {/* Страница с информацией о конкретном питомце */}
             <Route path="/pet/:id" element={<PetDetails />} />
+
+            <Route
+                path="/admin"
+                element={
+                        <AdminPage />
+                }
+            />
 
         </>
     )

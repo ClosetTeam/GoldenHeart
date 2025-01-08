@@ -9,7 +9,6 @@ interface PopupCardProps {
 
 export default function PopupCard({isOpen, onClose, children}: PopupCardProps) {
 
-
     return (
         <>
             {/* Всплывающее окно */}

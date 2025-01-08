@@ -35,7 +35,7 @@ const PetDetails = () => {
                     <p className={"someInfo"}>{pet.description}</p>
                         <p>Возраст: {pet.age} года</p>
                         <p>Пол: {pet.sex === "Male" ? "Мужской" : "Женский"}</p>
-                        <p>Вес: {pet.weigth} кг</p>
+                        <p>Вес: {pet.weight} кг</p>
                         <p>Вакцинация: {pet.vaccinated ? "Да" : "Нет"}</p>
                         <p>Стерилизация: {pet.sterilized ? "Да" : "Нет"}</p>
                     <div className={"BubliksButtons"}>

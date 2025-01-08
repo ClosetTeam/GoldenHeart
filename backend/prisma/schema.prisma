@@ -19,7 +19,7 @@ model Cat {
   description String
   age         Int
   sex         String
-  weigth      Float?
+  weight      Float?
   vaccinated  Boolean?
   sterilized  Boolean?
 }

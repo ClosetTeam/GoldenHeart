@@ -58,57 +58,57 @@ async function deleteItem(item: string, id: number) {
     }
 }
 
-function editCatComponent() {
+export function EditCatComponent() {
+    // const [formData, setFormData] = useState({
+    //     // id: 0,
+    //     // name: "",
+    //     // description: "",
+    //     // age: 0,
+    //     // image: "",
+    //     // sex: "Male",
+    //     // sterilized: false,
+    //     // vaccinated: false,
+    //     // weight: 0
+    // });
 
-    // TODO: Both methods
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {}
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {}
+    // const [num, setNum] = useState(0);
 
+    // FixMe: При создании хука все ломается
     return (
         <>
             <form
                 style={{display: "flex", flexDirection: "column", alignItems: "start"}}
-                onSubmit={handleSubmit}
+                // onSubmit={(e) => {console.log(formData)}}
             >
                 <label htmlFor="name">Имя</label>
-                <input id="name" onChange={handleInputChange}/>
+                <input id="name"/>
 
                 <label htmlFor="description">Описание</label>
-                <input id="description" onChange={handleInputChange}/>
+                <input id="description"/>
 
                 <label htmlFor="age">Возраст</label>
-                <input id="age" type="number" onChange={handleInputChange}/>
+                <input id="age" type="number"/>
 
                 <label htmlFor="sex">Пол</label>
-                <select id="sex" onChange={handleInputChange}>
+                <select id="sex">
                     <option value="Male">Мальчик</option>
                     <option value="Female">Девочка</option>
                 </select>
 
                 <label htmlFor="weight">Вес</label>
-                <input id="weight" type="number" onChange={handleInputChange}/>
+                <input id="weight" type="number"/>
 
                 <label htmlFor="vaccinated">Вакцинирован</label>
-                <input id="vaccinated" type="checkbox" onChange={handleInputChange}/>
+                <input id="vaccinated" type="checkbox"/>
 
                 <label htmlFor="sterilized">Стерилизован</label>
-                <input id="sterilized" type="checkbox" onChange={handleInputChange}/>
+                <input id="sterilized" type="checkbox"/>
 
                 <label htmlFor="image">Изображение</label>
-                <input id="image" type="file" accept="image/*" onChange={handleInputChange}/>
+                <input id="image" type="file" accept="image/*"/>
 
                 <button type="submit">Создать</button>
             </form>
-
-            {/*
-        description: string;
-        age: number;
-        sex: "Male" | "Female";
-        weigh: number;
-        vaccinated: boolean;
-        sterilized: boolean;
-        image?: string;
-        */}
         </>
     )
 }
@@ -161,10 +161,10 @@ export default function AdminPage() {
                             <h5>{cat.sex}</h5>
                             <h5>{cat.sterilized}</h5>
                             <h5>{cat.vaccinated}</h5>
-                            <h5>{cat.weigth}</h5>
+                            <h5>{cat.weight}</h5>
                             <button onClick={async () => {
                                 // TODO: Edit cat
-                                setModalContent(editCatComponent)
+                                setModalContent(EditCatComponent)
                                 openPopup();
                             }} style={{cursor: "pointer"}}>Изменить
                             </button>

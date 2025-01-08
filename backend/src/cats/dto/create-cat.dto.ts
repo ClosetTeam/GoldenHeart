@@ -16,7 +16,7 @@ export class CreateCatDto {
 
     @IsNumber()
     @IsOptional()
-    weigth?: number
+    weight?: number
 
     @IsBoolean()
     @IsOptional()

@@ -1,15 +1,8 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
-import {Cat} from "../PetsPage/PetsPage.tsx";
-
-// Потом переместить к артиклам
-interface Article {
-    id: number;
-    title: string;
-    description?: string;
-    text: string;
-    images: string[];
-}
+import PopupCard from "../../components/PopupCard/PopupCard.tsx";
+import Article from "../../abstractions/Article.ts";
+import {Cat} from "../../abstractions/Cat.ts";
 
 interface LoginRequest {
     email: string;
@@ -65,9 +58,72 @@ async function deleteItem(item: string, id: number) {
     }
 }
 
+function editCatComponent() {
+
+    // TODO: Both methods
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {}
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {}
+
+    return (
+        <>
+            <form
+                style={{display: "flex", flexDirection: "column", alignItems: "start"}}
+                onSubmit={handleSubmit}
+            >
+                <label htmlFor="name">Имя</label>
+                <input id="name" onChange={handleInputChange}/>
+
+                <label htmlFor="description">Описание</label>
+                <input id="description" onChange={handleInputChange}/>
+
+                <label htmlFor="age">Возраст</label>
+                <input id="age" type="number" onChange={handleInputChange}/>
+
+                <label htmlFor="sex">Пол</label>
+                <select id="sex" onChange={handleInputChange}>
+                    <option value="Male">Мальчик</option>
+                    <option value="Female">Девочка</option>
+                </select>
+
+                <label htmlFor="weight">Вес</label>
+                <input id="weight" type="number" onChange={handleInputChange}/>
+
+                <label htmlFor="vaccinated">Вакцинирован</label>
+                <input id="vaccinated" type="checkbox" onChange={handleInputChange}/>
+
+                <label htmlFor="sterilized">Стерилизован</label>
+                <input id="sterilized" type="checkbox" onChange={handleInputChange}/>
+
+                <label htmlFor="image">Изображение</label>
+                <input id="image" type="file" accept="image/*" onChange={handleInputChange}/>
+
+                <button type="submit">Создать</button>
+            </form>
+
+            {/*
+        description: string;
+        age: number;
+        sex: "Male" | "Female";
+        weigh: number;
+        vaccinated: boolean;
+        sterilized: boolean;
+        image?: string;
+        */}
+        </>
+    )
+}
+
 export default function AdminPage() {
     const [cats, setCats] = useState<Cat[]>([]);
     const [articles, setArticles] = useState<Article[]>([]);
+
+    const [isOpen, setIsOpen] = useState(false);
+
+    // Функции для открытия и закрытия окна
+    const openPopup = () => setIsOpen(true);
+    const closePopup = () => setIsOpen(false);
+
+    const [modalContent, setModalContent] = useState(<>Modal</>);
 
     useEffect(() => {
         const fetchCats = async () => {
@@ -107,8 +163,15 @@ export default function AdminPage() {
                             <h5>{cat.vaccinated}</h5>
                             <h5>{cat.weigth}</h5>
                             <button onClick={async () => {
+                                // TODO: Edit cat
+                                setModalContent(editCatComponent)
+                                openPopup();
+                            }} style={{cursor: "pointer"}}>Изменить
+                            </button>
+                            <button onClick={async () => {
                                 deleteCat(cat.id);
-                            }} style={{cursor: "pointer"}}>Удалить</button>
+                            }} style={{cursor: "pointer", backgroundColor: "red"}}>Удалить
+                            </button>
                         </li>
                     ))}
                 </ul>
@@ -116,22 +179,30 @@ export default function AdminPage() {
             <details>
                 <summary>Articles</summary>
                 <ul>
-                    {articles.map((article: Article, id) => (
-                        <li key={id}>
-                            <h3>{article.title}</h3>
-                            <h5>{article.description}</h5>
-                            <div>{article.text}</div>
-                            {article.images.map(image => (
-                                <img key={image} src={image} style={{width: '50px', height: '50px'}}/>
-                            ))}
-                            <button onClick={async () => {
-                                deleteArticle(article.id);
-                            }} style={{cursor: "pointer"}}>Удалить
-                            </button>
-                        </li>
-                    ))}
+                {articles.map((article: Article, id) => (
+                    <li key={id}>
+                        <h3>{article.title}</h3>
+                        <h5>{article.description}</h5>
+                        <div>{article.text}</div>
+                        {article.images.map(image => (
+                            <img key={image} src={image} style={{width: '50px', height: '50px'}}/>
+                        ))}
+                        <button onClick={async () => {
+                            // TODO: Edit article
+                            openPopup();
+                        }} style={{cursor: "pointer"}}>Изменить
+                        </button>
+                        <button onClick={async () => {
+                            deleteArticle(article.id);
+                        }} style={{cursor: "pointer", backgroundColor: "red"}}>Удалить
+                        </button>
+                    </li>
+                ))}
                 </ul>
             </details>
+            <PopupCard isOpen={isOpen} onClose={closePopup}>
+                <h2>{modalContent}</h2>
+            </PopupCard>
         </>
     )
 };

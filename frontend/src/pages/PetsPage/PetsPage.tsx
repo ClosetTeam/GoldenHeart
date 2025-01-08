@@ -5,19 +5,7 @@ import catImg from "../../assets/cat_img.png"
 import {useEffect, useState} from "react";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
-
-// Интерфейс для питомца
-export interface Cat {
-    id: number;
-    name: string;
-    description: string;
-    age: number;
-    sex: "Male" | "Female";
-    weigth: number;
-    vaccinated: boolean;
-    sterilized: boolean;
-    image?: string;
-}
+import {Cat} from "../../abstractions/Cat.ts";
 
 const PetsPage = () => {
 

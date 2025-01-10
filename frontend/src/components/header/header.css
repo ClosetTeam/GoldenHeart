@@ -4,6 +4,7 @@ header {
     align-items: center;
     padding: 0 5%;
     /*padding: 10px 20px 10px 20px;*/
+    
 }
 
 button{
@@ -28,7 +29,7 @@ h1{
     width: 50px;
     height: 50px;
     cursor: pointer;
-    margin-left: 10%;
+
 }
 .projectName{
     margin: 1%;
@@ -46,16 +47,20 @@ nav{
 
 .btn {
     border-radius: 30px;
-    width: 40%;
-    height: 100%;
+    width: 25%;
+    height: 80%;
     margin: 0;
     font-size: 0.8em;
     font-weight: 500;
-    border-width: 2px;
+    border-width: 1px;
     background-color: white;
     color: black;
     cursor: pointer;
     margin-left: 5%;
 
+}
+
+.btn:hover{
+    background-color: #C3BAA2;
 }
 

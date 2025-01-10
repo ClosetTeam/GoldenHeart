@@ -1,6 +1,6 @@
 import "./mainpage.css"
-import myimg from "../assets/img.png"
-import Header from "../components/header/Header.tsx";
+import myimg from "../../../assets/img.png"
+import Header from "../../../components/header/Header.tsx";
 export default function Mainpage (){
 
     return (

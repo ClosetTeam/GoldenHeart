@@ -4,6 +4,11 @@
     border-top-right-radius: 90px;
     padding-left: 5%;
     padding-right: 20%;
+
+}
+.bodyBublikPage{
+    display: flex;
+    margin-top: 5%;
 }
 .defaultInfo{
 
@@ -11,9 +16,13 @@
 .someInfo{
     font-size: large;
 }
+.fon{
+    display: flex;
+}
 .backBut{
     width: 20%;
     background-color: #bdbdbd;
     color: black;
     margin-top: 10%;
 }
+

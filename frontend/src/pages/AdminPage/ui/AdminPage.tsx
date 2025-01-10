@@ -1,8 +1,8 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
-import PopupCard from "../../components/PopupCard/PopupCard.tsx";
-import Article from "../../abstractions/Article.ts";
-import {Cat} from "../../abstractions/Cat.ts";
+import PopupCard from "../../../components/PopupCard/PopupCard.tsx";
+import Article from "../../../abstractions/Article.ts";
+import {Cat} from "../../../abstractions/Cat.ts";
 
 interface LoginRequest {
     email: string;

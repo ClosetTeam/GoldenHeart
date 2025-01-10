@@ -7,10 +7,12 @@ import {
 import './index.css'
 // import PetChoice from "./pages/PetChoice/PetChoice.tsx";
 // import BublikPage from "./pages/BublikPage/BublikPage.tsx";
-import Mainpage from "./pages/mainpage.tsx";
-import PetsPage from "./pages/PetsPage/PetsPage.tsx";
-import PetDetails from "./pages/PetDetails/PetDetails.tsx";
-import AdminPage from "./pages/AdminPage/AdminPage.tsx";
+import Mainpage from "./pages/mainpage/ui/mainpage.tsx";
+import PetsPage from "./pages/PetsPage/ui/PetsPage.tsx";
+import PetDetails from "./pages/PetDetails/ui/PetDetails.tsx";
+import AdminPage from "./pages/AdminPage/ui/AdminPage.tsx";
+import ArticlePage from "./pages/ArticlePage/ui/ArticlePage.tsx"
+import ArticleDetails from "./pages/ArticleDetails/ui/ArticleDetails.tsx";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -31,6 +33,12 @@ const router = createBrowserRouter(
 
             {/* Страница с информацией о конкретном питомце */}
             <Route path="/pet/:id" element={<PetDetails />} />
+
+            <Route
+                path="/article"
+                element={<ArticlePage/>}
+            />
+            <Route path="/article/:id" element={<ArticleDetails />} />
 
             <Route
                 path="/admin"

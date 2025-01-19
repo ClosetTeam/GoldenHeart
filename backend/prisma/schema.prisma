@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -19,9 +13,9 @@ model Cat {
   description String
   age         Int
   sex         String
-  weight      Float?
   vaccinated  Boolean?
   sterilized  Boolean?
+  weight      Float?
 }
 
 model User {
@@ -37,7 +31,7 @@ model Article {
   title       String
   description String?
   text        String
-  images      String[] // Массив строк для хранения URL картинок
+  images      String[]
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }

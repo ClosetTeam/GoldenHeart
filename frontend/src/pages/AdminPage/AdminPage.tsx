@@ -72,7 +72,6 @@ export function EditCatComponent() {
     // });
 
     // const [num, setNum] = useState(0);
-
     // FixMe: При создании хука все ломается
     return (
         <>
@@ -162,6 +161,7 @@ export default function AdminPage() {
                             <h5>{cat.sterilized}</h5>
                             <h5>{cat.vaccinated}</h5>
                             <h5>{cat.weight}</h5>
+                            <img src={cat.imageUrl} style={{width: '50px', height: '50px'}}/>
                             <button onClick={async () => {
                                 // TODO: Edit cat
                                 setModalContent(EditCatComponent)

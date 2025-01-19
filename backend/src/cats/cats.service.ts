@@ -6,8 +6,7 @@ import {PrismaService} from "../prisma.service";
 @Injectable()
 export class CatsService {
 
-  constructor(private readonly prisma: PrismaService) {
-  }
+  constructor(private readonly prisma: PrismaService) {}
 
   create(createCatDto: CreateCatDto) {
     return this.prisma.cat.create({

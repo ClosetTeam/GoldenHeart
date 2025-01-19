@@ -16,6 +16,7 @@ model Cat {
   vaccinated  Boolean?
   sterilized  Boolean?
   weight      Float?
+  imageUrl  String?
 }
 
 model User {

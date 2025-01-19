@@ -25,4 +25,8 @@ export class CreateCatDto {
     @IsBoolean()
     @IsOptional()
     sterilized?: boolean
+
+    @IsOptional()
+    @IsString()
+    imageUrl?: string
 }

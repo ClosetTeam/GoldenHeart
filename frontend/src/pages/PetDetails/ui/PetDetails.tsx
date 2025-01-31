@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import "./PetDetails.css";
 import Header from "../../../components/header/Header.tsx";
 import myimg from "../../../assets/img_2.png";
 import myimg2 from "../../../assets/img_3.png";
@@ -41,21 +42,51 @@ const PetDetails = () => {
             <div className={"bodyBublikPage"}>
                 <div className={"DefaultDiv"}>
                     <button className={"backBut"}>назад</button>
-                    <p className={"Name"}>{pet.name}</p>
-                    <p className={"someInfo"}>{pet.description}</p>
-                        <p>Возраст: {pet.age} года</p>
-                        <p>Пол: {pet.sex === "Male" ? "Мужской" : "Женский"}</p>
-                        <p>Вес: {pet.weight} кг</p>
-                        <p>Вакцинация: {pet.vaccinated ? "Да" : "Нет"}</p>
-                        <p>Стерилизация: {pet.sterilized ? "Да" : "Нет"}</p>
-                    <div className={"BubliksButtons"}>
-                        <button className={"mainbtn"}>Задать вопрос</button>
+                    <h1 className={"Name"}>{pet.name}</h1>
+                    <div className={"defaultInfo"}>
+                        <p>{pet.description}</p>
+                        <button className={"nextTextBut"}>Читать далее</button>
+                    </div>
+
+                    <table className={"someInfoTablle"}>
+                        <tr>
+                            <th>Возраст</th>
+                            <th>Пол</th>
+                            <th>Вакцинация</th>
+                            <th>Стерилизация</th>
+
+                        </tr>
+                        <tr>
+                            <td>{pet.age} года</td>
+                            <td>{pet.sex === "Male" ? "Мужской" : "Женский"}</td>
+                            <td>{pet.vaccinated ? "Да" : "Нет"}</td>
+                            <td>{pet.sterilized ? "Да" : "Нет"}</td>
+                        </tr>
+                    </table>
+
+                    {/*<div classname={"someInfo"}>*/}
+                    {/*    <div className={"Info_Item"}>Возраст: <div> {pet.age} года </div> </div>*/}
+                    {/*    <div className={"Info_Item"}>Пол: {pet.sex === "Male" ? "Мужской" : "Женский"} </div>*/}
+                    {/*    /!*<p>Вес: {pet.weight} кг </p>*!/*/}
+                    {/*    <div className={"Info_Item"}>Вакцинация: {pet.vaccinated ? "Да" : "Нет"} </div>*/}
+                    {/*    <div className={"Info_Item"}>Стерилизация: {pet.sterilized ? "Да" : "Нет"} </div>*/}
+                    {/*</div>*/}
+
+                    <div className={"pet-Buttons"}>
+                        <button className={"questionsBut"}>Задать вопрос</button>
                         <button className={"mainbtn"}>забрать домой</button>
                     </div>
                 </div>
+
+
+
+
                 <div className={"fon"}>
-                    <img src={myimg}/>
-                    <img src={myimg2}/>
+                    <img className={"picture1"} src={myimg}/>
+                    <img className={"picture2"} src={myimg2}/>
+                </div>
+                <div className={"Photos"}>
+
                 </div>
             </div>
         </>

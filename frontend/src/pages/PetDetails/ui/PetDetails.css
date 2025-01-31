@@ -4,23 +4,74 @@
     border-top-right-radius: 90px;
     padding-left: 5%;
     padding-right: 20%;
+    height: 60vh;
+
+}
+.Name{
+    color: #73685D;
 
 }
 .bodyBublikPage{
     display: flex;
-    margin-top: 5%;
 }
 .defaultInfo{
-
-}
-.someInfo{
     font-size: large;
+    margin-bottom: 10%;
+}
+
+.someInfoTable{
+    width: 100%;
+}
+tr, td{
+    width: 20%;
+    text-align: center;
+    font-size: x-large;
+}
+.Info_Item{
+    display: inline;
 }
 .fon{
     display: flex;
+    z-index: 2;
+    position: absolute;
+    margin-left: 60%;
+    margin-top: 0;
+
+
 }
+.pet-Buttons{
+    margin-top: 15%;
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+}
+
+.questionsBut{
+    width: 50%;
+    height: 15%;
+    background: none;
+    border: #73685D;
+    cursor: pointer;
+}
+
+.picture1{
+    position: absolute;
+    z-index: 2;
+}
+.picture2{
+    z-index: 1;
+    position: relative;
+
+}
+
+.nextTextBut{
+    background: none;
+    border: #B29B84;
+}
+
 .backBut{
-    width: 20%;
+    width: 10%;
+    height: 6%;
     background-color: #bdbdbd;
     color: black;
     margin-top: 10%;

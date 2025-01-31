@@ -9,17 +9,17 @@ import {Article} from "../../../abstractions/Article.ts";
 
 const ArticlePage = () => {
 
-    const [pets, setPets] = useState<Article[]>([]);
+    const [Articles, setArticles] = useState<Article[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 
     const navigate = useNavigate();
 
     useEffect(() => {
-        const fetchPets = async () => {
+        const fetchArticles = async () => {
             try {
                 const response = await axios.get<Article[]>("http://localhost:3000/api/articles/");
-                setPets(response.data);
+                setArticles(response.data);
             } catch (err) {
                 setError("Не удалось загрузить данные о питомцах");
                 console.error(err);
@@ -28,7 +28,7 @@ const ArticlePage = () => {
             }
         };
 
-        fetchPets();
+        fetchArticles();
     }, []);
 
     if (loading) return <p>Загрузка...</p>;
@@ -51,10 +51,10 @@ const ArticlePage = () => {
                     </div>
 
                     <div className="pets-grid">
-                        {pets.map((pet, index) => (
-                            <div key={index} className="pet-card" style={{cursor: "pointer"}} onClick={() => navigate(`/article/${Article.id}`)}>
-                                <img src={pet.images[0] ?? catImg} alt={pet.title} className="pet-image"/>
-                                <p className="pet-name">{pet.title}</p>
+                        {Articles.map((Article, index) => (
+                            <div key={index} className="pet-card" style={{cursor: "pointer"}}>
+                                <img src={Article.images[0] ?? catImg} alt={Article.title} className="pet-image"/>
+                                <p className="pet-name">{Article.title}</p>
                             </div>
                         ))}
                     </div>

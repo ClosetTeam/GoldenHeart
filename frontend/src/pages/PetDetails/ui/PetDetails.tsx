@@ -5,7 +5,8 @@ import "./PetDetails.css";
 import Header from "../../../components/header/Header.tsx";
 import myimg from "../../../assets/img_2.png";
 import myimg2 from "../../../assets/img_3.png";
-import {Cat} from "../../../abstractions/Cat.ts"; // Картинка по умолчанию
+import {Cat} from "../../../abstractions/Cat.ts";
+import WhiteButton from "../../../components/WhiteButton/WhiteButton.tsx"; // Картинка по умолчанию
 
 const PetDetails = () => {
     const { id } = useParams<{ id: string }>();
@@ -73,22 +74,31 @@ const PetDetails = () => {
                     {/*</div>*/}
 
                     <div className={"pet-Buttons"}>
-                        <button className={"questionsBut"}>Задать вопрос</button>
-                        <button className={"mainbtn"}>забрать домой</button>
+                        <WhiteButton>Задать вопрос</WhiteButton>
+                        <WhiteButton classname={'button2'}>забрать домой</WhiteButton>
                     </div>
                 </div>
-
-
 
 
                 <div className={"fon"}>
                     <img className={"picture1"} src={myimg}/>
                     <img className={"picture2"} src={myimg2}/>
                 </div>
-                <div className={"Photos"}>
 
-                </div>
             </div>
+            {/*<div className={"Photos"}>*/}
+            {/*    <div className="sim-slider">*/}
+            {/*        <ul className="sim-slider-list">*/}
+            {/*            <li className="sim-slider-element"><img src={myimg} alt="1"/></li>*/}
+            {/*            <li className="sim-slider-element"><img src={myimg} alt="2"/></li>*/}
+
+            {/*            <li className="sim-slider-element"><img src={myimg} alt="N"/></li>*/}
+            {/*        </ul>*/}
+            {/*        <div className="sim-slider-arrow-left"></div>*/}
+            {/*        <div className="sim-slider-arrow-right"></div>*/}
+            {/*        <div className="sim-slider-dots"></div>*/}
+            {/*    </div>*/}
+            {/*</div>*/}
         </>
     );
 };

@@ -1,0 +1,20 @@
+.button{
+    background-color: #FFFFFF;
+    border: 2px solid transparent;
+    border-color: #B29B84;
+    border-radius: 30px;
+    color: #B29B84;
+    width: 235.21px;
+    height: 57px;
+    font-size: larger;
+    cursor: pointer;
+}
+.button2{
+    background-color: #B29B84;
+    border-radius: 30px;
+    color: #FFFFFF;
+    width: 235.21px;
+    height: 57px;
+    font-size: larger;
+    cursor: pointer;
+}

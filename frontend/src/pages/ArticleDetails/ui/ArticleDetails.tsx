@@ -6,7 +6,7 @@ import myimg from "../../../assets/img_2.png";
 import myimg2 from "../../../assets/img_3.png";
 import {Article} from "../../../abstractions/Article.ts"; // Картинка по умолчанию
 
-const PetDetails = () => {
+const CatDetails = () => {
     const { id } = useParams<{ id: string }>();
     const [Article, setPet] = useState<Article | null>(null);
 
@@ -26,6 +26,17 @@ const PetDetails = () => {
     if (!Article) return <p>Загрузка информации о коте...</p>;
 
     return (
+
+        // <div className="pet-details">
+        //     <h1>{pet.name}</h1>
+        //     <img src={pet.image ?? catImg} alt={pet.name} />
+        //     <p>Описание: {pet.description}</p>
+        //     <p>Возраст: {pet.age} года</p>
+        //     <p>Пол: {pet.sex === "Male" ? "Мужской" : "Женский"}</p>
+        //     <p>Вес: {pet.weigth} кг</p>
+        //     <p>Вакцинация: {pet.vaccinated ? "Да" : "Нет"}</p>
+        //     <p>Стерилизация: {pet.sterilized ? "Да" : "Нет"}</p>
+        // </div>
 
         <>
             <Header/>
@@ -49,4 +60,4 @@ const PetDetails = () => {
     );
 };
 
-export default PetDetails;
+export default CatDetails;

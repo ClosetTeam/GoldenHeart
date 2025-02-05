@@ -1,5 +1,5 @@
-// PetsPage.tsx
-import "./PetsPage.css";
+// CatsPage.tsx
+import "./CatsPage.css";
 import Header from "../../../components/header/Header.tsx";
 import catImg from "../../../assets/cat_img.png"
 import {useEffect, useState} from "react";
@@ -7,19 +7,19 @@ import axios from "axios";
 import {useNavigate} from "react-router-dom";
 import {Cat} from "../../../abstractions/Cat.ts";
 
-const PetsPage = () => {
+const CatsPage = () => {
 
-    const [pets, setPets] = useState<Cat[]>([]);
+    const [Cats, setCats] = useState<Cat[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 
     const navigate = useNavigate();
 
     useEffect(() => {
-        const fetchPets = async () => {
+        const fetchCats = async () => {
             try {
                 const response = await axios.get<Cat[]>("http://localhost:3000/api/cats/");
-                setPets(response.data);
+                setCats(response.data);
             } catch (err) {
                 setError("Не удалось загрузить данные о питомцах");
                 console.error(err);
@@ -28,7 +28,7 @@ const PetsPage = () => {
             }
         };
 
-        fetchPets();
+        fetchCats();
     }, []);
 
     if (loading) return <p>Загрузка...</p>;
@@ -37,7 +37,7 @@ const PetsPage = () => {
     return (
         <>
             <Header/>
-            <div className="pets-page">
+            <div className="Cats-page">
                 <div className="main">
                     <div className="title">Выбрать питомца</div>
 
@@ -50,11 +50,11 @@ const PetsPage = () => {
                         <button className="search-button">найти</button>
                     </div>
 
-                    <div className="pets-grid">
-                        {pets.map((pet, index) => (
-                            <div key={index} className="pet-card" style={{cursor: "pointer"}} onClick={() => navigate(`/pet/${pet.id}`)}>
-                                <img src={pet.image ?? catImg} alt={pet.name} className="pet-image"/>
-                                <p className="pet-name">{pet.name}</p>
+                    <div className="Cats-grid">
+                        {Cats.map((Cat, index) => (
+                            <div key={index} className="Cat-card" style={{cursor: "pointer"}} onClick={() => navigate(`/Cat/${Cat.id}`)}>
+                                <img src={Cat.image ?? catImg} alt={Cat.name} className="Cat-image"/>
+                                <p className="Cat-name">{Cat.name}</p>
                             </div>
                         ))}
                     </div>
@@ -69,4 +69,4 @@ const PetsPage = () => {
     );
 };
 
-export default PetsPage;
+export default CatsPage;

@@ -9,7 +9,7 @@ import {Article} from "../../../abstractions/Article.ts";
 
 const ArticlePage = () => {
 
-    const [Articles, setArticles] = useState<Article[]>([]);
+    const [articles, setArticles] = useState<Article[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 
@@ -37,9 +37,9 @@ const ArticlePage = () => {
     return (
         <>
             <Header/>
-            <div className="pets-page">
+            <div className="article-page">
                 <div className="main">
-                    <div className="title">Выбрать питомца</div>
+                    <div className="title">Полезные статьи и последние новости</div>
 
                     <div className="search-container">
                         <input
@@ -50,13 +50,22 @@ const ArticlePage = () => {
                         <button className="search-button">найти</button>
                     </div>
 
-                    <div className="pets-grid">
-                        {Articles.map((Article, index) => (
-                            <div key={index} className="pet-card" style={{cursor: "pointer"}}>
-                                <img src={Article.images[0] ?? catImg} alt={Article.title} className="pet-image"/>
-                                <p className="pet-name">{Article.title}</p>
+                    <div className="article-grid">
+                        {articles.map((article, index) => (
+                            <div key={index} className="article-card" style={{cursor: "pointer"}}>
+                                <div className="forImage">
+                                    <img src={article.images[0] ?? catImg} alt={article.title}
+                                         className="article-image"/>
+                                </div>
+                                <div className="card-text">
+                                    <p className="article-name">{article.title}</p>
+                                    <p className="article-text">{article.text}</p>
+                                    <button className="toArticleDetails">Читать далее</button>
+                                </div>
+
                             </div>
                         ))}
+
                     </div>
 
                     {/*<footer className="pagination">*/}

@@ -1,5 +1,5 @@
-/* PetsPage.css */
-.pets-page {
+/* CatsPage.css */
+.Cats-page {
     font-family: Arial, sans-serif;
     /*padding: 20px 0;*/
     max-width: 1200px;
@@ -42,7 +42,7 @@
     cursor: pointer;
 }
 
-.pets-grid {
+.Cats-grid {
     background-color: #E8E8E8;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -50,7 +50,7 @@
     border-radius: 10px;
 }
 
-.pet-card {
+.Cat-card {
     text-align: center;
     /*background-color: #f9f9f9;*/
     padding: 15px;
@@ -58,14 +58,14 @@
     /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
 }
 
-.pet-image {
+.Cat-image {
     max-width: 100%;
     width: 122px;
     height: 209px;
     border-radius: 8px;
 }
 
-.pet-name {
+.Cat-name {
     margin-top: 10px;
     font-size: 18px;
     font-weight: bold;

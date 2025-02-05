@@ -1,5 +1,5 @@
-/* PetsPage.css */
-.pets-page {
+
+.article-page {
     font-family: Arial, sans-serif;
     /*padding: 20px 0;*/
     max-width: 1200px;
@@ -7,7 +7,7 @@
 }
 
 .main {
-    padding: 0 122px;
+    padding: 0;
 }
 
 .title {
@@ -42,30 +42,36 @@
     cursor: pointer;
 }
 
-.pets-grid {
+.article-grid {
     background-color: #E8E8E8;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    display: table;
     border-radius: 10px;
+    margin: 5% 3%;
+    width: 90%;
 }
 
-.pet-card {
-    text-align: center;
+.article-card {
+    display: flex;
     /*background-color: #f9f9f9;*/
     padding: 15px;
+    width: 100vh;
     /*border-radius: 8px;*/
     /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
 }
 
-.pet-image {
+.article-image {
     max-width: 100%;
-    width: 122px;
-    height: 209px;
+    width: 30vh;
+    height: 30vh;
     border-radius: 8px;
 }
+.card-text{
+    display: table-column;
+    width: 100%;
+    margin-left: 5%;
+}
 
-.pet-name {
+.article-name {
     margin-top: 10px;
     font-size: 18px;
     font-weight: bold;

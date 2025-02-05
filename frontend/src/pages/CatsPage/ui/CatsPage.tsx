@@ -1,5 +1,5 @@
-// PetsPage.tsx
-import "./PetsPage.css";
+// CatsPage.tsx
+import "./CatsPage.css";
 import Header from "../../../components/header/Header.tsx";
 import catImg from "../../../assets/cat_img.png"
 import {useEffect, useState} from "react";
@@ -7,7 +7,7 @@ import axios from "axios";
 import {useNavigate} from "react-router-dom";
 import {Cat} from "../../../abstractions/Cat.ts";
 
-const PetsPage = () => {
+const CatsPage = () => {
 
     const [pets, setPets] = useState<Cat[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
@@ -69,4 +69,4 @@ const PetsPage = () => {
     );
 };
 
-export default PetsPage;
+export default CatsPage;

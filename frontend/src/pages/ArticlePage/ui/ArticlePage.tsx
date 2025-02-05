@@ -1,4 +1,3 @@
-
 import "./ArticlePage.css";
 import Header from "../../../components/header/Header.tsx";
 import {useEffect, useState} from "react";
@@ -9,17 +8,17 @@ import {Article} from "../../../abstractions/Article.ts";
 
 const ArticlePage = () => {
 
-    const [pets, setPets] = useState<Article[]>([]);
+    const [articles, setArticles] = useState<Article[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 
     const navigate = useNavigate();
 
     useEffect(() => {
-        const fetchPets = async () => {
+        const fetchArticles = async () => {
             try {
                 const response = await axios.get<Article[]>("http://localhost:3000/api/articles/");
-                setPets(response.data);
+                setArticles(response.data);
             } catch (err) {
                 setError("Не удалось загрузить данные о питомцах");
                 console.error(err);
@@ -28,7 +27,7 @@ const ArticlePage = () => {
             }
         };
 
-        fetchPets();
+        fetchArticles();
     }, []);
 
     if (loading) return <p>Загрузка...</p>;
@@ -37,9 +36,9 @@ const ArticlePage = () => {
     return (
         <>
             <Header/>
-            <div className="pets-page">
+            <div className="article-page">
                 <div className="main">
-                    <div className="title">Выбрать питомца</div>
+                    <div className="title">Полезные статьи и последние новости</div>
 
                     <div className="search-container">
                         <input
@@ -50,13 +49,22 @@ const ArticlePage = () => {
                         <button className="search-button">найти</button>
                     </div>
 
-                    <div className="pets-grid">
-                        {pets.map((pet, index) => (
-                            <div key={index} className="pet-card" style={{cursor: "pointer"}} onClick={() => navigate(`/article/${Article.id}`)}>
-                                <img src={pet.images[0] ?? catImg} alt={pet.title} className="pet-image"/>
-                                <p className="pet-name">{pet.title}</p>
+                    <div className="article-grid">
+                        {articles.map((article, index) => (
+                            <div key={index} className="article-card" style={{cursor: "pointer"}}>
+                                <div className="forImage">
+                                    <img src={article.images[0] ?? catImg} alt={article.title}
+                                         className="article-image"/>
+                                </div>
+                                <div className="card-text">
+                                    <p className="article-name">{article.title}</p>
+                                    <p className="article-text">{article.text}</p>
+                                    <button className="toArticleDetails">Читать далее</button>
+                                </div>
+
                             </div>
                         ))}
+
                     </div>
 
                     {/*<footer className="pagination">*/}

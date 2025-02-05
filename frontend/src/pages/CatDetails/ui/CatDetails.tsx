@@ -6,7 +6,7 @@ import myimg from "../../../assets/img_2.png";
 import myimg2 from "../../../assets/img_3.png";
 import {Cat} from "../../../abstractions/Cat.ts"; // Картинка по умолчанию
 
-const PetDetails = () => {
+const CatDetails = () => {
     const { id } = useParams<{ id: string }>();
     const [pet, setPet] = useState<Cat | null>(null);
 
@@ -62,4 +62,4 @@ const PetDetails = () => {
     );
 };
 
-export default PetDetails;
+export default CatDetails;

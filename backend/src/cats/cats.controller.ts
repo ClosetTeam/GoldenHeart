@@ -1,12 +1,34 @@
-import {Controller, Get, Post, Body, Patch, Param, Delete, UsePipes, ValidationPipe, UseGuards} from '@nestjs/common';
+import {Controller, Get, Post, Body, Patch, Param, Delete, UsePipes, ValidationPipe, UseGuards, UseInterceptors, UploadedFile} from '@nestjs/common';
 import { CatsService } from './cats.service';
 import { CreateCatDto } from './dto/create-cat.dto';
 import { UpdateCatDto } from './dto/update-cat.dto';
 import {JwtAuthGuard} from "../jwt-auth.guard";
+import { FileInterceptor } from '@nestjs/platform-express';
+import * as multer from 'multer';
+import { Express } from 'express';
+import * as path from 'path';
+import * as fs from 'fs';
+
+const catStorage = multer.diskStorage({
+  destination: './uploads/cats/',
+  filename: (req, file, cb) => {
+    cb(null, `${Date.now()}${path.extname(file.originalname)}`);
+  },
+});
 
 @Controller('cats')
 export class CatsController {
   constructor(private readonly catsService: CatsService) {}
+
+  @UseGuards(JwtAuthGuard)
+  @Post('upload')
+  @UseInterceptors(FileInterceptor('file', { storage: catStorage }))
+  uploadFile(@UploadedFile() file: Express.Multer.File) {
+    if (!file) {
+      throw new Error('File is not provided');
+    }
+    return { imageUrl: `/uploads/cats/${file.filename}` };
+  }
 
   @Post()
   @UsePipes(new ValidationPipe())
@@ -33,7 +55,17 @@ export class CatsController {
 
   @UseGuards(JwtAuthGuard)
   @Delete(':id')
-  remove(@Param('id') id: string) {
+  async remove(@Param('id') id: string) {
+    const cat = await this.catsService.findOne(+id);
+    if (cat && cat.imageUrl) {
+      // const filePath = path.join(__dirname, '..', '..', '..', cat.imageUrl);
+      const filePath = path.join(__dirname, '..', '..', cat.imageUrl);
+      fs.unlink(filePath, (err) => {
+        if (err) {
+          console.error('Error deleting file:', err);
+        }
+      });
+    }
     return this.catsService.remove(+id);
   }
 }

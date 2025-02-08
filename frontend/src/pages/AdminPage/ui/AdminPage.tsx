@@ -26,7 +26,7 @@ async function deleteItem(item: string, id: number) {
         // TODO: Убрать потом добавление токена отсюда
         const loginData:LoginRequest = {
             email: "Neonexer12@gmail.com",
-            password: "123",
+            password: "root",
         }
         try {
             const response = await axios.post<LoginResponse>(`http://localhost:3000/api/users/login`, loginData)
@@ -161,7 +161,7 @@ export default function AdminPage() {
                             <h5>{cat.sterilized}</h5>
                             <h5>{cat.vaccinated}</h5>
                             <h5>{cat.weight}</h5>
-                            <img src={cat.imageUrl} style={{width: '50px', height: '50px'}}/>
+                            <img src={`http://localhost:3000${cat.imageUrl}`} style={{width: '50px', height: '50px'}}/>
                             <button onClick={async () => {
                                 // TODO: Edit cat
                                 setModalContent(EditCatComponent)
@@ -184,8 +184,8 @@ export default function AdminPage() {
                         <h3>{article.title}</h3>
                         <h5>{article.description}</h5>
                         <div>{article.text}</div>
-                        {article.images.map(image => (
-                            <img key={image} src={image} style={{width: '50px', height: '50px'}}/>
+                        {article.images.map((image: string) => (
+                            <img key={image} src={`http://localhost:3000${image}`} style={{width: '150px', height: '150px'}}/>
                         ))}
                         <button onClick={async () => {
                             // TODO: Edit article

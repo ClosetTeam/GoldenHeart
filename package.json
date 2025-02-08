@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@types/express": "^5.0.0",
+    "@types/multer": "^1.4.12"
+  }
+}

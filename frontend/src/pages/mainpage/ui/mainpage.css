@@ -1,34 +1,429 @@
+/*Жирный*/
 @font-face {
-    font-family: 'Shototam';
-    src: url(../../../fonts/goosberry_version_02.otf) format('otf');
-    font-weight: 400;
-}
-.photo{
+    font-family: 'Montserrat-Bold';
+    src: url('../../public/fonts/montserrat/Montserrat-Bold.ttf') format("truetype");
 
 }
-img{
-    height: 78vh;
+/*Обычный*/
+@font-face {
+    font-family: 'Montserrat-normal';
+    src: url('../../public/fonts/montserrat/Montserrat-Regular.ttf') format("truetype");
 }
+/*SemiBold*/
+@font-face {
+    font-family: 'Montserrat-SemiBold';
+    src: url('../../public/fonts/montserrat/Montserrat-SemiBold.ttf') format("truetype");
+}
+::-webkit-input-placeholder { opacity: 1; -webkit-transition: opacity .5s; transition: opacity .5s; }  /* Chrome <=56, Safari < 10 */
+:-moz-placeholder { opacity: 1; -moz-transition: opacity .5s; transition: opacity .5s; } /* FF 4-18 */
+::-moz-placeholder { opacity: 1; -moz-transition: opacity .5s; transition: opacity .5s; } /* FF 19-51 */
+:-ms-input-placeholder { opacity: 1; -ms-transition: opacity .5s; transition: opacity .5s; } /* IE 10+ */
+::placeholder { opacity: 1; transition: opacity .5s; } /* Modern Browsers */
 
-h1{
-    font-family: Shototam;
-    font-size: xxx-large;
+*:focus::-webkit-input-placeholder { opacity: 0; } /* Chrome <=56, Safari < 10 */
+*:focus:-moz-placeholder { opacity: 0; } /* FF 4-18 */
+*:focus::-moz-placeholder { opacity: 0; } /* FF 19-50 */
+*:focus:-ms-input-placeholder { opacity: 0; } /* IE 10+ */
+*:focus::placeholder { opacity: 0; } /* Modern Browsers */
+/*Medium*/
+@font-face {
+    font-family: 'Montserrat-Medium';
+    src: url('../../public/fonts/montserrat/Montserrat-Medium.ttf') format("truetype");
+}
+/*Какой то гусь*/
+@font-face {
+    font-family: 'gooseberry';
+    src: url('../../public/fonts/gooseberry/goosberry_version_02.otf') format("opentype");
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+.bodymain{
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-right: 0;
+    background-image: url(../assets/PawsOriginal.png);
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: left 30%;
 }
 .mainbtnframe{
     display: block;
-    width: 30%;
+    margin-left: 122px;
+    padding-top: 80px;
+    width: 700px;
+    height: 360px;
 }
-
-.mainbtn{
-    width: 50%;
+.catArticle{
+    color: #73685D;
+    font-family: gooseberry, sans-serif;
+    font-size: 100px;
+    margin: 0;
+}
+.mainBtn{
+    width: 247px;
     height: 15%;
+    margin-top: 16px;
+    font-family: Montserrat-SemiBold,sans-serif;
+    font-size: 18px;
+    border-radius: 100px;
+    cursor: pointer;
+}
+.chooseCatBtn{
+    border:2px solid #B29B84;
+    background-color: white;
+    color: #B29B84;
+}
+.donateBtn{
+    margin-left: 16px;
+    background-color: #B29B84;
+    color: white;
+    box-shadow: #B29B84 0 0 6.4px;
+}
+.firstCatText{
+    color:#73685D;
+    font-family: Montserrat-Medium, sans-serif;
+    padding-top: 4%;
+    font-size: 20px;
+    width:559px;
+}
+.catPreviewPhoto{
+    width: auto;
+    height: 100%;
+    margin-left: 30%;
+    margin-top: 10%;
+}
+
+.articleCatCircle{
+    display: grid;
+    grid-template-rows: 1fr 1fr 3fr 1fr;
+    padding-left: 122px;
+    margin-top: 16px;
+    width: 100%;
+    height: 448px;
+    background-image: url(../assets/articleVector.png);
+    background-repeat: no-repeat;
+    background-position: center 30%;
+    background-size:100%;
+    align-items: center;
+}
+.secondCatArticle{
+    grid-column: 1/4;
+    grid-row:1/2;
+    margin: 0;
+    padding: 0;
+    font-family: gooseberry,sans-serif;
+    font-size: 48px;
+}
+.catArticleText{
+    grid-column: 1/4;
+    grid-row:2/3;
+    margin-top: 1px;
+    margin-bottom: 0;
+    font-family: Montserrat-Medium,sans-serif;
+    font-size: 24px;
+    color: #73685D;
+}
+.catCircle{
+    margin-left: 2%;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3,.4fr);
+    margin-top: 43px;
+    grid-column: 1/4;
+    grid-row:3/4;
+    /*grid-template-columns: 413px 413px 413px;*/
+}
+.miniArticlePreview{
+    width: 369px;
+    height: 236px;
+    background-color: #73685D;
+    border-radius: 25px;
+}
+.showMore{
+    font-family: Montserrat-SemiBold, sans-serif;
+    font-size: 18px;
+    grid-column: 2/3;
+    grid-row:4/5;
+    width: 205px;
+    height: 60px;
     background-color: #C3BAA2;
+    color: white;
+}
+.aboutShelter{
+    display: grid;
+    grid-template-columns: 1fr .7fr;
+    grid-template-rows: 1fr 1fr;
+    margin-top:26px;
+    padding-top: 10%;
+    padding-right: 10%;
+    width:100%;
+    height: 800px;
+
+}
+/*wave Image*/
+.aboutShelter{
+    background-image: url(../assets/wave.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 100% 100%;
+}
+.catPhotoShelter{
+    grid-row:1/4;
+    grid-column: 1/2;
+    margin-left: 20%;
+    width: 490px;
+    height: 532px;
+}
+.nameShelter{
+    color: #73685D;
+    font-size: 48px;
+    font-family: gooseberry, sans-serif;
+    grid-row:1/2;
+    grid-column: 2/2;
+    text-align: center;
+    margin:0;
+}
+.textAboutShelter > p{
+    padding-top: 31px;
+}
+.textAboutShelter{
+    font-family: Montserrat-Medium, sans-serif;
+    font-size: 16px;
+    line-height: 28px;
+
+}
+.twoCounters{
+    display: grid;
+    font-family: gooseberry, sans-serif;
+    text-align: center;
+    font-size: 48px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 100%;
+    width: 100%;
+    height: 70%;
+    color:#6D645B;
+    align-items: center;
+
+}
+.twoCounters > div > p {
+    font-family: Montserrat-normal, sans-serif;
+    font-size: 15px;
+    margin: 0;
+}
+.firstCounter{
+    padding-top: 25%;
+    background-image: url(../assets/buble1.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
+}
+.secondCounter{
+    padding-top: 25%;
+    background-image: url(../assets/buble2.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
+}
+.howTTHome{
+    display: grid;
+    grid-template-rows:.5fr 1fr 1fr;
+    grid-template-columns: .9fr .5fr .9fr .8fr;
+    font-family: Montserrat-Medium, sans-serif;
+    width:90%;
+    height: 90%;
+    align-items: center;
+    font-size: 40px;
+    color:black;
+    margin-top: 30px;
+    margin-left: 5%;
+    text-align: center;
+
+}
+.howTTHome{
+    background-image: url(../assets/stratchedVector.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 40% 80%;
+}
+.howTTHome > div > p{
+    font-size: 20px;
+    margin: 0;
+}
+
+.howTTHome > h2{
+    font-family: gooseberry, sans-serif;
+    font-size: 48px;
+    margin-bottom: 3%;
+    text-align: center;
+    color:#73685D;
+    grid-column: 1/5;
+    grid-row:1/2;
+}
+
+.text1{
+    grid-column:1/2;
+    grid-row:2/3;
+    margin-left: 10%;
+    width: 100%;
+
+}
+.text2{
+    grid-column: 2/3;
+    grid-row:3/4;
+
+}
+.text3{
+    grid-column: 3/4;
+    grid-row:2/3;
+}
+.text4{
+    grid-column: 4/5;
+    grid-row:3/3;
+    width: 100%;
+
+}
+
+.howTHShelter{
+    display: grid;
+    grid-template-rows: 0.15fr 0.2fr 1.5fr;
+    /*grid-template-columns: 0.5fr;*/
+    width:100%;
+    height: 100vh;
+    margin-top: 5%;
+    justify-items: center;
+}
+.howTHShelter > h2{
+    font-family: gooseberry, sans-serif;
+    font-size: 48px;
+    height: fit-content;
+    color: #73685D;
+    margin: 0;
+}
+.howTHShelter > p{
+    font-family: Montserrat-Medium, sans-serif;
+    font-size: 16px;
     color: black;
-    font-size: larger;
+    margin: 0;
+    width: 50%;
+    text-align: center;
+}
+.donateBlock{
+    text-align: center;
+    box-shadow: 0 0 3em #C3AB91;
+    width: 45%;
+    height: 75%;
+    margin-top: 3%;
+    padding-top: 1.2%;
+    border-radius: 62px;
+}
+.donateBlock > h3 {
+    font-family: Montserrat-Medium,sans-serif;
+    font-size: 13px;
+    margin: 0;
+}
+.donateBlock > h2 {
+    font-family: gooseberry, sans-serif;
+    font-size: 40px;
+    margin: 0;
+}
+.donateForm{
+    display: grid;
+    grid-template-rows: .5fr .5fr .5fr;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 5%;
+    margin-top: 5%;
+    margin-left: 5%;
+    height: 70%;
+    width:90%;
+}
+.form-example {
+    display: grid;
+    grid-template-rows: .6fr 1fr;
+    width: 100%;
+    height: 80%;
+    text-align: left;
+}
+.form-example > label{
+    font-family: Montserrat-SemiBold,sans-serif;
+    font-size: 14px;
+}
+.form-example > input[type="text"]{
+    border: 2px solid #B29B84;
+    border-radius: 100px;
 }
 
-.bodymain{
-    display: flex;
-    margin: 0 5%;
+
+.form-example > input[type="text"]::placeholder{
+    padding-left: 10%;
+    font-family: Montserrat-Medium, sans-serif;
+    font-size: 14px;
+}
+.form-example > input[type="text"]:focus{
+    padding-left: 10%;
+    box-shadow: 0 0 1em #C3AB91;
+    transition-duration: 0.2s;
+}
+.checkBox{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 10px;
+    margin-top: 9%;
+    width:100%;
+    height:45%;
+}
+.checkBox input[type="radio"]{
+    display:none;
+}
+.checkBox > .button{
+    padding-top: 8%;
+    text-align: center;
+    font-family: Montserrat-Medium,sans-serif;
+    font-size: 14px;
+    background-color: #C2C2C2;
+    color: white;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+.checkBox input[type="radio"]:checked + .button {
+    background-color: #EEBF5F;
+    color: black;
+}
+.form-example > .userAgree{
+    height: 100%;
+    margin-top: 5%;
+    margin-left: 5%;
+    grid-row: 1/3;
+}
+.userAgree > input[type="checkbox"]{
+    width: 10%;
+    height: 30%;
+    background-color: #73685D;
+}
+.userAgree > a{
+    font-family: Montserrat-SemiBold,sans-serif;
+    text-decoration: none;
+    color:#7ACAFF;
+}
+.form-example > input[type="submit"]{
+    margin-top: 5%;
+    color: #fff;
+    background-color: #B29B84;
+    border-radius: 100px;
+    border: 0;
+    grid-row: 1/3;
+    height: 70%;
+    width: 100%;
+    font-family: Montserrat-SemiBold,sans-serif;
+    font-size: 16px;
 }
 
+/*.ibtn{*/
+/*    height: 100%;*/
+/*}*/

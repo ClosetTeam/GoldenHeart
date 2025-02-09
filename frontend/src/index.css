@@ -1,3 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+    --color-heading: #73685D;
+    --color-headerbg: #E8E8E8;
+    --color-btn: #B29B84;
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
 }

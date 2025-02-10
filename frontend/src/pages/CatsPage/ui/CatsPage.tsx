@@ -5,7 +5,7 @@ import catImg from "../../../assets/cat_img.png"
 import {useEffect, useState} from "react";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
-import {Cat} from "../../../abstractions/Cat.ts";
+import {Cat} from "../../../models/Cat.ts";
 
 const CatsPage = () => {
 

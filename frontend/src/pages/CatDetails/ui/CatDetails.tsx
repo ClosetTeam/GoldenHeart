@@ -5,7 +5,7 @@ import "./CatDetails.css";
 import Header from "../../../components/header/Header.tsx";
 import myimg from "../../../assets/img_2.png";
 import myimg2 from "../../../assets/img_3.png";
-import {Cat} from "../../../abstractions/Cat.ts";
+import {Cat} from "../../../models/Cat.ts";
 import WhiteButton from "../../../components/WhiteButton/WhiteButton.tsx"; // Картинка по умолчанию
 
 const CatDetails = () => {

@@ -5,7 +5,7 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import catImg from "../../../assets/cat_img.png"
 import {useNavigate} from "react-router-dom";
-import {Article} from "../../../abstractions/Article.ts";
+import {Article} from "../../../models/Article.ts";
 
 const ArticlePage = () => {
 

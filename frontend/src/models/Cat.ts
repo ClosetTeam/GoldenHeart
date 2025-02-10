@@ -1,5 +1,5 @@
 // Интерфейс для питомца
-export interface Cat {
+export default interface Cat {
     id: number;
     name: string;
     description: string;

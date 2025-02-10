@@ -4,7 +4,7 @@ import axios from "axios";
 import Header from "../../../components/header/Header.tsx";
 import myimg from "../../../assets/img_2.png";
 import myimg2 from "../../../assets/img_3.png";
-import {Article} from "../../../abstractions/Article.ts"; // Картинка по умолчанию
+import {Article} from "../../../models/Article.ts"; // Картинка по умолчанию
 
 const CatDetails = () => {
     const { id } = useParams<{ id: string }>();

@@ -13,7 +13,6 @@ import CatDetails from "./pages/CatDetails/ui/CatDetails.tsx";
 import AdminPage from "./pages/AdminPage/ui/AdminPage.tsx";
 import ArticlePage from "./pages/ArticlePage/ui/ArticlePage.tsx"
 import ArticleDetails from "./pages/ArticleDetails/ui/ArticleDetails.tsx";
-import AdminPageTest from './pages/AdminPage/ui/AdminPageTest.tsx';
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -44,7 +43,7 @@ const router = createBrowserRouter(
             <Route
                 path="/admin"
                 element={
-                        <AdminPageTest />
+                        <AdminPage />
                 }
             />
 

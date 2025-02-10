@@ -21,6 +21,13 @@ export default function AdminPageTest() {
 				</div>
 				<CatTable />
 			</main>
+			<footer className='flex mx-25 mb-29'>
+				<div className='px-8 py-1.5 bg-headerbg rounded-2xl text-black/30'>количество строк - 10</div>
+				<ul className='ml-68 flex gap-3'>
+					<li className='bg-currentpagebg w-7 h-7 rounded-full items-center justify-center flex text-heading cursor-pointer'>1</li>
+					<li className='bg-pagebg w-7 h-7 rounded-full items-center justify-center flex text-heading cursor-pointer'>2</li>
+				</ul>
+			</footer>
 		</>
 	)
 }
@@ -39,9 +46,13 @@ interface Cat {
 
 const initialCats: Cat[] = [
   { id: 1, name: "Бублик", age: "5 лет", vaccinated: true, sterilized: true, description: "Дружелюбный котик Дружелюбный котик Дружелюбный котик Дружелюбный котик Дружелюбный котик", photo: "https://avatars.mds.yandex.net/i?id=3854849fff39117370e05b68c3a0861ff02e22c2-5590559-images-thumbs&n=13" },
-  { id: 2, name: "Бублик", age: "4 года", vaccinated: true, sterilized: true, description: "Любит играть Любит играть Любит играть" },
+  { id: 2, name: "Бублик", age: "4 года", vaccinated: true, sterilized: true, description: "Любит играть Любит играть Любит играть", photo: "https://spb.benevobis.su/upload/Мифы%20про%20аллергию.%20Кошка%20в%20шоке.jpg" },
   { id: 3, name: "Бублик", age: "2 года", vaccinated: true, sterilized: true, description: "Очень активный Очень активный Очень активный", photo: "/cat2.jpg" },
   { id: 4, name: "Бублик", age: "8 месяцев", vaccinated: true, sterilized: true, description: "Маленький шалун" },
+  { id: 5, name: "Бублик", age: "5 лет", vaccinated: true, sterilized: true, description: "Дружелюбный котик Дружелюбный котик Дружелюбный котик Дружелюбный котик Дружелюбный котик", photo: "https://avatars.mds.yandex.net/i?id=3854849fff39117370e05b68c3a0861ff02e22c2-5590559-images-thumbs&n=13" },
+  { id: 6, name: "Бублик", age: "4 года", vaccinated: true, sterilized: true, description: "Любит играть Любит играть Любит играть", photo: "https://spb.benevobis.su/upload/Мифы%20про%20аллергию.%20Кошка%20в%20шоке.jpg" },
+  { id: 7, name: "Бублик", age: "2 года", vaccinated: true, sterilized: true, description: "Очень активный Очень активный Очень активный", photo: "/cat2.jpg" },
+  { id: 8, name: "Бублик", age: "8 месяцев", vaccinated: true, sterilized: true, description: "Маленький шалун" },
 ];
 
 const CatTable: React.FC = () => {
@@ -62,14 +73,14 @@ const CatTable: React.FC = () => {
       <table className="min-w-full border border-gray-300 last:border-0">
         <thead>
           <tr className="bg-gray-100 last:bg-transparent">
-            <th className="border p-2">кличка</th>
-            <th className="border p-2">фото</th>
-            <th className="border p-2">возраст</th>
-            <th className="border p-2">пол</th>
-            <th className="border p-2">прививки</th>
-            <th className="border p-2">стерилизация</th>
-            <th className="border p-2">описание</th>
-            <th className="border-0 p-5"></th>
+            <td className="border p-2 text-center">кличка</td>
+            <td className="border p-2 text-center">фото</td>
+            <td className="border p-2 text-center">возраст</td>
+            <td className="border p-2 text-center">пол</td>
+            <td className="border p-2 text-center">прививки</td>
+            <td className="border p-2 text-center">стерилизация</td>
+            <td className="border p-2 text-center">описание</td>
+            <td className="border-0 p-5"></td>
           </tr>
         </thead>
         <tbody>
@@ -96,14 +107,14 @@ const CatTable: React.FC = () => {
 					<div className="text-left flex-1 truncate">
 						{cat.description.slice(0, _description_max) + (cat.description.length > _description_max ? '...' : '')}
 					</div>
-					{cat.description.length > _description_max && (
+					{
 					<div onClick={() => toggleDescription(cat.id)} 
 						className="bg-headerbg mr-2 shrink-0 w-9 h-9 gap-0.75 flex justify-center items-center rounded-full cursor-pointer">
 						<div className='bg-white w-1 h-1 rounded'></div>
 						<div className='bg-white w-1 h-1 rounded'></div>
 						<div className='bg-white w-1 h-1 rounded'></div>
 					</div>
-					)}
+					}
 				</div>
 			  </td>
 			  <td className="">

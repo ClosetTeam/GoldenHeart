@@ -4,6 +4,8 @@
     --color-heading: #73685D;
     --color-headerbg: #E8E8E8;
     --color-btn: #B29B84;
+    --color-currentpagebg: #BEBBBB;
+    --color-pagebg: #D9D9D9;
 }
 
 *, *::before, *::after {

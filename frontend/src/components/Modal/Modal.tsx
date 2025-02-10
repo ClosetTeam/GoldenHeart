@@ -10,7 +10,7 @@ const Modal: React.FC<ModalProps> = ({ children }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black/10 bg-opacity-50" onClick={toggleModalIsOpen}>
-      <div className="bg-white p-6 rounded-4xl shadow-lg w-111" onClick={(e) => e.stopPropagation()}>
+      <div className="bg-white rounded-4xl shadow-lg" onClick={(e) => e.stopPropagation()}>
         {/* <h2 className="text-xl font-semibold">Модальное окно</h2>
         <p className="mt-2">Содержимое модального окна</p>
         <button

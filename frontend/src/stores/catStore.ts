@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import Cat from '../models/Cat';
-import { getAllCats } from '../services/cat.service';
+import { getAllCats, removeCat } from '../services/cat.service';
 
 interface CatState {
 	cats: Cat[];
@@ -21,7 +21,8 @@ export const useCatStore = create<CatState>((set) => ({
 			cats: state.cats.map((c) => (c.id === cat.id ? cat : c))
 		}));
 	},
-	removeCat: (id: number) => {
+	removeCat: async (id: number) => {
+		await removeCat(id);
 		set((state) => ({
 			cats: state.cats.filter((cat) => cat.id !== id)
 		}));

@@ -1,18 +1,18 @@
 /*Жирный*/
 @font-face {
     font-family: 'Montserrat-Bold';
-    src: url('../../public/fonts/montserrat/Montserrat-Bold.ttf') format("truetype");
+    src: url('../../../../public/fonts/montserrat/Montserrat-Bold.ttf') format("truetype");
 
 }
 /*Обычный*/
 @font-face {
     font-family: 'Montserrat-normal';
-    src: url('../../public/fonts/montserrat/Montserrat-Regular.ttf') format("truetype");
+    src: url('../../../../public/fonts/montserrat/Montserrat-Regular.ttf') format("truetype");
 }
 /*SemiBold*/
 @font-face {
     font-family: 'Montserrat-SemiBold';
-    src: url('../../public/fonts/montserrat/Montserrat-SemiBold.ttf') format("truetype");
+    src: url('../../../../public/fonts/montserrat/Montserrat-SemiBold.ttf') format("truetype");
 }
 ::-webkit-input-placeholder { opacity: 1; -webkit-transition: opacity .5s; transition: opacity .5s; }  /* Chrome <=56, Safari < 10 */
 :-moz-placeholder { opacity: 1; -moz-transition: opacity .5s; transition: opacity .5s; } /* FF 4-18 */
@@ -28,12 +28,12 @@
 /*Medium*/
 @font-face {
     font-family: 'Montserrat-Medium';
-    src: url('../../public/fonts/montserrat/Montserrat-Medium.ttf') format("truetype");
+    src: url('../../../../public/fonts/montserrat/Montserrat-Medium.ttf') format("truetype");
 }
 /*Какой то гусь*/
 @font-face {
     font-family: 'gooseberry';
-    src: url('../../public/fonts/gooseberry/goosberry_version_02.otf') format("opentype");
+    src: url('../../../../public/fonts/gooseberry/goosberry_version_02.otf') format("opentype");
 }
 *{
     margin: 0;
@@ -44,7 +44,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-right: 0;
-    background-image: url(../assets/PawsOriginal.png);
+    background-image: url(../../../assets/PawsOriginal.png);
     background-size: 60%;
     background-repeat: no-repeat;
     background-position: left 30%;
@@ -103,7 +103,7 @@
     margin-top: 16px;
     width: 100%;
     height: 448px;
-    background-image: url(../assets/articleVector.png);
+    background-image: url(../../../assets/articleVector.png);
     background-repeat: no-repeat;
     background-position: center 30%;
     background-size:100%;
@@ -165,7 +165,7 @@
 }
 /*wave Image*/
 .aboutShelter{
-    background-image: url(../assets/wave.png);
+    background-image: url(../../../assets/wave.png);
     background-repeat: no-repeat;
     background-position: top;
     background-size: 100% 100%;
@@ -215,7 +215,7 @@
 }
 .firstCounter{
     padding-top: 25%;
-    background-image: url(../assets/buble1.png);
+    background-image: url(../../../assets/buble1.png);
     background-repeat: no-repeat;
     background-size: 100%;
     width: 100%;
@@ -223,7 +223,7 @@
 }
 .secondCounter{
     padding-top: 25%;
-    background-image: url(../assets/buble2.png);
+    background-image: url(../../../assets/buble2.png);
     background-repeat: no-repeat;
     background-size: 100%;
     width: 100%;
@@ -245,7 +245,7 @@
 
 }
 .howTTHome{
-    background-image: url(../assets/stratchedVector.png);
+    background-image: url(../../../assets/stratchedVector.png);
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: 40% 80%;
@@ -333,8 +333,8 @@
 }
 .donateForm{
     display: grid;
-    grid-template-rows: .5fr .5fr .5fr;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: .5fr .5fr .5fr;
     grid-column-gap: 5%;
     margin-top: 5%;
     margin-left: 5%;
@@ -370,8 +370,8 @@
 }
 .checkBox{
     display: grid;
-    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 10px;
     margin-top: 9%;
     width:100%;
@@ -388,7 +388,10 @@
     background-color: #C2C2C2;
     color: white;
     border-radius: 100px;
+    border-color: transparent;
     cursor: pointer;
+    width: 100%;
+    height: 100%;
     transition: background-color 0.3s, color 0.3s;
 }
 .checkBox input[type="radio"]:checked + .button {

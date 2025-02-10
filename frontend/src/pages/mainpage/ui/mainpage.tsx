@@ -1,11 +1,9 @@
 import "./mainpage.css";
-import catPrevievImg from "../assets/catPreviev.png";
-import catAboutShelterImg from "../assets/someCats.png";
-import miniCatImg from "../assets/cat_img.png";
-import arrowImg from "../assets/arrowRight.png";
-import Header from "../components/header/Header.tsx";
-import Footer from "../components/footer/footer.tsx";
-import MiniBublik from "../components/miniBublikCard/miniBublik.tsx";
+import catPrevievImg from "../../../assets/catPreviev.png";
+import catAboutShelterImg from "../../../assets/someCats.png";
+import Header from "../../../components/header/Header.tsx";
+import Footer from "../../../components/footer/footer.tsx";
+import MiniBublik from "../../../components/miniBublikCard/miniBublik.tsx";
 import {post} from "axios";
 export default function Mainpage (){
 

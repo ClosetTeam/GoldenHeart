@@ -35,7 +35,7 @@
     font-family: 'gooseberry';
     src: url('../../../../public/fonts/gooseberry/goosberry_version_02.otf') format("opentype");
 }
-*{
+.bodymain > *{
     margin: 0;
     padding: 0;
 }

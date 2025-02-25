@@ -8,7 +8,7 @@ export default function Header(){
 
     return(
         <>
-            <header>
+            <header className='header-header'>
                 <nav className={"headerButtons"}>
                     <div className={"projectName"} onClick={() => navigate("/")}>Золотое сердце</div>
                     <button className={"headerButton"}>статьи</button>

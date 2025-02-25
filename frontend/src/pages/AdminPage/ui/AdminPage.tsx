@@ -3,12 +3,12 @@ import { useCatStore } from '../../../stores/catStore';
 import CatTable from '../../../components/CatTable/CatTable';
 import Modal from '../../../components/Modal/Modal';
 import { useModalStore } from '../../../stores/modalStore';
-import MoreInfoModal from '../../../components/CatTable/MoreInfoModal';
+
 
 export default function AdminPageTest() {
 
 	const {cats, fetchCats} = useCatStore();
-    const {modalContent, setModalContent} = useModalStore();
+    const {modalContent} = useModalStore();
 
 	useEffect(() => {
 		fetchCats();

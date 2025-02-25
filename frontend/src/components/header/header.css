@@ -1,66 +1,78 @@
+/*Общая разметка*/
 header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 0 5%;
+    margin-left: 30px;
+    margin-top: 24px;
+    background-color: #E8E8E8;
+    width: 97%;
+    height: 65px;
+    border-radius: 10px;
     /*padding: 10px 20px 10px 20px;*/
-    
+}
+/*Редакт всех кнопок*/
+.headerButtons{
+    display: grid;
+
+    grid-template-columns: 0.8fr 0.4fr 0.2fr 0.3fr 0.5fr 0.2fr;
+    /*grid-template-columns: 20% 10% 10% 10% 20% 5%;*/
+    /*grid-template-columns: 74px 104px 174px 243px 66px;*/
+    width: 100%;
+    align-items: center;
+    justify-items: right;
+    height: 10vh;
+}
+/*Лого*/
+.projectName{
+    color:#73685D;
+    font-size: 27px;
+    cursor: pointer;
+    font-family: Montserrat-bold, sans-serif;
+    width: auto;
+    height: auto;
+    margin-right: 50%;
+
 }
 
+/*Основные кнопки*/
 button{
     border: none;
-    border-radius: 8px;
-    padding: 0.5rem 0.75rem;
-    box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.2), 0 1px 2px hsla(0, 0%, 0%, 0.2);
-}
 
-.icons{
-    display: flex;
-    justify-content: space-between;
 }
-h1{
-    color: black;
+.headerButton {
+    padding: 0;
+    cursor: pointer;
+    font-family: Montserrat-SemiBold, sans-serif;
+    font-size: 16px;
+    background-color: transparent;
+    /*border-radius: 30px;*/
+    /*width: 40%;*/
+    /*height: 100%;*/
+    /*margin: 0;*/
+    /*font-size: 0.8em;*/
+    /*font-weight: 500;*/
+    /*border-width: 2px;*/
+    /*color: black;*/
+    /*margin-left: 5%;*/
+
 }
-.find{
-    width: 50px;
-    height: 50px;
+.chooseCatBtnHeader{
+    margin-right: 10%;
+    width: 62%;
+    min-width: 58%;
+    max-width: 63%;
+    height: 50%;
+    background-color: #B29B84;
+    border-radius: 100px;
+    color: white;
 }
 .logo {
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-
-}
-.projectName{
-    margin: 1%;
-    font-size: 2em;
+    width: 100%;
+    height: 100%;
+    padding-right: 50px;
     cursor: pointer;
 }
-nav{
-    width: 100vh;
-    height: 10vh;
-    display: flex;
-    justify-content: space-between;
-    margin-right: 15% ;
 
-}
 
-.btn {
-    border-radius: 30px;
-    width: 25%;
-    height: 80%;
-    margin: 0;
-    font-size: 0.8em;
-    font-weight: 500;
-    border-width: 1px;
-    background-color: white;
-    color: black;
-    cursor: pointer;
-    margin-left: 5%;
 
-}
-
-.btn:hover{
-    background-color: #C3BAA2;
-}
 

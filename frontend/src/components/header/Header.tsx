@@ -1,31 +1,28 @@
 import "./header.css"
-import myimgprofile from "../../assets/logo.png"
+import myProfileImg from "../../assets/personLogo.png"
 import {useNavigate} from "react-router-dom";
 
 
 export default function Header(){
     const navigate = useNavigate();
+
     return(
         <>
             <header>
-                <div className={"projectName"} onClick={() => navigate("/")}>Золотое сердце</div>
-                <nav>
-                    {/*<button className={"btn"}>О фонде</button>*/}
-                    {/*<button className={"btn"}>Проекты</button>*/}
-                    <button className={"btn"} onClick={() => navigate("/cats")}>Ищут дом</button>
-                    {/*<button className={"btn"}>Статьи</button>*/}
-                    <button className={"btn"} onClick={() => navigate("/article")}>Статьи</button>
-                    <button className={"btn"}>Контакты</button>
-
+                <nav className={"headerButtons"}>
+                    <div className={"projectName"} onClick={() => navigate("/")}>Золотое сердце</div>
+                    <button className={"headerButton"}>статьи</button>
+                    <button className={"headerButton"}>о приюте</button>
+                    {/*<button className={"btn"} onClick={() => navigate("/pets")}>Ищут дом</button>*/}
+                    <button className={"headerButton"}>помочь приюту</button>
+                    <button className={"headerButton chooseCatBtnHeader"} onClick={() => navigate("/pets")}>Выбрать питомца</button>
+                    <button className={"headerButton"}>
+                        <img className="logo" src={myProfileImg}
+                             onClick={() => {
+                                 navigate(`/profile`);
+                             }}></img>
+                    </button>
                 </nav>
-                <div className={"icons"}>
-                    {/*<img className="find" src={myimgfind} onClick={() => {*/}
-                    {/*    navigate(`/`);*/}
-                    {/*}}></img>*/}
-                    <img className="logo" src={myimgprofile} onClick={() => {
-                        navigate(`/profile`);
-                    }}></img>
-                </div>
             </header>
         </>
     )

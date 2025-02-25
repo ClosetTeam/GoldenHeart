@@ -3,11 +3,12 @@ import { useCatStore } from '../../../stores/catStore';
 import CatTable from '../../../components/CatTable/CatTable';
 import Modal from '../../../components/Modal/Modal';
 import { useModalStore } from '../../../stores/modalStore';
+import MoreInfoModal from '../../../components/CatTable/MoreInfoModal';
 
 export default function AdminPageTest() {
 
 	const {cats, fetchCats} = useCatStore();
-    const {modalContent} = useModalStore();
+    const {modalContent, setModalContent} = useModalStore();
 
 	useEffect(() => {
 		fetchCats();
@@ -30,7 +31,9 @@ export default function AdminPageTest() {
 				<div className="info flex gap-18 items-center text-2xl">
 					<div>Панель администратора</div>
 					<div>таблица кошек</div>
-					<input type='button' className='text-btn border-btn h-9 w-40 border-2 rounded-4xl flex justify-center cursor-pointer' value='Добавить'/>
+					<input type='button' 
+						className='text-btn border-btn h-9 w-40 border-2 rounded-4xl flex justify-center cursor-pointer' 
+						value='Добавить'/>
 				</div>
 				<div className="search h-9 flex gap-4 items-center mt-7 mb-9">
 					<input type="text" placeholder='поиск по имени' className='bg-headerbg text-black/30 h-full rounded-2xl pl-8 py-1 text-xl flex items-center flex-grow'/>

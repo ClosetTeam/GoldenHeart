@@ -1,11 +1,13 @@
 import { useEffect } from 'react';
 import { useCatStore } from '../../stores/catStore';
 import { useModalStore } from '../../stores/modalStore';
+import MoreInfoModal from './MoreInfoModal';
+import DeleteCatModal from './DeleteCatModal';
 
 const CatTable: React.FC = () => {
   const _description_max = 15;
   const {toggleModalIsOpen, setModalContent} = useModalStore();
-  const {cats, removeCat} = useCatStore();
+  const {cats} = useCatStore();
 
   useEffect(() => console.log(cats), [cats]);
 
@@ -51,56 +53,7 @@ const CatTable: React.FC = () => {
                   {
                   <div onClick={() => {
                     setModalContent(
-                      <div className='w-147 py-4 px-8'>
-                        <div className='header flex items-center justify-between'>
-                          <p className='text-base'>Описание</p>
-                          <div className='flex gap-2'>
-                            <input type="button" value="Удалить" className='bg-white cursor-pointer text-btn text-xl w-34 h-10 mt-4 mb-3 rounded-full border-2 border-btn'/>
-                            <input type="button" value="Отменить" className='bg-white cursor-pointer text-btn text-xl w-34 h-10 mt-4 mb-3 rounded-full border-2 border-btn'/>
-                          </div>
-                        </div>
-                        <div className='w-95 border border-white mx-auto mt-11 rounded-[50px] drop-shadow-sm'>
-                          <div className='flex '>
-                            <div className='flex flex-col px-10 py-4'>
-                              <div className='w-fit'>
-                                <div className='text-3xl text-heading'>{cat.name}</div>
-                                <div className='h-0.5 border border-dashed'></div>
-                              </div>
-                              <div className='flex justify-between w-35'>
-                                <div>Возраст</div>
-                                <div>
-                                  <div>{cat.age}</div>
-                                  <div className='h-0.5 border border-dashed'></div>
-                                </div>
-                              </div>
-                              <div className='flex justify-between w-35'>
-                                <div>Пол</div>
-                                <div>
-                                  <div>{cat.sex}</div>
-                                  <div className='h-0.5 border border-dashed'></div>
-                                </div>
-                              </div>
-                              <div className='flex justify-between w-35'>
-                                <div>Прививки</div>
-                                <div>
-                                  <div>{cat.vaccinated ? "Да" : "Нет"}</div>
-                                  <div className='h-0.5 border border-dashed'></div>
-                                </div>
-                              </div>
-                              <div className='flex justify-between w-35'>
-                                <div>Стерилизация</div>
-                                <div>
-                                  <div>{cat.sterilized ? "Да" : "Нет"}</div>
-                                  <div className='h-0.5 border border-dashed'></div>
-                                </div>
-                              </div>
-                            </div>
-                            <div className='w-28 h-47'>
-                              <img src={`http://localhost:3000${cat.imageUrl}`} alt="" className='max-h-full object-contain'/>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      <MoreInfoModal {...cat} />
                     )
                     toggleModalIsOpen()
                   }} 
@@ -115,22 +68,7 @@ const CatTable: React.FC = () => {
               <td className="">
                 <div onClick={() => {
                   setModalContent(
-                    <div className='flex flex-col items-center w-111 p-6'>
-                      <div className='h-28 mt-3 flex items-center justify-center'> {/* контейнер с фиксированной высотой */}
-                        <img 
-                          src="/delete_cat_img.jpg" 
-                          alt="Удалить" 
-                          className='w-28 max-h-full object-contain'
-                        />
-                      </div>
-                      <p className='mt-8 text-2xl font-bold'>Удалить кота из списка?</p>
-                      <input type="button" className='bg-btn cursor-pointer text-white text-xl w-full h-10 mt-10 rounded-full' value='Удалить' onClick={() => {
-                        removeCat(cat.id)
-                        console.log('cat.id', cat.id)
-                        toggleModalIsOpen()
-                      }}/>
-                      <input type="button" className='bg-white cursor-pointer text-btn text-xl w-full h-10 mt-4 mb-3 rounded-full border-2 border-btn' value='Отменить' onClick={toggleModalIsOpen}/>
-                    </div>
+                    <DeleteCatModal {...cat} />
                   )
                   toggleModalIsOpen()
                 }} className="bg-btn w-9 h-9 flex justify-center items-center rounded-full mx-auto cursor-pointer">

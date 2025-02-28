@@ -1,0 +1,80 @@
+.window {
+	width: 588px;
+	padding: 16px 32px;
+}
+
+.window-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.window-btns {
+	display: flex;
+	gap: 8px;
+}
+
+.window-btn {
+	background-color: white;
+	color: var(--color-btn);
+	cursor: pointer;
+	font-size: 20px;
+	width: 136px;
+	height: 40px;
+	margin-top: 16px;
+	margin-bottom: 12px;
+	border-radius: 100px;
+	border: 2px var(--color-btn) solid;
+}
+
+.window-card {
+	width: 380px;
+	border: 1px white solid;
+	margin: 0 auto;
+	margin-top: 44px;
+	border-radius: 50px;
+	box-shadow: 0 1px 10px rgba(128, 128, 128, 0.3);
+	padding: 28px 40px;
+	display: flex;
+	gap: 14px;
+}
+
+.window-card .info {
+	width: 200px;
+}
+
+.window-card .info .input-name {
+	margin-bottom: 10px;
+	width: fit-content;
+}
+
+.window-card .info .input-name input{
+	width: 88px;
+	font-size: 30px;
+	color: var(--color-heading);
+	line-height: 26px;
+}
+
+.window-card .info .underscore {
+	width: 100%;
+	border: .8px black dashed;
+}
+
+.window-card .info ul li {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+	font-size: 14px;
+}
+
+.window-card .info ul li div input {
+	width: 48px;
+	font-size: 14px;
+}
+
+.window-card .info-image {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

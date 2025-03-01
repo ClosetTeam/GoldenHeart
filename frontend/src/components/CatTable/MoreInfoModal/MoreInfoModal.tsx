@@ -92,6 +92,21 @@ export default function MoreInfoModal(cat: Cat) {
           </div>
         </div>
       </div>
+      {/* TODO: Image carousel */}
+      <div className="add-photo">
+        <div className="add-photo-inner">
+          <input type="button" value="Добавить фото" className="add-photo-btn"/>
+        </div>
+      </div>
+      <div className="add-text">
+        <textarea 
+          name="description" 
+          className="description"
+        />
+      </div>
+      <div className="save-btn-div">
+        <input type="button" value="Сохранить" className="save-btn"/>
+      </div>
     </div>
   );
 }

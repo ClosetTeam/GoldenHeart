@@ -6,7 +6,12 @@ import './MoreInfoModal.css';
 import { useCatStore } from '../../../stores/catStore';
 import CatRequest from '../../../models/CatRequest';
 
-export default function MoreInfoModal(cat: Cat) {
+interface MoreInfoModalProps {
+  cat: Cat;
+  method: "add" | "edit";
+}
+
+export default function MoreInfoModal({cat, method}: MoreInfoModalProps) {
 
   const {toggleModalIsOpen, setModalContent} = useModalStore();
   const {updateCat} = useCatStore();
@@ -16,6 +21,7 @@ export default function MoreInfoModal(cat: Cat) {
   const [vaccinated, setVaccinated] = useState(cat.vaccinated);
   const [sterilized, setSterilized] = useState(cat.sterilized);
   const [description, setDescription] = useState(cat.description);
+  const [imageUrl, setImageUrl] = useState(cat.imageUrl);
 
 
   return (
@@ -97,16 +103,18 @@ export default function MoreInfoModal(cat: Cat) {
             </ul>
         </div>
         <div className="info-image">
-          <div>
-            {cat.imageUrl ? (
+          <div className='change-image'>
+            {imageUrl ? (
               // TODO: Возможность замены изображения
               <img 
-                src={`http://localhost:3000${cat.imageUrl}`}
+                src={`http://localhost:3000${imageUrl}`}
                 alt={cat.name} 
                 className="cat-image"
               />
               ) : 
-              "-"
+                <div className="no-image">
+                  <input type="file" name="image" id="" className='image-input'/>
+                </div>
               }
           </div>
         </div>
@@ -138,11 +146,13 @@ export default function MoreInfoModal(cat: Cat) {
             sterilized: sterilized,
             imageUrl: cat.imageUrl ? cat.imageUrl : ""
           }
-          updateCat(cat.id, updatedCat)
-            .then(() => console.log("Updated successfully"))
-            .catch(() => console.log("Failed to update"));
-
-          toggleModalIsOpen();
+          if (method == "edit") { 
+            updateCat(cat.id, updatedCat)
+              .then(() => console.log("Updated successfully"))
+              .catch(() => console.log("Failed to update"));
+  
+            toggleModalIsOpen();
+          }
         }}/>
       </div>
     </div>

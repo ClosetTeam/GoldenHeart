@@ -80,10 +80,40 @@
 }
 
 .window-card .info-image {
+	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
+
+.window-card .change-image {
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.window-card .no-image {
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	border-radius: 15px;
+	background-color: grey;
+
+}
+
+.window-card .no-image .image-input {
+	width: 100%;
+	height: 100%;
+}
+
+
 
 .add-photo {
 	display: flex;

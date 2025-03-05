@@ -51,7 +51,7 @@ const CatTable: React.FC = () => {
                   <div 
                     onClick={() => {
                       setModalContent(
-                        <MoreInfoModal {...cat} />
+                        <MoreInfoModal cat={cat} method='edit' />
                       )
                       toggleModalIsOpen()
                     }}

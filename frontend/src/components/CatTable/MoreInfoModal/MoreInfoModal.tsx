@@ -72,10 +72,10 @@ export default function MoreInfoModal(cat: Cat) {
                 <label htmlFor="vaccinated">Прививки</label>
                 <div>
                   <input 
-                    type="text" 
+                    type="checkbox" 
                     name="vaccinated" 
-                    value={vaccinated ? 'Да' : 'Нет'}
-                    onChange={(e) => setVaccinated(e.target.value === 'Да')}
+                    checked={vaccinated}
+                    onChange={(e) => setVaccinated(e.target.checked)}
                   />
                   <div className="underscore"></div>
                 </div>
@@ -84,10 +84,11 @@ export default function MoreInfoModal(cat: Cat) {
                 <label htmlFor="sterillized">Стерилизация</label>
                 <div>
                   <input 
-                    type="text" 
+                    // TODO: Add checkbox
+                    type="checkbox" 
                     name="sterillized" 
-                    value={sterilized ? 'Да' : 'Нет'}
-                    onChange={(e) => setSterilized(e.target.value === 'Да')}
+                    checked={sterilized}
+                    onChange={(e) => setSterilized(e.target.checked)}
                   />
                   <div className="underscore"></div>
                 </div>

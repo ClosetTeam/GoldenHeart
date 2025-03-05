@@ -1,11 +1,21 @@
+import { useState } from 'react';
 import Cat from '../../../models/Cat';
 import { useModalStore } from '../../../stores/modalStore';
 import DeleteCatModal from '../DeleteCatModal';
 import './MoreInfoModal.css';
+import { useCatStore } from '../../../stores/catStore';
+import CatRequest from '../../../models/CatRequest';
 
 export default function MoreInfoModal(cat: Cat) {
 
   const {toggleModalIsOpen, setModalContent} = useModalStore();
+  const {updateCat} = useCatStore();
+  const [name, setName] = useState(cat.name);
+  const [age, setAge] = useState(cat.age);
+  const [sex, setSex] = useState(cat.sex);
+  const [vaccinated, setVaccinated] = useState(cat.vaccinated);
+  const [sterilized, setSterilized] = useState(cat.sterilized);
+  const [description, setDescription] = useState(cat.description);
 
 
   return (
@@ -28,7 +38,8 @@ export default function MoreInfoModal(cat: Cat) {
               type="text" 
               name="name" 
               className='' 
-              value={'Bublik'}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
             <div className="underscore"></div>
           </div>
@@ -37,9 +48,10 @@ export default function MoreInfoModal(cat: Cat) {
                 <label htmlFor="age">Возраст</label>
                 <div>
                   <input 
-                    type="text" 
+                    type="number" 
                     name="age" 
-                    value={'2 года'}
+                    value={age}
+                    onChange={(e) => setAge(parseInt(e.target.value))}
                   />
                   <div className="underscore"></div>
                 </div>
@@ -50,7 +62,8 @@ export default function MoreInfoModal(cat: Cat) {
                   <input 
                     type="text" 
                     name="sex" 
-                    value={'M'}
+                    value={sex}
+                    onChange={(e) => setSex(e.target.value)}
                   />
                   <div className="underscore"></div>
                 </div>
@@ -61,7 +74,8 @@ export default function MoreInfoModal(cat: Cat) {
                   <input 
                     type="text" 
                     name="vaccinated" 
-                    value={'Да'}
+                    value={vaccinated ? 'Да' : 'Нет'}
+                    onChange={(e) => setVaccinated(e.target.value === 'Да')}
                   />
                   <div className="underscore"></div>
                 </div>
@@ -72,7 +86,8 @@ export default function MoreInfoModal(cat: Cat) {
                   <input 
                     type="text" 
                     name="sterillized" 
-                    value={'Да'}
+                    value={sterilized ? 'Да' : 'Нет'}
+                    onChange={(e) => setSterilized(e.target.value === 'Да')}
                   />
                   <div className="underscore"></div>
                 </div>
@@ -83,12 +98,15 @@ export default function MoreInfoModal(cat: Cat) {
         <div className="info-image">
           <div>
             {cat.imageUrl ? (
+              // TODO: Возможность замены изображения
               <img 
                 src={`http://localhost:3000${cat.imageUrl}`}
                 alt={cat.name} 
                 className="cat-image"
               />
-              ) : "-"}
+              ) : 
+              "-"
+              }
           </div>
         </div>
       </div>
@@ -102,10 +120,29 @@ export default function MoreInfoModal(cat: Cat) {
         <textarea 
           name="description" 
           className="description"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
         />
       </div>
       <div className="save-btn-div">
-        <input type="button" value="Сохранить" className="save-btn"/>
+        <input type="button" value="Сохранить" className="save-btn"
+        onClick={() => {
+          const updatedCat: CatRequest = {
+            name: name,
+            description: description,
+            age: age,
+            sex: sex,
+            weight: 0,
+            vaccinated: vaccinated,
+            sterilized: sterilized,
+            imageUrl: cat.imageUrl ? cat.imageUrl : ""
+          }
+          updateCat(cat.id, updatedCat)
+            .then(() => console.log("Updated successfully"))
+            .catch(() => console.log("Failed to update"));
+
+          toggleModalIsOpen();
+        }}/>
       </div>
     </div>
   );

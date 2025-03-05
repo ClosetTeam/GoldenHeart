@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useCatStore } from '../../stores/catStore';
 import { useModalStore } from '../../stores/modalStore';
 import MoreInfoModal from './MoreInfoModal/MoreInfoModal';
@@ -9,8 +8,6 @@ const CatTable: React.FC = () => {
   const _description_max = 15;
   const {toggleModalIsOpen, setModalContent} = useModalStore();
   const {cats} = useCatStore();
-
-  useEffect(() => console.log(cats), [cats]);
 
   return (
     <div className="table-container">

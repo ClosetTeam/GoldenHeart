@@ -12,7 +12,7 @@ export default function AdminPageTest() {
 
 	useEffect(() => {
 		fetchCats();
-        console.log("fetchCats");
+        // console.log("fetchCats");
 	}, []);
     
 	return (

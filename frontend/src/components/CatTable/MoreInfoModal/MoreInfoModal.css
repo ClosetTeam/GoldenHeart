@@ -51,12 +51,12 @@
 
 .window-card .info .input-name {
 	margin-bottom: 10px;
-	width: fit-content;
+	width: 100%;
 }
 
 .window-card .info .input-name input{
-	width: 88px;
-	font-size: 30px;
+	width: 100%;
+	font-size: 26px;
 	color: var(--color-heading);
 	line-height: 26px;
 }

@@ -1,0 +1,65 @@
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    max-width: 900px; /* Ширина контейнера слайдера */
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-bottom: 5%;
+}
+
+.slider {
+    width: 100%;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    /*width: 40%;*/
+    /*background-color: #6D645B;*/
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    flex: 0 0 33.33%; /* Каждый слайд занимает 1/3 ширины контейнера */
+    /*box-sizing: border-box;*/
+    /*width: 30%;*/
+    /*padding: 0 10px;*/
+    background-color: #E8E8E8;
+    margin-right: 3%;
+    /*border: 1px solid red;*/
+    justify-items: center;
+}
+
+.slide img {
+    width: 50%;
+    /*height: 60%;*/
+    height: auto;
+    border-radius: 8px;
+}
+
+.arrow {
+    /*width: ;*/
+    /*background-color: rgba(0, 0, 0, 0.5);*/
+    border: none;
+    color: #C8C8C8;
+    /*color:red;*/
+    font-size: 5.5vh;
+    min-font-size: 3vh;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.arrow.left {
+    left: 10px;
+}
+
+.arrow.right {
+    right: 10px;
+}

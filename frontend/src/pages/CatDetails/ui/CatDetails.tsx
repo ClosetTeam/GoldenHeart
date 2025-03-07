@@ -3,9 +3,10 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import "./CatDetails.css";
 import Header from "../../../components/header/Header.tsx";
+import Slider from "../../../components/Slider/newSlider1.tsx";
 import myimg from "../../../assets/img_2.png";
 import myimg2 from "../../../assets/img_3.png";
-import {Cat} from "../../../models/Cat.ts";
+import Cat from "../../../models/Cat.ts";
 import WhiteButton from "../../../components/WhiteButton/WhiteButton.tsx"; // Картинка по умолчанию
 
 const CatDetails = () => {
@@ -41,29 +42,44 @@ const CatDetails = () => {
         <>
             <Header/>
             <div className={"bodyBublikPage"}>
-                <div className={"DefaultDiv"}>
+                <div className={"mainBlock"}>
                     <button className={"backBut"}>назад</button>
-                    <h1 className={"Name"}>{Cat.name}</h1>
+                    <h3>Золотое Сердце</h3>
+                    <h1>{Cat.name}</h1>
                     <div className={"defaultInfo"}>
                         <p>{Cat.description}</p>
                         <button className={"nextTextBut"}>Читать далее</button>
                     </div>
 
-                    <table className={"someInfoTable"}>
-                        <tr>
-                            <th>Возраст</th>
-                            <th>Пол</th>
-                            <th>Вакцинация</th>
-                            <th>Стерилизация</th>
+                    <div className={"someInfoTable"}>
+                        <dl>
+                            <dt>Возраст</dt>
+                            <dd>{Cat.age} года</dd>
+                            <dt>Пол</dt>
+                            <dd className={"genderPlace"}>{Cat.sex === "Male" ? '♂' : '♀'}</dd>
+                            <dt>Вакцинация</dt>
+                            <dd>{Cat.vaccinated ? "Да" : "Нет"}</dd>
+                            <dt>Стерилизация</dt>
+                            <dd>{Cat.sterilized ? "Да" : "Нет"}</dd>
+                        </dl>
+                        {/*<tr>*/}
+                        {/*    <th>Возраст</th>*/}
+                        {/*    <th>Пол</th>*/}
+                        {/*    <th>Вакцинация</th>*/}
+                        {/*    <th>Стерилизация</th>*/}
 
-                        </tr>
-                        <tr>
-                            <td>{Cat.age} года</td>
-                            <td>{Cat.sex === "Male" ? "Мужской" : "Женский"}</td>
-                            <td>{Cat.vaccinated ? "Да" : "Нет"}</td>
-                            <td>{Cat.sterilized ? "Да" : "Нет"}</td>
-                        </tr>
-                    </table>
+                        {/*</tr>*/}
+                        {/*<tr>*/}
+                        {/*    <td>{Cat.age} года</td>*/}
+                        {/*    <td>{Cat.sex === "Male" ? '♂' : '♀'}</td>*/}
+                        {/*    <td>{Cat.vaccinated ? "Да" : "Нет"}</td>*/}
+                        {/*    <td>{Cat.sterilized ? "Да" : "Нет"}</td>*/}
+                        {/*</tr>*/}
+                        <div className={"askButtons"}>
+                            <WhiteButton>Задать вопрос</WhiteButton>
+                            <WhiteButton classname={'button2'}>Забрать домой</WhiteButton>
+                        </div>
+                    </div>
 
                     {/*<div classname={"someInfo"}>*/}
                     {/*    <div className={"Info_Item"}>Возраст: <div> {Cat.age} года </div> </div>*/}
@@ -73,18 +89,13 @@ const CatDetails = () => {
                     {/*    <div className={"Info_Item"}>Стерилизация: {Cat.sterilized ? "Да" : "Нет"} </div>*/}
                     {/*</div>*/}
 
-                    <div className={"Cat-Buttons"}>
-                        <WhiteButton>Задать вопрос</WhiteButton>
-                        <WhiteButton classname={'button2'}>забрать домой</WhiteButton>
-                    </div>
+
+
                 </div>
-
-
                 <div className={"fon"}>
                     <img className={"picture1"} src={myimg}/>
                     <img className={"picture2"} src={myimg2}/>
                 </div>
-
             </div>
             {/*<div className={"Photos"}>*/}
             {/*    <div className="sim-slider">*/}
@@ -99,6 +110,7 @@ const CatDetails = () => {
             {/*        <div className="sim-slider-dots"></div>*/}
             {/*    </div>*/}
             {/*</div>*/}
+            <Slider/>
         </>
     );
 };

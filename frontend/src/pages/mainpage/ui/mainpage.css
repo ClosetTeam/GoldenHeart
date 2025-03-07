@@ -62,6 +62,10 @@
     font-size: 100px;
     margin: 0;
 }
+.catArticle > h1{
+    height: 20%;
+
+}
 .mainBtn{
     width: 247px;
     height: 15%;

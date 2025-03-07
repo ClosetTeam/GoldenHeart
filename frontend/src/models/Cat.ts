@@ -4,7 +4,7 @@ export default interface Cat {
     name: string;
     description: string;
     age: number;
-    sex: "Male" | "Female";
+    sex: string;
     weight: number;
     vaccinated: boolean;
     sterilized: boolean;

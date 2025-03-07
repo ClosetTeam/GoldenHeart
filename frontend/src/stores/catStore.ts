@@ -1,11 +1,12 @@
 import { create } from 'zustand';
 import Cat from '../models/Cat';
-import { getAllCats, removeCat } from '../services/cat.service';
+import { getAllCats, removeCat, updateCat } from '../services/cat.service';
+import CatRequest from '../models/CatRequest';
 
 interface CatState {
 	cats: Cat[];
 	fetchCats: () => void;
-	updateCat: (cat: Cat) => Promise<void>;
+	updateCat: (id: number, request: CatRequest) => Promise<void>;
 	removeCat: (id: number) => void;
 }
 
@@ -15,11 +16,19 @@ export const useCatStore = create<CatState>((set) => ({
 		const cats = await getAllCats();
 		set({ cats });
 	},
-	updateCat: async (cat: Cat) => {
+	updateCat: async (id: number, request: CatRequest) => {
+		// Define a type without id
 		// Implement your update logic here
-		set((state) => ({
-			cats: state.cats.map((c) => (c.id === cat.id ? cat : c))
-		}));
+		updateCat(id, request).then(() => {
+			set((state) => ({
+				cats: state.cats.map((c) => {
+					if (c.id === id) {
+						return { ...c, ...request };
+					} 
+					return c;
+				})
+			}));
+		});
 	},
 	removeCat: async (id: number) => {
 		await removeCat(id);

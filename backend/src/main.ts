@@ -18,7 +18,7 @@ async function bootstrap() {
   app.enableCors({
     origin: 'http://localhost:5173', // Разрешить доступ с фронтенда (React)
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true, // Если используете cookies
+    // credentials: true, // Если используете cookies
   });
 
   // Настройка статической раздачи файлов

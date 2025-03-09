@@ -4,8 +4,9 @@ import catAboutShelterImg from "../../../assets/someCats.png";
 import Header from "../../../components/header/Header.tsx";
 import Footer from "../../../components/footer/footer.tsx";
 import MiniBublik from "../../../components/miniBublikCard/miniBublik.tsx";
-import {post} from "axios";
 import {useNavigate} from "react-router-dom";
+
+
 export default function Mainpage (){
     const navigate = useNavigate()
 

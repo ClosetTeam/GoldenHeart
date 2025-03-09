@@ -5,8 +5,6 @@ import {
     RouterProvider,
 } from "react-router-dom";
 import './index.css'
-// import catChoice from "./pages/catChoice/catChoice.tsx";
-// import BublikPage from "./pages/BublikPage/BublikPage.tsx";
 import Mainpage from "./pages/mainpage/ui/mainpage.tsx";
 import CatsPage from "./pages/CatsPage/ui/CatsPage.tsx";
 import CatDetails from "./pages/CatDetails/ui/CatDetails.tsx";

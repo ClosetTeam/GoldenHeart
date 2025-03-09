@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {useNavigate, useParams} from "react-router-dom";
 import axios from "axios";
 import "./CatDetails.css";
@@ -21,6 +21,7 @@ const CatDetails = () => {
     useEffect(() => {
         const fetchCatDetails = async () => {
             try {
+                // TODO: Убрать запрос и сделать через стор
                 const response = await axios.get<Cat>(`http://localhost:3000/api/cats/${id}`);
                 setCat(response.data);
             } catch (error) {

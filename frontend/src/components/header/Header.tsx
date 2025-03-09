@@ -15,7 +15,7 @@ export default function Header(){
                     <button className={"headerButton"}>о приюте</button>
                     {/*<button className={"btn"} onClick={() => navigate("/pets")}>Ищут дом</button>*/}
                     <button className={"headerButton"}>помочь приюту</button>
-                    <button className={"headerButton chooseCatBtnHeader"} onClick={() => navigate("/pets")}>Выбрать питомца</button>
+                    <button className={"headerButton chooseCatBtnHeader"} onClick={() => navigate("/cats")}>Выбрать питомца</button>
                     <button className={"headerButton"}>
                         <img className="logo" src={myProfileImg}
                              onClick={() => {

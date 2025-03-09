@@ -2,7 +2,7 @@
 
 .mainBlock{
     display: grid;
-    grid-template-rows: repeat(2, 0.1fr) 0.2fr 0.6fr 0.4fr 0.4fr;
+    grid-template-rows: repeat(2, 0.1fr) 0.2fr 0.6fr 0.5fr 0.2fr;
     /*grid-template-rows: repeat(6,100px);*/
     background-color: #E8E8E8;
     width: 100%;
@@ -11,15 +11,13 @@
     padding-left: 8%;
     padding-right: 10%;
     padding-top: 5%;
-    height: 100%;
-
+    height: 90%;
 }
 
 .mainBlock > h3 {
     font-family: Montserrat-normal, sans-serif;
     font-size: 20px;
     height: 80%;
-
 }
 .mainBlock > h1 {
     font-family: gooseberry, sans-serif;
@@ -54,6 +52,20 @@
     font-size: 2.1vh;
     width:75%;
 }
+
+.text-content {
+    max-height: 100px;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.2s ease;
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+   -webkit-mask-image: -webkit-linear-gradient(to bottom, black 50%, transparent 100%);
+}
+
+.text-content.visible {
+    -webkit-mask-image: none;
+    max-height: 300px; /* Укажите максимальную высоту, достаточную для текста */
+    opacity: 1;
+}
 .nextTextBut{
     color: #B29B84;
     font-family: Montserrat-SemiBold, sans-serif;
@@ -64,6 +76,15 @@
     margin-top: 2%;
     cursor: pointer;
 }
+.nextTextBut:hover{
+    background-color: #B29B84;
+    transition: 0.2s ease;
+    color: white;
+}
+/*.someInfoTable.visible{*/
+/*    overflow: hidden;*/
+/*    transition: max-height 0.5s ease, opacity 0.2s ease;*/
+/*}*/
 .someInfoTable{
     display: grid;
     margin-top: 3%;
@@ -71,6 +92,10 @@
     text-align: left;
     font-size: 3vh;
     font-family: Montserrat-SemiBold,sans-serif;
+}
+.infoTable.visible{
+    content-visibility: hidden;
+    transition:  0.5s ease, opacity 0.2s ease;
 }
 .someInfoTable > dl{
     display: grid;
@@ -94,8 +119,9 @@
 /*}*/
 .fon{
     display: flex;
-    transform:  translateY(10%) translateX(-50%);
+    transform:  translateX(-40%);
     /*transform: ;*/
+    width: 100%;
     height: 100%;
 
 }
@@ -108,12 +134,12 @@
 .picture2{
     position: relative;
     width: 100%;
-    transform:  translateX(-50%);
+    transform:  translateX(-30%);
     height: auto;
     z-index: -1;
 }
 .askButtons{
-    transform: translateY(50%);
+    transform: translateY(35%);
     display: flex;
     gap: 20px;
     justify-items: auto;

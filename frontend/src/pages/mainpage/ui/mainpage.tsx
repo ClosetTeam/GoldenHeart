@@ -5,7 +5,17 @@ import Header from "../../../components/header/Header.tsx";
 import Footer from "../../../components/footer/footer.tsx";
 import MiniBublik from "../../../components/miniBublikCard/miniBublik.tsx";
 import {post} from "axios";
+import {useNavigate} from "react-router-dom";
 export default function Mainpage (){
+    const navigate = useNavigate()
+
+    // Плавненько прокручиваем
+    const scrollToSection = () =>{
+        const section = document.getElementById("targetSection");
+        if (section){
+            section.scrollIntoView({behavior:'smooth'}); // Плавненько прокручиваем
+        }    
+    }
 
     return (
         <>
@@ -13,8 +23,8 @@ export default function Mainpage (){
             <div className={"bodymain"}>
                 <div className={"mainbtnframe"}>
                     <h1 className={"catArticle"}>КАЖДЫЙ КОТИК ЗАСЛУЖИВАЕТ ДОМ</h1>
-                    <button className={"mainBtn chooseCatBtn"}>Выбрать питомца &#8594;</button>
-                    <button className={"mainBtn donateBtn"}>Пожертвовать</button>
+                    <button className={"mainBtn chooseCatBtn"} onClick={() => navigate("/cats")}>Выбрать питомца &#8594;</button>
+                    <button className={"mainBtn donateBtn"} onClick={scrollToSection}>Пожертвовать</button>
                     <p className={"firstCatText"}>Сделайте доброе дело — подарите заботу и любовь одному из наших пушистых друзей в приюте</p>
                 </div>
                 <div className={"catPreviewPhoto"}>
@@ -61,7 +71,7 @@ export default function Mainpage (){
                 <div className={"text4"}>приютите<br/><p>питомца, подарив ему дом</p></div>
             </div>
             <MiniBublik/>
-            <div className={"howTHShelter"}>
+            <div className={"howTHShelter"} id={"targetSection"}>
                 <h2>КАК ПОМОЧЬ ПРИЮТУ</h2>
                 <p>Вы можете помочь приюту „Золотое Сердце“ любым удобным способом.<br/>Ваша поддержка обеспечивает наших котиков едой, лечением и уютным домом</p>
                 <div className={"donateBlock"}>

@@ -23,7 +23,7 @@ export default function AdminPageTest() {
                 {modalContent}
             </Modal>
 			<header className='m-5 p-5 rounded-xl bg-headerbg h-16 flex justify-between items-center'>
-				<div className='font-sans text-3xl text-heading'>Золотое сердце</div>
+				<div className='font-sans text-3xl text-heading'><a href="../">Золотое сердце</a></div>
 				<ul className='flex gap-7 text-sm pr-22 text-midnight'>
 					<li className=''>таблица кошек</li>
 					<li>статьи и новости</li>

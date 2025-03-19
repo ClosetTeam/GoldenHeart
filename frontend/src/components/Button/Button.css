@@ -1,4 +1,4 @@
-.button{
+.btn{
     font-family: Montserrat-SemiBold,sans-serif;
     background-color: #FFFFFF;
     border: 2px solid #B29B84;
@@ -6,16 +6,18 @@
     color: #B29B84;
     width: 27%;
     height: 8vh;
-    font-size: 3vh;
+    font-size: 14px;
     cursor: pointer;
 }
-.button2{
+.btn2{
     font-family: Montserrat-SemiBold,sans-serif;
     background-color: #B29B84;
     border-radius: 30px;
     color: #FFFFFF;
     width: 27%;
     height: 8vh;
-    font-size: 3vh;
+    font-size: 14px;
     cursor: pointer;
 }
+
+

@@ -1,17 +1,20 @@
 import { create } from 'zustand';
 import Cat from '../models/Cat';
-import { getAllCats, removeCat, updateCat } from '../services/cat.service';
+import {getAllCats, removeCat, updateCat } from '../services/cat.service';
 import CatRequest from '../models/CatRequest';
 
 interface CatState {
 	cats: Cat[];
+
 	fetchCats: () => void;
 	updateCat: (id: number, request: CatRequest) => Promise<void>;
 	removeCat: (id: number) => void;
+
 }
 
 export const useCatStore = create<CatState>((set) => ({
 	cats: [],
+
 	fetchCats: async () => {
 		const cats = await getAllCats();
 		set({ cats });

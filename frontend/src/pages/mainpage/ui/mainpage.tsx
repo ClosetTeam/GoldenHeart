@@ -5,11 +5,20 @@ import Header from "../../../components/header/Header.tsx";
 import Footer from "../../../components/footer/footer.tsx";
 import MiniBublik from "../../../components/miniBublikCard/miniBublik.tsx";
 import {useNavigate} from "react-router-dom";
+import { useEffect } from 'react';
+import {useCatStore} from '../../../stores/catStore';
+import arrowImg from "../../../assets/arrowRight.png";
+
 
 
 export default function Mainpage (){
     const navigate = useNavigate()
+    const {cats, fetchCats} = useCatStore();
 
+    useEffect(() => {
+        fetchCats();
+
+    }, []);
     // Плавненько прокручиваем
     const scrollToSection = () =>{
         const section = document.getElementById("targetSection");
@@ -17,7 +26,8 @@ export default function Mainpage (){
             section.scrollIntoView({behavior:'smooth'}); // Плавненько прокручиваем
         }    
     }
-
+    cats.splice(0, cats.length-4)
+    console.log(cats.length-4)
     return (
         <>
             <Header/>
@@ -71,7 +81,15 @@ export default function Mainpage (){
                 <div className={"text3"}>приезжайте<br/><p>познакомьтесь с котиком лично</p></div>
                 <div className={"text4"}>приютите<br/><p>питомца, подарив ему дом</p></div>
             </div>
-            <MiniBublik/>
+            <div className={"exampleCatBlocks"}>
+                <h2>ПИТОМЦЫ, КОТОРЫЕ ИЩУТ ДОМ</h2>
+                {
+                    cats.map((cat)=>(
+                    <MiniBublik  {...cat}/>
+                ))}
+                <button className={"showMore3"}>Все питомцы <img src={arrowImg} alt="стрелочка"/></button>
+            </div>
+
             <div className={"howTHShelter"} id={"targetSection"}>
                 <h2>КАК ПОМОЧЬ ПРИЮТУ</h2>
                 <p>Вы можете помочь приюту „Золотое Сердце“ любым удобным способом.<br/>Ваша поддержка обеспечивает наших котиков едой, лечением и уютным домом</p>

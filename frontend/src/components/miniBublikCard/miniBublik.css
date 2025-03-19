@@ -83,6 +83,7 @@
 .showMore2:hover{
     background-color: #B29B84;
     color: white;
+    cursor: pointer;
 }
 .showMore3{
     /*display: grid;*/

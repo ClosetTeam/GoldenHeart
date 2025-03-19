@@ -1,0 +1,28 @@
+.ArticleBody{
+    font-family: Arial, sans-serif;
+    /*padding: 20px 0;*/
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.Article-Head{
+    display: flex;
+}
+
+.Article-Head{
+    font-size: 80px;
+    font-family: Arial, sans-serif;;
+}
+.ArticleBody{
+    font-family: Arial, sans-serif;
+    /*padding: 20px 0;*/
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.Article-Head{
+    display: flex;
+}
+
+.Article-Head{
+    font-size: 80px;
+    font-family: Arial, sans-serif;;
+}

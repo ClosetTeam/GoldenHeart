@@ -7,19 +7,24 @@ import Slider from "../../../components/Slider/newSlider1.tsx";
 import myimg from "../../../assets/img_2.png";
 import myimg2 from "../../../assets/img_3.png";
 import Cat from "../../../models/Cat.ts";
-import WhiteButton from "../../../components/WhiteButton/WhiteButton.tsx"; // Картинка по умолчанию
+import Button from "../../../components/Button/Button.tsx"; // Картинка по умолчанию
+//import {useCatStore} from "../../../stores/catStore.ts"
 
 const CatDetails = () => {
     const navigate = useNavigate();
     const { id } = useParams<{ id: string }>();
-    const [Cat, setCat] = useState<Cat | null>(null);
     const [isExpanded, setIsExpanded] = useState(false);
+    //const {cats, fetchCats} = useCatStore()
+    const [Cat, setCat] = useState<Cat | null>(null);
 
     const toggleText = () => {
         setIsExpanded(!isExpanded);
     };
+
     useEffect(() => {
+
         const fetchCatDetails = async () => {
+
             try {
                 // TODO: Убрать запрос и сделать через стор
                 const response = await axios.get<Cat>(`http://localhost:3000/api/cats/${id}`);
@@ -65,8 +70,8 @@ const CatDetails = () => {
                         </dl>
 
                         <div className={"askButtons"}>
-                            <WhiteButton>Задать вопрос</WhiteButton>
-                            <WhiteButton classname={'button2'}>Забрать домой</WhiteButton>
+                            <Button width={"20vh"} isWhite onClick={()=>{}} label={"Задать вопрос"}/>
+                            <Button width={"20vh"} onClick={()=>{}} label={"Забрать домой"}/>
                         </div>
                     </div>
                 </div>

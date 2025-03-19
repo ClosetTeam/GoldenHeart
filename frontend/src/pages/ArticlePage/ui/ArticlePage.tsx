@@ -5,7 +5,8 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import catImg from "../../../assets/cat_img.png"
 import {useNavigate} from "react-router-dom";
-import {Article} from "../../../models/Article.ts";
+import Article from "../../../models/Article.ts";
+import CustomButton from "../../../components/Button/Button.tsx"
 
 const ArticlePage = () => {
 
@@ -60,12 +61,17 @@ const ArticlePage = () => {
                                 <div className="card-text">
                                     <p className="article-name">{article.title}</p>
                                     <p className="article-text">{article.text}</p>
-                                    <button className="toArticleDetails">Читать далее</button>
+                                    <CustomButton className={"nextBtn"} width={"147px"} height={"40px"} isWhite={true} onClick={()=>navigate(`/article/${article.id}`)} label={"Читать далее"}/>
                                 </div>
 
                             </div>
                         ))}
-
+                        <div className='flex items-center'>
+                            <ul className='mx-auto flex gap-3 pr-100 '>
+                                <li className='bg-currentpagebg w-7 h-7 rounded-full items-center justify-center flex text-heading cursor-pointer'>1</li>
+                                <li className='bg-pagebg w-7 h-7 rounded-full items-center justify-center flex text-heading cursor-pointer'>2</li>
+                            </ul>
+                        </div>
                     </div>
 
                     {/*<footer className="pagination">*/}

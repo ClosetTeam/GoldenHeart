@@ -1,11 +1,10 @@
 // CatsPage.tsx
 import "./CatsPage.css";
 import Header from "../../../components/header/Header.tsx";
-import catImg from "../../../assets/cat_img.png"
 import {useEffect, useState} from "react";
 import axios from "axios";
-import {useNavigate} from "react-router-dom";
-import {Cat} from "../../../models/Cat.ts";
+import Cat from "../../../models/Cat.ts";
+import MiniBublik from "../../../components/miniBublikCard/miniBublik"
 
 const CatsPage = () => {
 
@@ -13,7 +12,6 @@ const CatsPage = () => {
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 
-    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchCats = async () => {
@@ -51,11 +49,12 @@ const CatsPage = () => {
                     </div>
 
                     <div className="Cats-grid">
-                        {Cats.map((Cat, index) => (
-                            <div key={index} className="Cat-card" style={{cursor: "pointer"}} onClick={() => navigate(`/Cat/${Cat.id}`)}>
-                                <img src={Cat.image ?? catImg} alt={Cat.name} className="Cat-image"/>
-                                <p className="Cat-name">{Cat.name}</p>
-                            </div>
+                        {Cats.map((Cat) => (
+                            // <div key={index} className="Cat-card" style={{cursor: "pointer"}} onClick={() => navigate(`/Cat/${Cat.id}`)}>
+                            //     <img src={Cat.imageUrl ?? catImg} alt={Cat.name} className="Cat-image"/>
+                            //     <p className="Cat-name">{Cat.name}</p>
+                            // </div>
+                            <MiniBublik {...Cat}/>
                         ))}
                     </div>
 

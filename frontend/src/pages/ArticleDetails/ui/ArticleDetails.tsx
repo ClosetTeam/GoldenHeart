@@ -4,17 +4,17 @@ import axios from "axios";
 import Header from "../../../components/header/Header.tsx";
 import myimg from "../../../assets/img_2.png";
 import myimg2 from "../../../assets/img_3.png";
-import {Article} from "../../../models/Article.ts"; // Картинка по умолчанию
+import Article from "../../../models/Article.ts"; // Картинка по умолчанию
 
-const CatDetails = () => {
+const ArticleDetails = () => {
     const { id } = useParams<{ id: string }>();
-    const [Article, setPet] = useState<Article | null>(null);
+    const [Article, setArticle] = useState<Article | null>(null);
 
     useEffect(() => {
         const fetchPetDetails = async () => {
             try {
-                const response = await axios.get<Article>(`http://localhost:3000/api/article/${id}`);
-                setPet(response.data);
+                const response = await axios.get<Article>(`http://localhost:3000/api/articles/${id}`);
+                setArticle(response.data);
             } catch (error) {
                 console.error("Ошибка загрузки данных:", error);
             }
@@ -23,41 +23,22 @@ const CatDetails = () => {
         fetchPetDetails();
     }, [id]);
 
-    if (!Article) return <p>Загрузка информации о коте...</p>;
+    if (!Article) return <p>Загрузка статьи...</p>;
 
     return (
-
-        // <div className="pet-details">
-        //     <h1>{pet.name}</h1>
-        //     <img src={pet.image ?? catImg} alt={pet.name} />
-        //     <p>Описание: {pet.description}</p>
-        //     <p>Возраст: {pet.age} года</p>
-        //     <p>Пол: {pet.sex === "Male" ? "Мужской" : "Женский"}</p>
-        //     <p>Вес: {pet.weigth} кг</p>
-        //     <p>Вакцинация: {pet.vaccinated ? "Да" : "Нет"}</p>
-        //     <p>Стерилизация: {pet.sterilized ? "Да" : "Нет"}</p>
-        // </div>
-
         <>
             <Header/>
-            <div className={"bodyBublikPage"}>
-                <div className={"DefaultDiv"}>
-                    <button className={"backBut"}>назад</button>
-                    <p className={"Name"}>{Article.title}</p>
-                    <p className={"someInfo"}>{Article.description}</p>
-                    <p className={"ArticleText"}>{Article.text}</p>
-                    <div className={"BubliksButtons"}>
-                        <button className={"mainbtn"}>Задать вопрос</button>
-                        <button className={"mainbtn"}>забрать домой</button>
-                    </div>
-                </div>
-                <div className={"fon"}>
+            <div className={"ArticleBody"}>
+                <div className={"Article-Head"}>
                     <img src={myimg}/>
-                    <img src={myimg2}/>
+                    <h1>{Article.title}</h1>
+                </div>
+                <div className={"Article-Text"}>
+                    <p>{Article.text}</p>
                 </div>
             </div>
         </>
     );
 };
 
-export default CatDetails;
+export default ArticleDetails;

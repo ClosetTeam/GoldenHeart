@@ -6,6 +6,10 @@ export function getAllCats() {
 	return fetch("http://localhost:3000/api/cats").then((response) => response.json());
 }
 
+export function getCat(id: string){
+	return fetch(`http://localhost:3000/api/cats/${id}`).then((response)=> response.json());
+}
+
 export async function updateCat(id: number, request: CatRequest) {
 	const response = await fetch(`http://localhost:3000/api/cats/${id}`, {
 		method: "PATCH",

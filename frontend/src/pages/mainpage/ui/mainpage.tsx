@@ -14,6 +14,7 @@ import arrowImg from "../../../assets/arrowRight.png";
 export default function Mainpage (){
     const navigate = useNavigate()
     const {cats, fetchCats} = useCatStore();
+    let length = 0;
 
     useEffect(() => {
         fetchCats();
@@ -26,6 +27,7 @@ export default function Mainpage (){
             section.scrollIntoView({behavior:'smooth'}); // Плавненько прокручиваем
         }    
     }
+    length = cats.length
     cats.splice(0, cats.length-4)
     console.log(cats.length-4)
     return (
@@ -68,7 +70,7 @@ export default function Mainpage (){
                         <p>Уже нашли дом</p>
                     </div>
                     <div className={"secondCounter"}>
-                        300 кошек<br/>
+                        {length} кошек<br/>
                         <p>Ещё ждут дом</p>
                     </div>
                 </div>

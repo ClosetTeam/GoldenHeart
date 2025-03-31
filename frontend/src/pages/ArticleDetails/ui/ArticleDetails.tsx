@@ -4,11 +4,13 @@ import axios from "axios";
 import Header from "../../../components/header/Header.tsx";
 import myimg from "../../../assets/img_2.png";
 import myimg2 from "../../../assets/img_3.png";
-import Article from "../../../models/Article.ts"; // Картинка по умолчанию
+import Article from "../../../models/Article.ts";
+import "./ArticleDetails.css"
+import Footer from "../../../components/footer/footer"
 
 const ArticleDetails = () => {
     const { id } = useParams<{ id: string }>();
-    const [Article, setArticle] = useState<Article | null>(null);
+    const [article, setArticle] = useState<Article | null>(null);
 
     useEffect(() => {
         const fetchPetDetails = async () => {
@@ -23,20 +25,33 @@ const ArticleDetails = () => {
         fetchPetDetails();
     }, [id]);
 
-    if (!Article) return <p>Загрузка статьи...</p>;
+    if (!article) return <p>Загрузка статьи...</p>;
 
     return (
         <>
             <Header/>
-            <div className={"ArticleBody"}>
-                <div className={"Article-Head"}>
-                    <img src={myimg}/>
-                    <h1>{Article.title}</h1>
+            <div className="article-container">
+
+                <div className="article-header">
+                    <img src={myimg2} alt="Article illustration" className={"background"}/>
+
+                    <div className="article-images">
+                        <img src={myimg} alt="Article illustration" className="main-image"/>
+
+                    </div>
+                    <div className="article-title">
+                        <h1>{article.title}</h1>
+                    </div>
+
                 </div>
-                <div className={"Article-Text"}>
-                    <p>{Article.text}</p>
+                <div className="article-content">
+                    <p>{article.text} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut deserunt dicta dolor
+                        dolorem eaque exercitationem, facilis impedit inventore iste labore natus optio porro quasi
+                        quis, repellat sed ut vel vitae.
+                    </p>
                 </div>
             </div>
+            <Footer/>
         </>
     );
 };

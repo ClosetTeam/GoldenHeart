@@ -7,6 +7,7 @@ body:
     id: goal
     attributes:
       label: 💡 Цель
+      placeholder: Опишите цель задачи.
     validations:
       required: true
   - type: textarea

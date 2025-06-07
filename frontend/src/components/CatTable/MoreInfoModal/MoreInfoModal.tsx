@@ -20,7 +20,7 @@ export default function MoreInfoModal({ cat, method }: MoreInfoModalProps) {
 	const [vaccinated, setVaccinated] = useState(cat.vaccinated);
 	const [sterilized, setSterilized] = useState(cat.sterilized);
 	const [description, setDescription] = useState(cat.description);
-	const [imageUrl, ] = useState(cat.imageUrl);
+	const [imageUrl] = useState(cat.imageUrl);
 
 	return (
 		<div className="window">

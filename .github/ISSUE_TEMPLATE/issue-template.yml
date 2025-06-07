@@ -1,19 +1,12 @@
 
 name: Task
 description: New task to be completed
-title: "[Task]: "
 labels: ["task"]
 body:
-  - type: markdown
-    attributes:
-      value: |
-        💡 Цель
   - type: input
-    id: contact
+    id: goal
     attributes:
-      label: Contact Details
-      description: How can we get in touch with you if we need more info?
-      placeholder: ex. email@example.com
+      label: 💡 Цель
     validations:
       required: false
   - type: textarea

@@ -3,7 +3,7 @@ import Cat from "../../../models/Cat";
 import { useModalStore } from "../../../stores/modalStore";
 import DeleteCatModal from "../DeleteCatModal";
 import "./MoreInfoModal.css";
-import {useCatStore } from "../../../stores/catStore";
+import { useCatStore } from "../../../stores/catStore";
 import CatRequest from "../../../models/CatRequest";
 
 interface MoreInfoModalProps {

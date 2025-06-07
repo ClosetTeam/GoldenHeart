@@ -1,39 +1,26 @@
-
 import "./ArticlePage.css";
-import Header from "../../../components/header/Header.tsx";
-import {useEffect, useState} from "react";
-import axios from "axios";
-import catImg from "../../../assets/cat_img.png"
+import { Header } from "../../../widgets";
+import { useEffect } from "react";
+import { useUnit } from 'effector-react';
+import catImg from "../../../shared/assets/images/cat_img.png"
 import {useNavigate} from "react-router-dom";
-import Article from "../../../models/Article.ts";
-import CustomButton from "../../../components/Button/Button.tsx"
+import { $articles, fetchArticles, fetchArticlesFx } from "../../../entities/article";
+import CustomButton from "../../../shared/ui/Button/Button.tsx"
 
 const ArticlePage = () => {
 
-    const [articles, setArticles] = useState<Article[]>([]);
-    const [loading, setLoading] = useState<boolean>(true);
-    const [error, setError] = useState<string | null>(null);
+    const articles = useUnit($articles);
+    const _fetchArticles = useUnit(fetchArticles);
+    const loading = useUnit(fetchArticlesFx.pending);
 
     const navigate = useNavigate();
 
     useEffect(() => {
-        const fetchArticles = async () => {
-            try {
-                const response = await axios.get<Article[]>("http://localhost:3000/api/articles/");
-                setArticles(response.data);
-            } catch (err) {
-                setError("Не удалось загрузить данные о питомцах");
-                console.error(err);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchArticles();
-    }, []);
+        _fetchArticles();
+    }, [_fetchArticles]);
 
     if (loading) return <p>Загрузка...</p>;
-    if (error) return <p>{error}</p>;
+    if (!articles.length && !loading) return <p>Статьи не найдены.</p>;
 
     return (
         <>

@@ -1,20 +1,21 @@
 import { useEffect, useState } from "react";
 import {useNavigate, useParams} from "react-router-dom";
-import axios from "axios";
 import "./CatDetails.css";
-import Header from "../../../components/header/Header.tsx";
-import Slider from "../../../components/Slider/newSlider1.tsx";
-import myimg from "../../../assets/img_2.png";
-import myimg2 from "../../../assets/img_3.png";
-import Cat from "../../../models/Cat.ts";
-import Button from "../../../components/Button/Button.tsx"; // Картинка по умолчанию
-//import {useCatStore} from "../../../stores/catStore.ts"
+import { Header } from "../../../widgets";
+import Slider from "../../../shared/ui/Slider";
+import myimg from "../../../shared/assets/images/img_2.png";
+import myimg2 from "../../../shared/assets/images/img_3.png";
+import { Button } from "../../../shared"; // Картинка по умолчанию
+import { type Cat } from "../../../entities/cat";
+import { $cats, fetchCats } from "../../../entities/cat/model";
+import { useUnit } from "effector-react";
 
 const CatDetails = () => {
     const navigate = useNavigate();
     const { id } = useParams<{ id: string }>();
     const [isExpanded, setIsExpanded] = useState(false);
-    //const {cats, fetchCats} = useCatStore()
+    const cats = useUnit($cats);
+    const _fetchCats = useUnit(fetchCats);
     const [Cat, setCat] = useState<Cat | null>(null);
 
     const toggleText = () => {
@@ -22,20 +23,10 @@ const CatDetails = () => {
     };
 
     useEffect(() => {
-
-        const fetchCatDetails = async () => {
-
-            try {
-                // TODO: Убрать запрос и сделать через стор
-                const response = await axios.get<Cat>(`http://localhost:3000/api/cats/${id}`);
-                setCat(response.data);
-            } catch (error) {
-                console.error("Ошибка загрузки данных:", error);
-            }
-        };
-
-        fetchCatDetails();
-    }, [id]);
+        _fetchCats();
+        const foundCat = cats.find(c => c.id === parseInt(id || '0'));
+        setCat(foundCat || null);
+    }, [id, cats, _fetchCats]);
 
     if (!Cat) return <p>Загрузка информации о коте...</p>;
 

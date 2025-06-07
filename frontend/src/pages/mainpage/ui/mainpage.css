@@ -44,7 +44,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-right: 0;
-    background-image: url(../../../assets/PawsOriginal.png);
+    background-image: url(../../../shared/assets/images/PawsOriginal.png);
     background-size: 60%;
     background-repeat: no-repeat;
     background-position: left 30%;
@@ -108,7 +108,7 @@
     margin-top: 16px;
     width: 100%;
     height: 448px;
-    background-image: url(../../../assets/articleVector.png);
+    background-image: url(../../../shared/assets/images/articleVector.png);
     background-repeat: no-repeat;
     background-position: center 30%;
     background-size:100%;
@@ -170,7 +170,7 @@
 }
 /*wave Image*/
 .aboutShelter{
-    background-image: url(../../../assets/wave.png);
+    background-image: url(../../../shared/assets/images/wave.png);
     background-repeat: no-repeat;
     background-position: top;
     background-size: 100% 100%;
@@ -220,7 +220,7 @@
 }
 .firstCounter{
     padding-top: 25%;
-    background-image: url(../../../assets/buble1.png);
+    background-image: url(../../../shared/assets/images/buble1.png);
     background-repeat: no-repeat;
     background-size: 100%;
     width: 100%;
@@ -228,7 +228,7 @@
 }
 .secondCounter{
     padding-top: 25%;
-    background-image: url(../../../assets/buble2.png);
+    background-image: url(../../../shared/assets/images/buble2.png);
     background-repeat: no-repeat;
     background-size: 100%;
     width: 100%;
@@ -250,7 +250,7 @@
 
 }
 .howTTHome{
-    background-image: url(../../../assets/stratchedVector.png);
+    background-image: url(../../../shared/assets/images/stratchedVector.png);
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: 40% 80%;

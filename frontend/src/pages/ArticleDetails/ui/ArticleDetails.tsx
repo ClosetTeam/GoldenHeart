@@ -1,31 +1,27 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
-import Header from "../../../components/header/Header.tsx";
-import myimg from "../../../assets/img_2.png";
-import myimg2 from "../../../assets/img_3.png";
-import Article from "../../../models/Article.ts";
+import { useUnit } from 'effector-react';
+import { Header } from "../../../widgets";
+import myimg from "../../../shared/assets/images/img_2.png";
+import myimg2 from "../../../shared/assets/images/img_3.png";
+import { $currentArticle, fetchArticleById, fetchArticleByIdFx } from "../../../entities/article";
 import "./ArticleDetails.css"
-import Footer from "../../../components/footer/footer"
+import { Footer } from "../../../widgets";
 
 const ArticleDetails = () => {
     const { id } = useParams<{ id: string }>();
-    const [article, setArticle] = useState<Article | null>(null);
+    const article = useUnit($currentArticle);
+    const _fetchArticleById = useUnit(fetchArticleById);
+    const loading = useUnit(fetchArticleByIdFx.pending);
 
     useEffect(() => {
-        const fetchPetDetails = async () => {
-            try {
-                const response = await axios.get<Article>(`http://localhost:3000/api/articles/${id}`);
-                setArticle(response.data);
-            } catch (error) {
-                console.error("Ошибка загрузки данных:", error);
-            }
-        };
+        if (id) {
+            _fetchArticleById(id);
+        }
+    }, [id, _fetchArticleById]);
 
-        fetchPetDetails();
-    }, [id]);
-
-    if (!article) return <p>Загрузка статьи...</p>;
+    if (loading) return <p>Загрузка статьи...</p>;
+    if (!article) return <p>Статья не найдена.</p>;
 
     return (
         <>
@@ -45,9 +41,7 @@ const ArticleDetails = () => {
 
                 </div>
                 <div className="article-content">
-                    <p>{article.text} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut deserunt dicta dolor
-                        dolorem eaque exercitationem, facilis impedit inventore iste labore natus optio porro quasi
-                        quis, repellat sed ut vel vitae.
+                    <p>{article.text}
                     </p>
                 </div>
             </div>

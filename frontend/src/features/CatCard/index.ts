@@ -1,0 +1,1 @@
+export { default as CatCard } from "./ui/cat-card";

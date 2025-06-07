@@ -1,21 +1,23 @@
 import { useEffect } from 'react';
-import { useCatStore } from '../../../stores/catStore';
-import CatTable from '../../../components/CatTable/CatTable';
-import Modal from '../../../components/Modal/Modal';
-import { useModalStore } from '../../../stores/modalStore';
-import MoreInfoModal from '../../../components/CatTable/MoreInfoModal/MoreInfoModal';
-import Cat from '../../../models/Cat';
-
+import { useUnit } from 'effector-react';
+import { $cats, fetchCats } from '../../../entities/cat/model';
+import CatTable from '../../../features/CatTable/CatTable';
+import Modal from '../../../shared/ui/Modal';
+import { $modalContent, setModalContent, toggleModalIsOpen } from '../../../shared/ui/Modal/model';
+import MoreInfoModal from '../../../features/CatTable/MoreInfoModal/MoreInfoModal';
+import { type Cat } from '../../../entities/cat';
 
 export default function AdminPageTest() {
 
-	const {cats, fetchCats} = useCatStore();
-    const {modalContent, setModalContent, toggleModalIsOpen} = useModalStore();
+	const cats = useUnit($cats);
+    const modalContent = useUnit($modalContent);
+    const _setModalContent = useUnit(setModalContent);
+    const _toggleModalIsOpen = useUnit(toggleModalIsOpen);
+    const _fetchCats = useUnit(fetchCats);
 
 	useEffect(() => {
-		fetchCats();
-        // console.log("fetchCats");
-	}, []);
+		_fetchCats();
+	}, [_fetchCats]);
     
 	return (
 		<>
@@ -48,10 +50,10 @@ export default function AdminPageTest() {
 								sterilized: false,
 								imageUrl: ''
 							}
-							setModalContent(
+							_setModalContent(
 								<MoreInfoModal cat={newCat} method='add' />
 							);
-							toggleModalIsOpen();
+							_toggleModalIsOpen();
 						}}	
 					/>
 				</div>

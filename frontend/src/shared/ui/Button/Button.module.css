@@ -1,24 +1,22 @@
-.btn{
-    font-family: Montserrat-SemiBold,sans-serif;
-    background-color: #FFFFFF;
-    border: 2px solid #B29B84;
-    border-radius: 100px;
-    color: #B29B84;
-    width: 27%;
-    height: 8vh;
-    font-size: 14px;
-    cursor: pointer;
+.btn {
+	font-family: Montserrat-SemiBold, sans-serif;
+	background-color: #ffffff;
+	border: 2px solid #b29b84;
+	border-radius: 100px;
+	color: #b29b84;
+	width: 27%;
+	height: 8vh;
+	font-size: 14px;
+	cursor: pointer;
 }
-.btn2{
-    font-family: Montserrat-SemiBold,sans-serif;
-    background-color: #B29B84;
-    border-radius: 30px;
-    border: none;
-    color: #FFFFFF;
-    width: 27%;
-    height: 8vh;
-    font-size: 14px;
-    cursor: pointer;
+.btn2 {
+	font-family: Montserrat-SemiBold, sans-serif;
+	background-color: #b29b84;
+	border-radius: 30px;
+	border: none;
+	color: #ffffff;
+	width: 27%;
+	height: 8vh;
+	font-size: 14px;
+	cursor: pointer;
 }
-
-

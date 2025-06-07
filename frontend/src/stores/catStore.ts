@@ -1,7 +1,7 @@
-import { create } from 'zustand';
-import Cat from '../models/Cat';
-import {getAllCats, removeCat, updateCat } from '../services/cat.service';
-import CatRequest from '../models/CatRequest';
+import { create } from "zustand";
+import Cat from "../models/Cat";
+import { getAllCats, removeCat, updateCat } from "../services/cat.service";
+import CatRequest from "../models/CatRequest";
 
 interface CatState {
 	cats: Cat[];
@@ -9,7 +9,6 @@ interface CatState {
 	fetchCats: () => void;
 	updateCat: (id: number, request: CatRequest) => Promise<void>;
 	removeCat: (id: number) => void;
-
 }
 
 export const useCatStore = create<CatState>((set) => ({
@@ -27,18 +26,18 @@ export const useCatStore = create<CatState>((set) => ({
 				cats: state.cats.map((c) => {
 					if (c.id === id) {
 						return { ...c, ...request };
-					} 
+					}
 					return c;
-				})
+				}),
 			}));
 		});
 	},
 	removeCat: async (id: number) => {
 		await removeCat(id);
 		set((state) => ({
-			cats: state.cats.filter((cat) => cat.id !== id)
+			cats: state.cats.filter((cat) => cat.id !== id),
 		}));
-	}
+	},
 }));
 
 // interface EquipmentState {

@@ -1,148 +1,151 @@
-
-
-.mainBlock{
-    display: grid;
-    grid-template-rows: repeat(2, 0.1fr) 0.2fr 0.6fr 0.5fr 0.2fr;
-    /*grid-template-rows: repeat(6,100px);*/
-    background-color: #E8E8E8;
-    width: 100%;
-    border-top-right-radius: 90px;
-    border-bottom-right-radius: 90px;
-    padding-left: 8%;
-    padding-right: 10%;
-    padding-top: 5%;
-    height: 90%;
+.mainBlock {
+	display: grid;
+	grid-template-rows: repeat(2, 0.1fr) 0.2fr 0.6fr 0.5fr 0.2fr;
+	/*grid-template-rows: repeat(6,100px);*/
+	background-color: #e8e8e8;
+	width: 100%;
+	border-top-right-radius: 90px;
+	border-bottom-right-radius: 90px;
+	padding-left: 8%;
+	padding-right: 10%;
+	padding-top: 5%;
+	height: 90%;
 }
 
 .mainBlock > h3 {
-    font-family: Montserrat-normal, sans-serif;
-    font-size: 20px;
-    height: 80%;
+	font-family: Montserrat-normal, sans-serif;
+	font-size: 20px;
+	height: 80%;
 }
 .mainBlock > h1 {
-    font-family: gooseberry, sans-serif;
-    /*font-size: 153px;*/
-    font-size: 25vh;
-    color: #6D645B;
-    width: 40%;
-    height: 85%;
-    margin-top: 0;
-    line-height: 80%;
-    /*height: fit-content;*/
-    /*width: fit-content;*/
+	font-family: gooseberry, sans-serif;
+	/*font-size: 153px;*/
+	font-size: 25vh;
+	color: #6d645b;
+	width: 40%;
+	height: 85%;
+	margin-top: 0;
+	line-height: 80%;
+	/*height: fit-content;*/
+	/*width: fit-content;*/
 }
-.backBut{
-    font-family: Montserrat-SemiBold,sans-serif;
-    width: max(10%);
-    height:100%;
-    font-size: 16px;
-    border-radius: 10px;
-    background-color: #bdbdbd;
-    color: black;
+.backBut {
+	font-family: Montserrat-SemiBold, sans-serif;
+	width: max(10%);
+	height: 100%;
+	font-size: 16px;
+	border-radius: 10px;
+	background-color: #bdbdbd;
+	color: black;
 }
-.bodyBublikPage{
-    margin-top: 2%;
-    display: grid;
-    grid-template-columns: 1.3fr 0.7fr;
-    width: 100%;
+.bodyBublikPage {
+	margin-top: 2%;
+	display: grid;
+	grid-template-columns: 1.3fr 0.7fr;
+	width: 100%;
 }
 
-.defaultInfo{
-    font-family: Montserrat-normal,sans-serif;
-    font-size: 2.1vh;
-    width:75%;
+.defaultInfo {
+	font-family: Montserrat-normal, sans-serif;
+	font-size: 2.1vh;
+	width: 75%;
 }
 
 .text-content {
-    max-height: 100px;
-    overflow: hidden;
-    transition: max-height 0.5s ease, opacity 0.2s ease;
-    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-   -webkit-mask-image: -webkit-linear-gradient(to bottom, black 50%, transparent 100%);
+	max-height: 100px;
+	overflow: hidden;
+	transition:
+		max-height 0.5s ease,
+		opacity 0.2s ease;
+	mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+	-webkit-mask-image: -webkit-linear-gradient(
+		to bottom,
+		black 50%,
+		transparent 100%
+	);
 }
 
 .text-content.visible {
-    -webkit-mask-image: none;
-    max-height: 300px; /* Укажите максимальную высоту, достаточную для текста */
-    opacity: 1;
+	-webkit-mask-image: none;
+	max-height: 300px; /* Укажите максимальную высоту, достаточную для текста */
+	opacity: 1;
 }
-.nextTextBut{
-    color: #B29B84;
-    font-family: Montserrat-SemiBold, sans-serif;
-    font-size: 2.0vh;
-    border: 1px solid #B29B84;
-    border-radius: 17.5px;
-    width: 23%;
-    margin-top: 2%;
-    cursor: pointer;
+.nextTextBut {
+	color: #b29b84;
+	font-family: Montserrat-SemiBold, sans-serif;
+	font-size: 2vh;
+	border: 1px solid #b29b84;
+	border-radius: 17.5px;
+	width: 23%;
+	margin-top: 2%;
+	cursor: pointer;
 }
-.nextTextBut:hover{
-    background-color: #B29B84;
-    transition: 0.2s ease;
-    color: white;
+.nextTextBut:hover {
+	background-color: #b29b84;
+	transition: 0.2s ease;
+	color: white;
 }
 /*.someInfoTable.visible{*/
 /*    overflow: hidden;*/
 /*    transition: max-height 0.5s ease, opacity 0.2s ease;*/
 /*}*/
-.someInfoTable{
-    display: grid;
-    margin-top: 3%;
-    grid-template-rows: repeat(2,1fr);
-    text-align: left;
-    font-size: 3vh;
-    font-family: Montserrat-SemiBold,sans-serif;
+.someInfoTable {
+	display: grid;
+	margin-top: 3%;
+	grid-template-rows: repeat(2, 1fr);
+	text-align: left;
+	font-size: 3vh;
+	font-family: Montserrat-SemiBold, sans-serif;
 }
-.infoTable.visible{
-    content-visibility: hidden;
-    transition:  0.5s ease, opacity 0.2s ease;
+.infoTable.visible {
+	content-visibility: hidden;
+	transition:
+		0.5s ease,
+		opacity 0.2s ease;
 }
-.someInfoTable > dl{
-    display: grid;
-    grid-template-columns: 0.3fr 0.2fr 0.45fr 0.5fr;
-    grid-template-rows: 0.4fr 0.7fr;
-    width: 70%;
-
+.someInfoTable > dl {
+	display: grid;
+	grid-template-columns: 0.3fr 0.2fr 0.45fr 0.5fr;
+	grid-template-rows: 0.4fr 0.7fr;
+	width: 70%;
 }
-.someInfoTable > dl > dt{
-    grid-row: 1/2;
+.someInfoTable > dl > dt {
+	grid-row: 1/2;
 }
-.someInfoTable > dl > .genderPlace{
-    font-size: 4vh;
-    padding-left: 10%;
+.someInfoTable > dl > .genderPlace {
+	font-size: 4vh;
+	padding-left: 10%;
 }
-.someInfoTable > dl > dd{
-    font-family: Montserrat-normal,sans-serif;
+.someInfoTable > dl > dd {
+	font-family: Montserrat-normal, sans-serif;
 }
 /*.someInfoTable > dl > dd{*/
 /*    font-family: Montserrat-normal,sans-serif;*/
 /*}*/
-.fon{
-    display: flex;
-    transform:  translateX(-40%);
-    /*transform: ;*/
-    width: 100%;
-    height: 100%;
-
+.fon {
+	display: flex;
+	transform: translateX(-40%);
+	/*transform: ;*/
+	width: 100%;
+	height: 100%;
 }
 
-.picture1{
-    width: 150%;
-    height: auto;
-    z-index: 1;
+.picture1 {
+	width: 150%;
+	height: auto;
+	z-index: 1;
 }
-.picture2{
-    position: relative;
-    width: 100%;
-    transform:  translateX(-30%);
-    height: auto;
-    z-index: -1;
+.picture2 {
+	position: relative;
+	width: 100%;
+	transform: translateX(-30%);
+	height: auto;
+	z-index: -1;
 }
-.askButtons{
-    transform: translateY(35%);
-    display: flex;
-    gap: 20px;
-    justify-items: auto;
-    margin-top: 5%;
+.askButtons {
+	transform: translateY(35%);
+	display: flex;
+	gap: 20px;
+	justify-items: auto;
+	margin-top: 5%;
 }
-

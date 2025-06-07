@@ -1,131 +1,132 @@
 .table-container {
-  overflow-x: auto;
+	overflow-x: auto;
 }
 
 .cat-table {
-  min-width: 100%;
-  border-collapse: collapse;
+	min-width: 100%;
+	border-collapse: collapse;
 }
 
 .cat-table:last-child {
 	border: 0;
 }
 
-.cat-table, .cat-table td {
-  border: 1px solid #d1d5db;
+.cat-table,
+.cat-table td {
+	border: 1px solid #d1d5db;
 }
 
 .cat-table td:last-child {
-  border: 0;
+	border: 0;
 }
 
 .table-header {
-  background-color: #f3f4f6;
+	background-color: #f3f4f6;
 }
 
 .table-header:last-child {
-  background-color: transparent;
+	background-color: transparent;
 }
 
 .header-cell {
-  border: 1px solid #d1d5db;
-  padding: 0.5rem;
-  text-align: center;
+	border: 1px solid #d1d5db;
+	padding: 0.5rem;
+	text-align: center;
 }
 
 .last-header-cell {
-  border: 0;
-  padding: 1.25rem;
+	border: 0;
+	padding: 1.25rem;
 }
 
 .cell {
-  border: 1px solid #d1d5db;
-  padding: 0.5rem;
-  text-align: center;
+	border: 1px solid #d1d5db;
+	padding: 0.5rem;
+	text-align: center;
 }
 
 .table-container .image-container {
-  width: 3rem;
-  height: 3rem;
-  overflow: hidden;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	width: 3rem;
+	height: 3rem;
+	overflow: hidden;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .table-container .cat-image {
-  width: 3rem;
-  height: 3rem;
-  object-fit: cover;
-  max-height: 100%;
-  max-width: 100%;
+	width: 3rem;
+	height: 3rem;
+	object-fit: cover;
+	max-height: 100%;
+	max-width: 100%;
 }
 
 .description-cell {
-  border: 1px solid #d1d5db;
-  padding-left: 1rem;
-  padding-right: 0.5rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  width: 16rem;
+	border: 1px solid #d1d5db;
+	padding-left: 1rem;
+	padding-right: 0.5rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	width: 16rem;
 }
 
 .description-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.5rem;
 }
 
 .description-text {
-  text-align: left;
-  flex: 1;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+	text-align: left;
+	flex: 1;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 .info-button {
-  background-color: var(--color-headerbg);
-  margin-right: 0.5rem;
-  flex-shrink: 0;
-  width: 2.25rem;
-  height: 2.25rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.1875rem;
-  border-radius: 9999px;
-  cursor: pointer;
+	background-color: var(--color-headerbg);
+	margin-right: 0.5rem;
+	flex-shrink: 0;
+	width: 2.25rem;
+	height: 2.25rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.1875rem;
+	border-radius: 9999px;
+	cursor: pointer;
 }
 
 .dot {
-  background-color: white;
-  width: 0.25rem;
-  height: 0.25rem;
-  border-radius: 9999px;
+	background-color: white;
+	width: 0.25rem;
+	height: 0.25rem;
+	border-radius: 9999px;
 }
 
 .action-cell {
-  padding: 0;
+	padding: 0;
 }
 
 .delete-button {
-  background-color: var(--color-btn);
-  width: 2.25rem;
-  height: 2.25rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 9999px;
-  margin: 0 auto;
-  cursor: pointer;
+	background-color: var(--color-btn);
+	width: 2.25rem;
+	height: 2.25rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 9999px;
+	margin: 0 auto;
+	cursor: pointer;
 }
 
 .delete-line {
-  background-color: white;
-  width: 1.5rem;
-  height: 0.25rem;
-  border-radius: 9999px;
+	background-color: white;
+	width: 1.5rem;
+	height: 0.25rem;
+	border-radius: 9999px;
 }

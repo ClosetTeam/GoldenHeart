@@ -1,191 +1,188 @@
 /* Общий контейнер хедера */
 .header {
-    display: flex;
-    align-items: center;
-    margin: 24px auto 0 auto; /* Центрирую по горизонтали, верхний отступ */
-    padding: 0 40px; /* Отступы слева и справа по дизайну Figma (40px от левого края для названия) */
-    background-color: #E8E8E8;
-    width: calc(100% - 80px); /* Ширина с учетом отступов */
-    max-width: 1381px; /* Максимальная ширина как в Figma */
-    height: 65px;
-    border-radius: 10px;
-    justify-content: space-between; /* Распределяю элементы по краям */
+	display: flex;
+	align-items: center;
+	margin: 24px auto 0 auto; /* Центрирую по горизонтали, верхний отступ */
+	padding: 0 40px; /* Отступы слева и справа по дизайну Figma (40px от левого края для названия) */
+	background-color: #e8e8e8;
+	width: calc(100% - 80px); /* Ширина с учетом отступов */
+	max-width: 1381px; /* Максимальная ширина как в Figma */
+	height: 65px;
+	border-radius: 10px;
+	justify-content: space-between; /* Распределяю элементы по краям */
 }
 
 /* Название проекта */
 .projectName {
-    color: #73685D;
-    font-size: 27px;
-    cursor: pointer;
-    font-family: 'Montserrat', sans-serif; /* Использую Montserrat */
-    font-weight: 700; /* Bold */
-    width: auto;
-    height: auto;
-    margin-right: auto; /* Отталкивает навигацию вправо */
+	color: #73685d;
+	font-size: 27px;
+	cursor: pointer;
+	font-family: "Montserrat", sans-serif; /* Использую Montserrat */
+	font-weight: 700; /* Bold */
+	width: auto;
+	height: auto;
+	margin-right: auto; /* Отталкивает навигацию вправо */
 }
 
 /* Контейнер навигационных кнопок */
 .headerNav {
-    display: flex; /* Использую flexbox для кнопок */
-    align-items: center;
-    gap: 30px; /* Расстояние между кнопками (примерно) */
+	display: flex; /* Использую flexbox для кнопок */
+	align-items: center;
+	gap: 30px; /* Расстояние между кнопками (примерно) */
 }
 
 /* Основные кнопки навигации */
 .headerButton {
-    padding: 0;
-    border: none;
-    cursor: pointer;
-    font-family: 'Montserrat', sans-serif; /* Использую Montserrat */
-    font-weight: 600; /* SemiBold */
-    font-size: 16px;
-    background-color: transparent;
-    color: #000000; /* Цвет текста */
+	padding: 0;
+	border: none;
+	cursor: pointer;
+	font-family: "Montserrat", sans-serif; /* Использую Montserrat */
+	font-weight: 600; /* SemiBold */
+	font-size: 16px;
+	background-color: transparent;
+	color: #000000; /* Цвет текста */
 }
 
 /* Кнопка "Выбрать питомца" */
 .chooseCatBtn {
-    background-color: #B29B84;
-    border-radius: 100px; /* Очень большие закругления */
-    color: white;
-    padding: 13px 42px; /* Padding по размерам из Figma (примерно) */
-    box-shadow: 0px 0px 6.4px 0px rgba(178, 155, 132, 1); /* Тень из Figma */
-    margin-left: 20px; /* Добавляю отступ от предыдущей кнопки */
+	background-color: #b29b84;
+	border-radius: 100px; /* Очень большие закругления */
+	color: white;
+	padding: 13px 42px; /* Padding по размерам из Figma (примерно) */
+	box-shadow: 0px 0px 6.4px 0px rgba(178, 155, 132, 1); /* Тень из Figma */
+	margin-left: 20px; /* Добавляю отступ от предыдущей кнопки */
 }
 
 /* Кнопка-контейнер для иконки профиля */
 .profileButton {
-     padding: 0;
-     border: none;
-     cursor: pointer;
-     background-color: transparent;
-     margin-left: 20px; /* Добавляю отступ от предыдущей кнопки */
+	padding: 0;
+	border: none;
+	cursor: pointer;
+	background-color: transparent;
+	margin-left: 20px; /* Добавляю отступ от предыдущей кнопки */
 }
 
 /* Иконка профиля */
 .profileIcon {
-    width: 33px; /* Размеры из Figma */
-    height: 28.22px; /* Размеры из Figma */
+	width: 33px; /* Размеры из Figma */
+	height: 28.22px; /* Размеры из Figma */
 }
 
 /*Редакт всех кнопок*/
-.headerButtons{
-    display: grid;
+.headerButtons {
+	display: grid;
 
-    grid-template-columns: 0.8fr 0.4fr 0.2fr 0.3fr 0.5fr 0.2fr;
-    /*grid-template-columns: 20% 10% 10% 10% 20% 5%;*/
-    /*grid-template-columns: 74px 104px 174px 243px 66px;*/
-    width: 100%;
-    align-items: center;
-    justify-items: right;
-    height: 10vh;
+	grid-template-columns: 0.8fr 0.4fr 0.2fr 0.3fr 0.5fr 0.2fr;
+	/*grid-template-columns: 20% 10% 10% 10% 20% 5%;*/
+	/*grid-template-columns: 74px 104px 174px 243px 66px;*/
+	width: 100%;
+	align-items: center;
+	justify-items: right;
+	height: 10vh;
 }
 
 .logo {
-    width: 100%;
-    height: 100%;
-    padding-right: 50px;
-    cursor: pointer;
+	width: 100%;
+	height: 100%;
+	padding-right: 50px;
+	cursor: pointer;
 }
 
 /* Стили для планшетов */
 @media (min-width: 769px) and (max-width: 1200px) {
-    .header {
-        height: 33.48px; /* Высота по макету */
-        padding: 0 20px; /* Примерные отступы для планшета */
-        width: calc(100% - 40px); /* Ширина с учетом отступов */
-        margin-top: 15px; /* Уменьшаю верхний отступ */
-    }
+	.header {
+		height: 33.48px; /* Высота по макету */
+		padding: 0 20px; /* Примерные отступы для планшета */
+		width: calc(100% - 40px); /* Ширина с учетом отступов */
+		margin-top: 15px; /* Уменьшаю верхний отступ */
+	}
 
-    .projectName {
-        font-size: 15px; /* Размер шрифта по макету */
-    }
+	.projectName {
+		font-size: 15px; /* Размер шрифта по макету */
+	}
 
-    .headerNav {
-        gap: 15px; /* Уменьшаю расстояние между кнопками */
-    }
+	.headerNav {
+		gap: 15px; /* Уменьшаю расстояние между кнопками */
+	}
 
-    .headerButton {
-        font-size: 11px; /* Размер шрифта по макету */
-    }
+	.headerButton {
+		font-size: 11px; /* Размер шрифта по макету */
+	}
 
-    .chooseCatBtn {
-        font-size: 10px; /* Размер шрифта по макету */
-        padding: 7px 25px; /* Уменьшаю padding */
-        margin-left: 10px; /* Уменьшаю отступ */
-    }
+	.chooseCatBtn {
+		font-size: 10px; /* Размер шрифта по макету */
+		padding: 7px 25px; /* Уменьшаю padding */
+		margin-left: 10px; /* Уменьшаю отступ */
+	}
 
-    .profileButton {
-        margin-left: 10px; /* Уменьшаю отступ */
-    }
+	.profileButton {
+		margin-left: 10px; /* Уменьшаю отступ */
+	}
 
-    .profileIcon {
-        width: 22.85px; /* Размеры по макету */
-        height: 20px; /* Размеры по макету */
-    }
+	.profileIcon {
+		width: 22.85px; /* Размеры по макету */
+		height: 20px; /* Размеры по макету */
+	}
 }
 
 /* Стили для мобильных устройств */
-@media (max-width: 768px) { /* Примерный брейкпойнт для мобильных */
-    .header {
-        height: 33.48px; /* Высота по макету */
-        padding: 0 13px; /* Отступы по макету */
-        width: calc(100% - 26px); /* Ширина с учетом отступов */
-        margin-top: 10px; /* Уменьшаю верхний отступ */
-    }
+@media (max-width: 768px) {
+	/* Примерный брейкпойнт для мобильных */
+	.header {
+		height: 33.48px; /* Высота по макету */
+		padding: 0 13px; /* Отступы по макету */
+		width: calc(100% - 26px); /* Ширина с учетом отступов */
+		margin-top: 10px; /* Уменьшаю верхний отступ */
+	}
 
-    .projectName {
-        font-size: 13px; /* Размер шрифта по макету */
-        /* margin-right: auto; - это свойство уже есть и работает */
-    }
+	.projectName {
+		font-size: 13px; /* Размер шрифта по макету */
+		/* margin-right: auto; - это свойство уже есть и работает */
+	}
 
-    .headerNav {
-        display: none; /* Скрываю обычную навигацию на мобильных */
-    }
+	.headerNav {
+		display: none; /* Скрываю обычную навигацию на мобильных */
+	}
 
-    .profileButton {
-        margin-left: auto; /* Отталкиваю иконку профиля вправо */
-        margin-right: 10px; /* Отступ от правого края */
-    }
+	.profileButton {
+		margin-left: auto; /* Отталкиваю иконку профиля вправо */
+		margin-right: 10px; /* Отступ от правого края */
+	}
 
-    .profileIcon {
-        width: 7.74px; /* Размеры по макету */
-        height: 14.54px; /* Размеры по макету */
-    }
+	.profileIcon {
+		width: 7.74px; /* Размеры по макету */
+		height: 14.54px; /* Размеры по макету */
+	}
 
-    /* Добавляю стили для иконки бургер-меню */
-    .mobileMenuButton {
-        display: flex; /* Показываю кнопку на мобильных */
-        flex-direction: column;
-        justify-content: space-around;
-        width: 20px; /* Размер кнопки (примерно) */
-        height: 15px; /* Размер кнопки (примерно) */
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-        box-sizing: border-box;
-        margin-left: 10px; /* Отступ от иконки профиля */
-    }
+	/* Добавляю стили для иконки бургер-меню */
+	.mobileMenuButton {
+		display: flex; /* Показываю кнопку на мобильных */
+		flex-direction: column;
+		justify-content: space-around;
+		width: 20px; /* Размер кнопки (примерно) */
+		height: 15px; /* Размер кнопки (примерно) */
+		background: transparent;
+		border: none;
+		cursor: pointer;
+		padding: 0;
+		box-sizing: border-box;
+		margin-left: 10px; /* Отступ от иконки профиля */
+	}
 
-    .mobileMenuButton div {
-        width: 100%;
-        height: 2px; /* Толщина линий */
-        background: #000; /* Цвет линий */
-        border-radius: 10px;
-        transition: all 0.3s linear;
-        position: relative;
-        transform-origin: 1px;
-    }
+	.mobileMenuButton div {
+		width: 100%;
+		height: 2px; /* Толщина линий */
+		background: #000; /* Цвет линий */
+		border-radius: 10px;
+		transition: all 0.3s linear;
+		position: relative;
+		transform-origin: 1px;
+	}
 }
 
 /* Скрываю кнопку бургер-меню на больших экранах */
 @media (min-width: 769px) {
-    .mobileMenuButton {
-        display: none;
-    }
+	.mobileMenuButton {
+		display: none;
+	}
 }
-
-
-
-

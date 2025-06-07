@@ -7,12 +7,12 @@ import {
 	RouterProvider,
 } from "react-router-dom";
 import "./index.css";
-import Mainpage from "./pages/MainPage/ui/mainpage";
-import CatsPage from "./pages/CatsPage/ui/CatsPage";
-import CatDetails from "./pages/CatDetails/ui/CatDetails";
-import AdminPage from "./pages/AdminPage/ui/AdminPage";
-import ArticlePage from "./pages/ArticlePage/ui/ArticlePage";
-import ArticleDetails from "./pages/ArticleDetails/ui/ArticleDetails";
+import Mainpage from "./pages/MainPage/ui/mainpage.tsx";
+import CatsPage from "./pages/CatsPage/ui/CatsPage.tsx";
+import CatDetails from "./pages/CatDetails/ui/CatDetails.tsx";
+import AdminPage from "./pages/AdminPage/ui/AdminPage.tsx";
+import ArticlePage from "./pages/ArticlePage/ui/ArticlePage.tsx";
+import ArticleDetails from "./pages/ArticleDetails/ui/ArticleDetails.tsx";
 
 const router = createBrowserRouter(
 	createRoutesFromElements(

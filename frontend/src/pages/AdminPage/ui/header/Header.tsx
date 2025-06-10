@@ -1,4 +1,4 @@
-
+import "./Header.css"
 
 export const Header = (props: { updateIsCats: (arg0: boolean) => void; }) => {
 
@@ -10,9 +10,9 @@ export const Header = (props: { updateIsCats: (arg0: boolean) => void; }) => {
                 <a href="../">Золотое сердце</a>
             </div>
             <ul className="flex gap-7 text-sm pr-22 text-midnight">
-                <li className="" onClick={() => {props.updateIsCats(true); console.log("true")}}>таблица кошек
+                <li className="navigateLinks" onClick={() => {props.updateIsCats(true); console.log("true")}}>таблица кошек
                 </li>
-                <li onClick={() => {props.updateIsCats(false); console.log("false")}}>статьи и новости</li>
+                <li className="navigateLinks" onClick={() => {props.updateIsCats(false); console.log("false")}}>статьи и новости</li>
             </ul>
         </header>
     )

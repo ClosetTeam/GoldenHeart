@@ -9,11 +9,11 @@ import { AdminArticles } from "./AdminArticles/AdminArticles";
 
 export default function AdminPageTest() {
 	const { cats, fetchCats } = useCatStore();
-	const { modalContent, } = useModalStore();
-	const [isCats, setIsCats] = useState(true)
-	const HandleSetIsCats = (isCat:boolean) =>{
-		setIsCats(isCat)
-	}
+	const { modalContent } = useModalStore();
+	const [isCats, setIsCats] = useState(true);
+	const HandleSetIsCats = (isCat: boolean) => {
+		setIsCats(isCat);
+	};
 
 	useEffect(() => {
 		fetchCats();
@@ -22,11 +22,10 @@ export default function AdminPageTest() {
 
 	return (
 		<>
-			
 			<Modal>{modalContent}</Modal>
-			<Header updateIsCats={HandleSetIsCats}/>
-			{isCats ? <AdminCats/>:<AdminArticles/>}
-			<Footer/>
+			<Header updateIsCats={HandleSetIsCats} />
+			{isCats ? <AdminCats /> : <AdminArticles />}
+			<Footer />
 		</>
 	);
 }

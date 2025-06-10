@@ -22,6 +22,7 @@ export default function AdminPageTest() {
 
 	return (
 		<>
+			
 			<Modal>{modalContent}</Modal>
 			<Header updateIsCats={HandleSetIsCats}/>
 			{isCats ? <AdminCats/>:<AdminArticles/>}

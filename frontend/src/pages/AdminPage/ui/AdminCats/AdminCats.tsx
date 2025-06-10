@@ -5,7 +5,7 @@ import MoreInfoModal from "../../../../components/CatTable/MoreInfoModal/MoreInf
 import { useModalStore } from "../../../../stores/modalStore";
 
 export const AdminCats = () => {
-    const { modalContent, setModalContent, toggleModalIsOpen } = useModalStore();
+    const {setModalContent, toggleModalIsOpen } = useModalStore();
     return(
         
         <main className="mx-25 my-8">

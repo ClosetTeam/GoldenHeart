@@ -57,9 +57,9 @@ export class CatsController {
   @Delete(':id')
   async remove(@Param('id') id: string) {
     const cat = await this.catsService.findOne(+id);
-    if (cat && cat.imageUrl) {
+    if (cat) {
       // const filePath = path.join(__dirname, '..', '..', '..', cat.imageUrl);
-      const filePath = path.join(__dirname, '..', '..', cat.imageUrl);
+      const filePath = path.join(__dirname);
       fs.unlink(filePath, (err) => {
         if (err) {
           console.error('Error deleting file:', err);

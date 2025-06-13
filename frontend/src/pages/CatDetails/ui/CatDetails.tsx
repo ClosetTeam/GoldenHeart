@@ -6,8 +6,8 @@ import Header from "../../../components/header/Header.tsx";
 import Slider from "../../../components/Slider/newSlider1.tsx";
 import myimg from "../../../assets/img_2.png";
 import myimg2 from "../../../assets/img_3.png";
-import Cat from "../../../models/Cat.ts";
 import { Button } from "../../../shared"; // Картинка по умолчанию
+import { Cat } from "../../../entities/cat";
 //import {useCatStore} from "../../../stores/catStore.ts"
 
 const CatDetails = () => {

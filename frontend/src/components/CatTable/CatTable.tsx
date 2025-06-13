@@ -1,13 +1,13 @@
-import { useModalStore } from "../../stores/modalStore";
 import MoreInfoModal from "./MoreInfoModal/MoreInfoModal";
 import DeleteCatModal from "./DeleteCatModal";
 import "./CatTable.css";
 import { useUnit } from 'effector-react';
 import { $cats } from '../../entities/cat';
+import { toggleModalIsOpen as toggleModalIsOpenEv, setModalContent as setModalContentEv } from '../../features/Modal/model';
 
 const CatTable: React.FC = () => {
 	const MAX_DESCRIPTION_LENGTH = 15;
-	const { toggleModalIsOpen, setModalContent } = useModalStore();
+	const [toggleModalIsOpen, setModalContent] = useUnit([toggleModalIsOpenEv, setModalContentEv]);
 	const cats = useUnit($cats);
 
 	return (

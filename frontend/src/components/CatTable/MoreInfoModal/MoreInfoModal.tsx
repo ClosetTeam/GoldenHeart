@@ -1,10 +1,13 @@
 import { useState } from "react";
-import { useModalStore } from "../../../stores/modalStore";
 import DeleteCatModal from "../DeleteCatModal";
 import "./MoreInfoModal.css";
 import { Cat, CatRequest } from "../../../entities/cat";
 import { useUnit } from "effector-react";
 import { updateCatFx } from "../../../entities/cat/model";
+import {
+	setModalContent as setModalContentEv,
+	toggleModalIsOpen as toggleModalIsOpenEv,
+} from "../../../features/Modal/model";
 
 interface MoreInfoModalProps {
 	cat: Cat;
@@ -12,7 +15,10 @@ interface MoreInfoModalProps {
 }
 
 export default function MoreInfoModal({ cat, method }: MoreInfoModalProps) {
-	const { toggleModalIsOpen, setModalContent } = useModalStore();
+	const [toggleModalIsOpen, setModalContent] = useUnit([
+		toggleModalIsOpenEv,
+		setModalContentEv,
+	]);
 	const updateCat = useUnit(updateCatFx);
 	const [name, setName] = useState(cat.name);
 	const [age, setAge] = useState(cat.age);

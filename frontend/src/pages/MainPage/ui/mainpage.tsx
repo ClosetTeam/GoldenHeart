@@ -1,7 +1,7 @@
 import "./mainpage.css";
 import catPrevievImg from "../../../assets/catPreviev.png";
 import catAboutShelterImg from "../../../assets/someCats.png";
-import Header from "../../../components/header/Header.tsx";
+import Header from "../../../widgets/header";
 import Footer from "../../../widgets/footer";
 import MiniBublik from "../../../components/miniBublikCard/miniBublik.tsx";
 import { useNavigate } from "react-router-dom";

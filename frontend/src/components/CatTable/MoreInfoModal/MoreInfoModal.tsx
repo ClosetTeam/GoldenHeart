@@ -2,8 +2,9 @@ import { useState } from "react";
 import { useModalStore } from "../../../stores/modalStore";
 import DeleteCatModal from "../DeleteCatModal";
 import "./MoreInfoModal.css";
-import { useCatStore } from "../../../stores/catStore";
 import { Cat, CatRequest } from "../../../entities/cat";
+import { useUnit } from "effector-react";
+import { updateCatFx } from "../../../entities/cat/model";
 
 interface MoreInfoModalProps {
 	cat: Cat;
@@ -12,7 +13,7 @@ interface MoreInfoModalProps {
 
 export default function MoreInfoModal({ cat, method }: MoreInfoModalProps) {
 	const { toggleModalIsOpen, setModalContent } = useModalStore();
-	const { updateCat } = useCatStore();
+	const updateCat = useUnit(updateCatFx);
 	const [name, setName] = useState(cat.name);
 	const [age, setAge] = useState(cat.age);
 	const [sex, setSex] = useState(cat.sex);
@@ -156,7 +157,7 @@ export default function MoreInfoModal({ cat, method }: MoreInfoModalProps) {
 							imageUrl: cat.imageUrl ? cat.imageUrl : "",
 						};
 						if (method == "edit") {
-							updateCat(cat.id, updatedCat)
+							updateCat({ id: cat.id, request: updatedCat })
 								.then(() => console.log("Updated successfully"))
 								.catch(() => console.log("Failed to update"));
 

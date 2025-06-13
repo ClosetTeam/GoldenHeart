@@ -5,18 +5,17 @@ import Header from "../../../components/header/Header.tsx";
 import Footer from "../../../components/footer/footer.tsx";
 import MiniBublik from "../../../components/miniBublikCard/miniBublik.tsx";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
-import { useCatStore } from "../../../stores/catStore.ts";
 import arrowImg from "../../../assets/arrowRight.png";
+import { useGate, useUnit } from 'effector-react';
+import { $cats, catsGate } from '../../../entities/cat';
 
 export default function Mainpage() {
 	const navigate = useNavigate();
-	const { cats, fetchCats } = useCatStore();
-	let length = 0;
+	useGate(catsGate); // Используем gate для загрузки данных
+	const cats = useUnit($cats); // Получаем список котов из стора
+	console.log(cats);
 
-	useEffect(() => {
-		fetchCats();
-	}, [fetchCats]);
+	let length = 0;
 	// Плавненько прокручиваем
 	const scrollToSection = () => {
 		const section = document.getElementById("targetSection");

@@ -16,6 +16,8 @@
 	"dependencies": {
 		"@tailwindcss/vite": "^4.0.4",
 		"axios": "^1.7.9",
+		"effector": "^23.3.0",
+		"effector-react": "^23.3.0",
 		"prop-types": "^15.8.1",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
@@ -30,6 +32,7 @@
 		"@storybook/addon-onboarding": "^9.0.6",
 		"@storybook/addon-vitest": "^9.0.6",
 		"@storybook/react-vite": "^9.0.6",
+		"@types/node": "^24.0.1",
 		"@types/react": "^18.3.18",
 		"@types/react-dom": "^18.3.5",
 		"@vitejs/plugin-react": "^4.3.4",

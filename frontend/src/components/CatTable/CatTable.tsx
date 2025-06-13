@@ -1,13 +1,14 @@
-import { useCatStore } from "../../stores/catStore";
 import { useModalStore } from "../../stores/modalStore";
 import MoreInfoModal from "./MoreInfoModal/MoreInfoModal";
 import DeleteCatModal from "./DeleteCatModal";
 import "./CatTable.css";
+import { useUnit } from 'effector-react';
+import { $cats } from '../../entities/cat';
 
 const CatTable: React.FC = () => {
-	const _description_max = 15;
+	const MAX_DESCRIPTION_LENGTH = 15;
 	const { toggleModalIsOpen, setModalContent } = useModalStore();
-	const { cats } = useCatStore();
+	const cats = useUnit($cats);
 
 	return (
 		<div className="table-container">
@@ -48,8 +49,8 @@ const CatTable: React.FC = () => {
 							<td className="description-cell">
 								<div className="description-container">
 									<div className="description-text">
-										{cat.description.slice(0, _description_max) +
-											(cat.description.length > _description_max ? "..." : "")}
+										{cat.description.slice(0, MAX_DESCRIPTION_LENGTH) +
+											(cat.description.length > MAX_DESCRIPTION_LENGTH ? "..." : "")}
 									</div>
 									<div
 										onClick={() => {

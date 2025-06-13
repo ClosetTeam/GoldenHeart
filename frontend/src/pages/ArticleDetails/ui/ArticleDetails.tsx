@@ -5,7 +5,7 @@ import Header from "../../../components/header/Header.tsx";
 import myimg from "../../../assets/img_2.png";
 import myimg2 from "../../../assets/img_3.png";
 import "./ArticleDetails.css";
-import Footer from "../../../components/footer/footer";
+import Footer from "../../../widgets/footer";
 import { Article } from "../../../entities/article";
 
 const ArticleDetails = () => {

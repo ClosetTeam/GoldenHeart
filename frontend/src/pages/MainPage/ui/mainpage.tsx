@@ -2,12 +2,12 @@ import "./mainpage.css";
 import catPrevievImg from "../../../assets/catPreviev.png";
 import catAboutShelterImg from "../../../assets/someCats.png";
 import Header from "../../../components/header/Header.tsx";
-import Footer from "../../../components/footer/footer.tsx";
+import Footer from "../../../widgets/footer";
 import MiniBublik from "../../../components/miniBublikCard/miniBublik.tsx";
 import { useNavigate } from "react-router-dom";
 import arrowImg from "../../../assets/arrowRight.png";
-import { useGate, useUnit } from 'effector-react';
-import { $cats, catsGate } from '../../../entities/cat';
+import { useGate, useUnit } from "effector-react";
+import { $cats, catsGate } from "../../../entities/cat";
 
 export default function Mainpage() {
 	const navigate = useNavigate();

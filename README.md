@@ -1,3 +1,3 @@
 # GoldenHeart
 
-[Правила репозитория (frontend)](./frontend/storybook/Rules.md)
+[Правила репозитория (frontend)](./frontend/storybook/Правила.mdx)

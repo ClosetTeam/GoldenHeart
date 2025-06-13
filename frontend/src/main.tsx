@@ -7,7 +7,7 @@ import {
 	RouterProvider,
 } from "react-router-dom";
 import "./index.css";
-import Mainpage from "./pages/MainPage/ui/mainpage.tsx";
+import Mainpage from "./pages/MainPage";
 import CatsPage from "./pages/CatsPage/ui/CatsPage.tsx";
 import CatDetails from "./pages/CatDetails/ui/CatDetails.tsx";
 import AdminPage from "./pages/AdminPage/ui/AdminPage.tsx";

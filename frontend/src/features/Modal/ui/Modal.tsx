@@ -1,5 +1,5 @@
-import { useUnit } from 'effector-react';
-import { $isModalOpen, toggleModalIsOpen } from '../model';
+import { useUnit } from "effector-react";
+import { $isModalOpen, toggleModalIsOpen } from "../model";
 
 interface ModalProps {
 	children: React.ReactNode;

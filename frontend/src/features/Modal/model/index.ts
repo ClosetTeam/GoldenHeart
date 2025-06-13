@@ -1,4 +1,4 @@
-import { createEvent, createStore, sample } from 'effector';
+import { createEvent, createStore, sample } from "effector";
 
 export const $isModalOpen = createStore<boolean>(false);
 export const $modalContent = createStore<React.ReactNode>(null);
@@ -11,9 +11,9 @@ sample({
 	source: $isModalOpen,
 	fn: (isOpen: boolean) => !isOpen,
 	target: $isModalOpen,
-})
+});
 
 sample({
 	clock: setModalContent,
 	target: $modalContent,
-})
+});

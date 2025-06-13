@@ -1,6 +1,6 @@
-import { useUnit } from 'effector-react';
+import { useUnit } from "effector-react";
 import { Cat } from "../../entities/cat";
-import { removeCatFx } from '../../entities/cat/model';
+import { removeCatFx } from "../../entities/cat/model";
 import { toggleModalIsOpen as toggleModalIsOpenEv } from "../../features/Modal/model";
 
 export default function DeleteCatModal(cat: Cat) {

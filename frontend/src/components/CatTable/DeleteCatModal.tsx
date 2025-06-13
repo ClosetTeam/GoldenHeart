@@ -1,4 +1,4 @@
-import Cat from "../../models/Cat";
+import { Cat } from '../../entities/cat';
 import { useCatStore } from "../../stores/catStore";
 import { useModalStore } from "../../stores/modalStore";
 

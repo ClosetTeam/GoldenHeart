@@ -4,9 +4,9 @@ import axios from "axios";
 import Header from "../../../components/header/Header.tsx";
 import myimg from "../../../assets/img_2.png";
 import myimg2 from "../../../assets/img_3.png";
-import Article from "../../../models/Article.ts";
 import "./ArticleDetails.css";
 import Footer from "../../../components/footer/footer";
+import { Article } from '../../../entities/article';
 
 const ArticleDetails = () => {
 	const { id } = useParams<{ id: string }>();

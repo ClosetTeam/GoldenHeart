@@ -1,1 +1,1 @@
-export {default} from "./ui/CatsPage";
+export { default } from "./ui/CatsPage";

@@ -6,7 +6,7 @@ import Footer from "../../../components/footer/footer.tsx";
 import MiniBublik from "../../../components/miniBublikCard/miniBublik.tsx";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import { useCatStore } from "../../../stores/catStore";
+import { useCatStore } from "../../../stores/catStore.ts";
 import arrowImg from "../../../assets/arrowRight.png";
 
 export default function Mainpage() {

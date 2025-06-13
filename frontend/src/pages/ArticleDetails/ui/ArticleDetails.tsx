@@ -6,7 +6,7 @@ import myimg from "../../../assets/img_2.png";
 import myimg2 from "../../../assets/img_3.png";
 import "./ArticleDetails.css";
 import Footer from "../../../components/footer/footer";
-import { Article } from '../../../entities/article';
+import { Article } from "../../../entities/article";
 
 const ArticleDetails = () => {
 	const { id } = useParams<{ id: string }>();

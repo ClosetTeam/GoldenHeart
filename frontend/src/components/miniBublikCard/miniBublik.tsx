@@ -1,7 +1,7 @@
 import "./miniBublik.css";
 import miniCatImg from "../../assets/cat_img.png";
 import { useNavigate } from "react-router-dom";
-import { Cat } from '../../entities/cat';
+import { Cat } from "../../entities/cat";
 
 export default function MiniBublik(Cat: Cat) {
 	const navigate = useNavigate();

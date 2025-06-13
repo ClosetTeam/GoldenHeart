@@ -4,7 +4,7 @@ import Header from "../../../components/header/Header.tsx";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import MiniBublik from "../../../components/miniBublikCard/miniBublik";
-import { Cat } from '../../../entities/cat';
+import { Cat } from "../../../entities/cat";
 
 const CatsPage = () => {
 	const [Cats, setCats] = useState<Cat[]>([]);

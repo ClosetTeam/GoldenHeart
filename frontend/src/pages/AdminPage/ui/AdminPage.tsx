@@ -5,7 +5,7 @@ import Modal from "../../../components/Modal/Modal";
 import { useModalStore } from "../../../stores/modalStore";
 import MoreInfoModal from "../../../components/CatTable/MoreInfoModal/MoreInfoModal";
 import { Button } from "../../../shared";
-import { Cat } from '../../../entities/cat';
+import { Cat } from "../../../entities/cat";
 
 export default function AdminPageTest() {
 	const { cats, fetchCats } = useCatStore();

@@ -1,5 +1,4 @@
-import { CatRequest } from '../entities/cat';
-
+import { CatRequest } from "../entities/cat";
 
 const token =
 	"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTWFrc2ltIiwiZW1haWwiOiJOZW9uZXhlcjEyQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MTE1MDY0MCwiZXhwIjoxNzQxMjM3MDQwfQ.abgMSd9Epa6SSJF-Mk6KzKU2DXh1dIU8FHJtKOn6ZgY";

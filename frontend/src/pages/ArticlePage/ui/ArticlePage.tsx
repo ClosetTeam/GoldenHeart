@@ -5,7 +5,7 @@ import axios from "axios";
 import catImg from "../../../assets/cat_img.png";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../../../shared";
-import { Article } from '../../../entities/article';
+import { Article } from "../../../entities/article";
 
 const ArticlePage = () => {
 	const [articles, setArticles] = useState<Article[]>([]);

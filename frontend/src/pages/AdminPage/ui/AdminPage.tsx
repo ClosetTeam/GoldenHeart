@@ -1,20 +1,21 @@
-import { useEffect } from "react";
-import { useCatStore } from "../../../stores/catStore";
 import CatTable from "../../../components/CatTable/CatTable";
-import Modal from "../../../components/Modal/Modal";
-import { useModalStore } from "../../../stores/modalStore";
+import Modal from "../../../features/Modal/ui/Modal";
 import MoreInfoModal from "../../../components/CatTable/MoreInfoModal/MoreInfoModal";
 import { Button } from "../../../shared";
-import { Cat } from "../../../entities/cat";
+import { $cats, Cat, catsGate } from "../../../entities/cat";
+import { useGate, useUnit } from "effector-react";
+import {
+	$modalContent,
+	setModalContent as setModalContentEv,
+	toggleModalIsOpen as toggleModalIsOpenEv,
+} from "../../../features/Modal/model";
 
 export default function AdminPageTest() {
-	const { cats, fetchCats } = useCatStore();
-	const { modalContent, setModalContent, toggleModalIsOpen } = useModalStore();
-
-	useEffect(() => {
-		fetchCats();
-		// console.log("fetchCats");
-	}, [fetchCats]);
+	useGate(catsGate); // Используем gate для загрузки данных
+	const cats = useUnit($cats); // Получаем список котов из стора
+	const modalContent = useUnit($modalContent);
+	const setModalContent = useUnit(setModalContentEv);
+	const toggleModalIsOpen = useUnit(toggleModalIsOpenEv);
 
 	return (
 		<>

@@ -1,5 +1,5 @@
 import "./ArticlePage.css";
-import Header from "../../../components/header/Header.tsx";
+import Header from "../../../widgets/header";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import catImg from "../../../assets/cat_img.png";

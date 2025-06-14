@@ -1,10 +1,11 @@
+import { useUnit } from "effector-react";
 import { Cat } from "../../entities/cat";
-import { useCatStore } from "../../stores/catStore";
-import { useModalStore } from "../../stores/modalStore";
+import { removeCatFx } from "../../entities/cat/model";
+import { toggleModalIsOpen as toggleModalIsOpenEv } from "../../features/Modal/model";
 
 export default function DeleteCatModal(cat: Cat) {
-	const { toggleModalIsOpen } = useModalStore();
-	const { removeCat } = useCatStore();
+	const toggleModalIsOpen = useUnit(toggleModalIsOpenEv);
+	const removeCat = useUnit(removeCatFx);
 
 	return (
 		<div className="flex flex-col items-center w-111 p-6">

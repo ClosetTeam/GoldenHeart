@@ -1,7 +1,7 @@
 // import { useState } from "react";
 // import { useModalStore } from "../../../stores/modalStore";
 // import DeleteCatModal from "../../CatTable/DeleteCatModal";
-import "./MoreInfoModal.css";
+import "../ArticleTable.css";
 // import { useCatStore } from "../../../stores/catStore";
 // import CatRequest from "../../../models/CatRequest";
 // import Article from "../../../models/Article";

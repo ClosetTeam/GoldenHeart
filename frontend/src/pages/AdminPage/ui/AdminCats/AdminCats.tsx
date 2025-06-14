@@ -1,4 +1,4 @@
-import Cat from "../../../../models/Cat";
+import { Cat } from "../../../../entities/cat";
 import { Button } from "../../../../shared";
 import CatTable from "../../../../components/CatTable/CatTable";
 import MoreInfoModal from "../../../../components/CatTable/MoreInfoModal/MoreInfoModal";

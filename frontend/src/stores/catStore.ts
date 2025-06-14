@@ -1,7 +1,6 @@
 import { create } from "zustand";
-import Cat from "../models/Cat";
 import { getAllCats, removeCat, updateCat } from "../services/cat.service";
-import CatRequest from "../models/CatRequest";
+import { Cat, CatRequest } from "../entities/cat";
 
 interface CatState {
 	cats: Cat[];

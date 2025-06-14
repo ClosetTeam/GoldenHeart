@@ -7,25 +7,19 @@ import {
 	RouterProvider,
 } from "react-router-dom";
 import "./index.css";
-import Mainpage from "./pages/MainPage/ui/mainpage.tsx";
-import CatsPage from "./pages/CatsPage/ui/CatsPage.tsx";
-import CatDetails from "./pages/CatDetails/ui/CatDetails.tsx";
-import AdminPage from "./pages/AdminPage/ui/AdminPage.tsx";
-import ArticlePage from "./pages/ArticlePage/ui/ArticlePage.tsx";
-import ArticleDetails from "./pages/ArticleDetails/ui/ArticleDetails.tsx";
+import Mainpage from "./pages/MainPage";
+import CatsPage from "./pages/CatsPage";
+import CatDetails from "./pages/CatDetails";
+import AdminPage from "./pages/AdminPage";
+import ArticlePage from "./pages/ArticlePage";
+import ArticleDetails from "./pages/ArticleDetails";
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
 		<>
 			<Route path={"/"} element={<Mainpage />} />
-			{/*<Route*/}
-			{/*    path={"/OneBublik"}*/}
-			{/*    element={<BublikPage/>}*/}
-			{/*/>*/}
 
 			<Route path="/cats" element={<CatsPage />} />
-
-			{/* Страница с информацией о конкретном питомце */}
 			<Route path="/cat/:id" element={<CatDetails />} />
 
 			<Route path="/article" element={<ArticlePage />} />

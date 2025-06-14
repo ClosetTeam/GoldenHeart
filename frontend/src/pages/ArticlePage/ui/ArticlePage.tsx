@@ -71,7 +71,7 @@ const ArticlePage = () => {
 									<Button
 										width={"147px"}
 										height={"40px"}
-										primary
+										variant={"primary"}
 										onClick={() => navigate(`/article/${article.id}`)}
 										label={"Читать далее"}
 									/>

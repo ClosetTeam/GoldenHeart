@@ -8,7 +8,7 @@ import { AdminCats } from "./AdminCats/AdminCats";
 import { AdminArticles } from "./AdminArticles/AdminArticles";
 
 export default function AdminPageTest() {
-	const { cats, fetchCats } = useCatStore();
+	const { fetchCats } = useCatStore();
 	const { modalContent } = useModalStore();
 	const [isCats, setIsCats] = useState(true);
 	const HandleSetIsCats = (isCat: boolean) => {

@@ -1,6 +1,6 @@
 import { ArticleTable } from "../../../../components/ArticleTable/ArticleTable";
-import MoreInfoModal from "../../../../components/CatTable/MoreInfoModal/MoreInfoModal";
-import Article from "../../../../models/Article";
+import MoreInfoModalArticle from "../../../../components/ArticleTable/MoreInfoModal/MoreInfoModalArticle";
+// import Article from "../../../../models/Article";
 import { Button } from "../../../../shared";
 import { useModalStore } from "../../../../stores/modalStore";
 
@@ -16,14 +16,14 @@ export const AdminArticles = () => {
 					width="163px"
 					height="36px"
 					onClick={() => {
-						const newArticle: Article = {
-							id: 0,
-							title: "",
-							description: "",
-							text: "",
-							images: [],
-						};
-						setModalContent(<MoreInfoModal cat={newArticle} method="add" />);
+						// const newArticle: Article = {
+						// 	id: 0,
+						// 	title: "",
+						// 	description: "",
+						// 	text: "",
+						// 	images: [],
+						// };
+						setModalContent(<MoreInfoModalArticle />);
 						toggleModalIsOpen();
 					}}
 				/>

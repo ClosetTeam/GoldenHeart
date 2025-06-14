@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import "./CatDetails.css";
-import Header from "../../../components/header/Header.tsx";
+import Header from "../../../widgets/header";
 import Slider from "../../../components/Slider/newSlider1.tsx";
 import myimg from "../../../assets/img_2.png";
 import myimg2 from "../../../assets/img_3.png";

@@ -11,10 +11,7 @@ import "./MoreInfoModal.css";
 // 	method: "add" | "edit";
 // }
 
-export default function MoreInfoModalArticle({
-	// article,
-	// method,
-} ) {
+export default function MoreInfoModalArticle() {
 	// const { toggleModalIsOpen, setModalContent } = useModalStore();
 	// const { updateCat } = useCatStore();
 	// const [name, setName] = useState(cat.name);

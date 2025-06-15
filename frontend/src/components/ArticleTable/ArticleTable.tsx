@@ -1,13 +1,20 @@
-import { useCatStore } from "../../stores/catStore";
-import { useModalStore } from "../../stores/modalStore";
+import {
+	toggleModalIsOpen as toggleModalIsOpenEv,
+	setModalContent as setModalContentEv,
+} from "../../features/Modal/model";
+import { $cats } from "../../entities/cat";
+import { useUnit } from "effector-react";
 import DeleteCatModal from "../CatTable/DeleteCatModal";
 import MoreInfoModal from "../CatTable/MoreInfoModal/MoreInfoModal";
 import "./ArticleTable.css";
 
 export const ArticleTable: React.FC = () => {
 	const _description_max = 15;
-	const { toggleModalIsOpen, setModalContent } = useModalStore();
-	const { cats } = useCatStore();
+	const [toggleModalIsOpen, setModalContent] = useUnit([
+		toggleModalIsOpenEv,
+		setModalContentEv,
+	]);
+	const cats = useUnit($cats);
 
 	return (
 		<div className="table-container">

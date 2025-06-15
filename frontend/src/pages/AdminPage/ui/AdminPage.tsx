@@ -1,24 +1,20 @@
-import { useEffect, useState } from "react";
-import { useCatStore } from "../../../stores/catStore";
-import Modal from "../../../components/Modal/Modal";
-import { useModalStore } from "../../../stores/modalStore";
+import { useState } from "react";
+import { catsGate } from "../../../entities/cat";
+import { useGate, useUnit } from "effector-react";
 import { Footer } from "./footer/footer";
+import Modal from "../../../features/Modal/ui/Modal";
+import { $modalContent } from "../../../features/Modal/model";
 import { Header } from "./header/Header";
 import { AdminCats } from "./AdminCats/AdminCats";
 import { AdminArticles } from "./AdminArticles/AdminArticles";
 
 export default function AdminPageTest() {
-	const { fetchCats } = useCatStore();
-	const { modalContent } = useModalStore();
+	useGate(catsGate); // Используем gate для загрузки данных
+	const modalContent = useUnit($modalContent);
 	const [isCats, setIsCats] = useState(true);
 	const HandleSetIsCats = (isCat: boolean) => {
 		setIsCats(isCat);
 	};
-
-	useEffect(() => {
-		fetchCats();
-		// console.log("fetchCats");
-	}, [fetchCats]);
 
 	return (
 		<>

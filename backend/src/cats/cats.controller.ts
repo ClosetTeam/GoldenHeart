@@ -47,13 +47,14 @@ export class CatsController {
     return this.catsService.findOne(+id);
   }
 
-  @UseGuards(JwtAuthGuard)
+  // @UseGuards(JwtAuthGuard)
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateCatDto: UpdateCatDto) {
     return this.catsService.update(+id, updateCatDto);
   }
 
-  @UseGuards(JwtAuthGuard)
+  // TODO: включить проверку авторизации
+  // @UseGuards(JwtAuthGuard)
   @Delete(':id')
   async remove(@Param('id') id: string) {
     const cat = await this.catsService.findOne(+id);

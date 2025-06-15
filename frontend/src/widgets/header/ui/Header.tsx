@@ -1,4 +1,4 @@
-import myProfileImg from "../../assets/personLogo.png";
+import myProfileImg from "../../../shared/assets/personLogo.png";
 import { useNavigate } from "react-router-dom";
 import styles from "./header.module.css";
 
@@ -18,7 +18,6 @@ export default function Header() {
 					статьи
 				</button>
 				<button className={styles.headerButton}>о приюте</button>
-				{/*<button className={styles.headerButton} onClick={() => navigate("/pets")}>Ищут дом</button>*/}
 				<button className={styles.headerButton}>помочь приюту</button>
 				<button
 					className={`${styles.headerButton} ${styles.chooseCatBtn}`}

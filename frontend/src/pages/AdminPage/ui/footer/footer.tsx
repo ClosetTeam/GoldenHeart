@@ -1,7 +1,8 @@
-import { useCatStore } from "../../../../stores/catStore";
+import { $cats } from "../../../../entities/cat";
+import { useUnit } from "effector-react";
 
 export const Footer = () => {
-	const { cats } = useCatStore();
+	const cats = useUnit($cats);
 
 	return (
 		<footer className="flex mx-25 mb-29">

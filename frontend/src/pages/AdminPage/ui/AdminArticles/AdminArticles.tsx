@@ -1,11 +1,18 @@
 import { ArticleTable } from "../../../../components/ArticleTable/ArticleTable";
 import MoreInfoModalArticle from "../../../../components/ArticleTable/MoreInfoModal/MoreInfoModalArticle";
 // import Article from "../../../../models/Article";
+import { useUnit } from "effector-react";
 import { Button } from "../../../../shared";
-import { useModalStore } from "../../../../stores/modalStore";
+import {
+	toggleModalIsOpen as toggleModalIsOpenEv,
+	setModalContent as setModalContentEv,
+} from "../../../../features/Modal/model";
 
 export const AdminArticles = () => {
-	const { setModalContent, toggleModalIsOpen } = useModalStore();
+	const [toggleModalIsOpen, setModalContent] = useUnit([
+		toggleModalIsOpenEv,
+		setModalContentEv,
+	]);
 	return (
 		<main className="mx-25 my-8">
 			<div className="info flex gap-18 items-center text-2xl">

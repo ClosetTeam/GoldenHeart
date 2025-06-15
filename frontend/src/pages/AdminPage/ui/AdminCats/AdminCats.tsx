@@ -1,11 +1,17 @@
-import { Cat } from "../../../../entities/cat";
 import { Button } from "../../../../shared";
-import CatTable from "../../../../components/CatTable/CatTable";
 import MoreInfoModal from "../../../../components/CatTable/MoreInfoModal/MoreInfoModal";
-import { useModalStore } from "../../../../stores/modalStore";
+import CatTable from "../../../../components/CatTable/CatTable";
+import { Cat, catsGate } from "../../../../entities/cat";
+import { useGate, useUnit } from "effector-react";
+import {
+	setModalContent as setModalContentEv,
+	toggleModalIsOpen as toggleModalIsOpenEv,
+} from "../../../../features/Modal/model";
 
 export const AdminCats = () => {
-	const { setModalContent, toggleModalIsOpen } = useModalStore();
+	useGate(catsGate); // Используем gate для загрузки данных
+	const setModalContent = useUnit(setModalContentEv);
+	const toggleModalIsOpen = useUnit(toggleModalIsOpenEv);
 	return (
 		<main className="mx-25 my-8">
 			<div className="info flex gap-18 items-center text-2xl">

@@ -76,7 +76,7 @@ const CatDetails = () => {
 						<div className={"askButtons"}>
 							<Button
 								width={"20vh"}
-								variant={"primary"}
+								variant="primary"
 								onClick={() => {}}
 								label={"Задать вопрос"}
 							/>

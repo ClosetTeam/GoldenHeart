@@ -20,3 +20,26 @@
 	font-size: 14px;
 	cursor: pointer;
 }
+.grayBtn {
+	font-family: Montserrat-SemiBold, sans-serif;
+	background-color: #c2c2c2;
+	border-radius: 30px;
+	border: none;
+	color: #ffffff;
+	width: 27%;
+	height: 8vh;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.yellowBtn {
+	font-family: Montserrat-SemiBold, sans-serif;
+	background-color: #eebf5f;
+	border-radius: 30px;
+	border: none;
+	color: #000000;
+	width: 27%;
+	height: 8vh;
+	font-size: 14px;
+	cursor: pointer;
+}

@@ -1,0 +1,28 @@
+name: Storybook Deploy
+
+on:
+  push:
+    branches: ['**']  # на все ветки
+  pull_request:       # на все PR тоже
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: frontend
+
+      - name: Publish to Chromatic
+        run: npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN --exit-once-uploaded
+        working-directory: frontend
+        env:
+          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}

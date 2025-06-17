@@ -1,0 +1,86 @@
+.articlesTable {
+	padding: 19px 56px 45px 55px;
+	border: 1px black solid;
+
+	display: flex;
+	flex-wrap: wrap;
+	gap: 25px 44px;
+
+	.articleItem {
+		max-width: 225px;
+
+		.articleImageContainer {
+			width: 225px;
+			height: 137px;
+			max-height: 137px;
+			max-width: 225px;
+			background-color: #b89595;
+			border-radius: 25px;
+			position: relative;
+
+			.articleImage {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				border-radius: 25px;
+			}
+
+			.btn {
+				position: absolute;
+				bottom: 6px;
+
+				width: 22px;
+				height: 22px;
+				background-color: #cbcbcb;
+				border: none;
+				border-radius: 100px;
+				color: #ffffff;
+
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				cursor: pointer;
+			}
+
+			.editBtn {
+				right: 48px;
+
+				&::after {
+					content: "";
+					width: 2px;
+					height: 2px;
+					background-color: #fff;
+					border-radius: 100px;
+					box-shadow: 
+						4px 0 0 #fff,
+						-4px 0 0 #fff;
+				}
+			}
+
+			.removeBtn {
+				right: 19px;
+
+				&::after {
+					content: "";
+					width: 14px;
+					height: 2px;
+					background-color: #fff;
+					border-radius: 100px;
+				}
+			}
+		}
+
+		.articleTitle {
+			font-family: "Montserrat", sans-serif;
+			font-size: 14px;
+			font-weight: 400;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+
+			margin: 3px 0 25px 0;
+			padding: 0;
+		}
+	}
+}

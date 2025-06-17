@@ -39,6 +39,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -54,5 +56,5 @@ jobs:
         working-directory: frontend
 
       - name: Deploy Storybook to Chromatic
-        run: npx chromatic --project-token ${{ secrets.CHROMATIC_TOKEN }} --exit-zero-on-changes --force-rebuild
+        run: npx chromatic --project-token ${{ secrets.CHROMATIC_TOKEN }} --exit-zero-on-changes
         working-directory: frontend

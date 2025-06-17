@@ -22,7 +22,5 @@ jobs:
         working-directory: frontend
 
       - name: Publish to Chromatic
-        run: npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN --exit-once-uploaded
+        run: npx chromatic --project-token ${{ secrets.CHROMATIC_TOKEN }} --exit-once-uploaded
         working-directory: frontend
-        env:
-          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}

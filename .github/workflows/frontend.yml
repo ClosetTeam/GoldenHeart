@@ -55,3 +55,4 @@ jobs:
 
       - name: Deploy Storybook to Chromatic
         run: npx chromatic --project-token ${{ secrets.CHROMATIC_TOKEN }} --exit-zero-on-changes
+        working-directory: frontend

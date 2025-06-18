@@ -1,7 +1,7 @@
 name: Storybook Deploy
 
 on:
-  # push:
+  push: 
     # branches: ['**']  # на все ветки
   pull_request:       # на все PR тоже
 

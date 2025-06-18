@@ -1,0 +1,26 @@
+{
+  "name": "goldenheart",
+  "version": "1.0.0",
+  "description": "[Правила репозитория (frontend)](./frontend/storybook/Правила.mdx)",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ClosetTeam/GoldenHeart.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ClosetTeam/GoldenHeart/issues"
+  },
+  "homepage": "https://github.com/ClosetTeam/GoldenHeart#readme",
+  "devDependencies": {
+    "@commitlint/config-conventional": "^19.8.1",
+    "husky": "^9.1.7"
+  }
+}

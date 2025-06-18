@@ -79,10 +79,7 @@ const CatDetails = () => {
 								onClick={() => {}}
 								label={"Задать вопрос"}
 							/>
-							<Button
-								onClick={() => {}}
-								label={"Забрать домой"}
-							/>
+							<Button onClick={() => {}} label={"Забрать домой"} />
 						</div>
 					</div>
 				</div>

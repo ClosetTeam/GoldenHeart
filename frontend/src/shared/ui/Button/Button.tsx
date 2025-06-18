@@ -1,26 +1,17 @@
 import styles from "./Button.module.css";
+import { type ButtonVariant } from "./Types.ts";
 
 interface CustomButtonProps {
 	label: string;
 	onClick?: () => void;
-	width?: string; // Ширина кнопки
-	height?: string; // Высота кнопки
-	variant?: "primary" | "secondary" | "gray" | "yellow"; // Новое свойство вместо primary
+	variant?: ButtonVariant;
 }
 
 const CustomButton: React.FC<CustomButtonProps> = ({
 	label = "Кнопка",
 	onClick = () => {},
-	width = "100px",
-	height = "40px",
-	variant = "primary", // Значение по умолчанию
+	variant = "primary",
 }) => {
-	const buttonStyle: React.CSSProperties = {
-		width,
-		height,
-	};
-
-	// Определяем класс в зависимости от variant
 	const getButtonClass = () => {
 		switch (variant) {
 			case "primary":
@@ -28,7 +19,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
 			case "secondary":
 				return styles.btn2;
 			case "gray":
-				return styles.grayBtn; // Предполагается, что вы добавите этот класс в CSS
+				return styles.grayBtn;
 			case "yellow":
 				return styles.yellowBtn;
 			default:
@@ -37,7 +28,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
 	};
 
 	return (
-		<button className={getButtonClass()} style={buttonStyle} onClick={onClick}>
+		<button className={getButtonClass()} onClick={onClick}>
 			{label}
 		</button>
 	);

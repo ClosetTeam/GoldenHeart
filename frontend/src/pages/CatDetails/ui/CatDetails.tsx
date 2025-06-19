@@ -75,16 +75,11 @@ const CatDetails = () => {
 
 						<div className={"askButtons"}>
 							<Button
-								width={"20vh"}
-								primary
+								variant="primary"
 								onClick={() => {}}
 								label={"Задать вопрос"}
 							/>
-							<Button
-								width={"20vh"}
-								onClick={() => {}}
-								label={"Забрать домой"}
-							/>
+							<Button onClick={() => {}} label={"Забрать домой"} />
 						</div>
 					</div>
 				</div>

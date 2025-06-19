@@ -1,22 +1,41 @@
-.btn {
+.btn,
+.btn2,
+.grayBtn,
+.yellowBtn {
+	line-height: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	padding: 0.8em 1.6em;
+	white-space: normal;
+
 	font-family: Montserrat-SemiBold, sans-serif;
+	border-radius: 30px;
+	cursor: pointer;
+	box-sizing: border-box;
+}
+
+.btn {
 	background-color: #ffffff;
 	border: 2px solid #b29b84;
-	border-radius: 100px;
 	color: #b29b84;
-	width: 27%;
-	height: 8vh;
-	font-size: 14px;
-	cursor: pointer;
 }
+
 .btn2 {
-	font-family: Montserrat-SemiBold, sans-serif;
 	background-color: #b29b84;
-	border-radius: 30px;
 	border: none;
 	color: #ffffff;
-	width: 27%;
-	height: 8vh;
-	font-size: 14px;
-	cursor: pointer;
+}
+
+.grayBtn {
+	background-color: #c2c2c2;
+	border: none;
+	color: #ffffff;
+}
+
+.yellowBtn {
+	background-color: #eebf5f;
+	border: none;
+	color: #000000;
 }

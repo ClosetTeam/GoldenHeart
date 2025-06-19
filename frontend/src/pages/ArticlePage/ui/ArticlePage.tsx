@@ -69,9 +69,7 @@ const ArticlePage = () => {
 									<p className="article-name">{article.title}</p>
 									<p className="article-text">{article.text}</p>
 									<Button
-										width={"147px"}
-										height={"40px"}
-										primary
+										variant={"primary"}
 										onClick={() => navigate(`/article/${article.id}`)}
 										label={"Читать далее"}
 									/>

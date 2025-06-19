@@ -35,8 +35,6 @@ export default function AdminPageTest() {
 					<div>таблица кошек</div>
 					<Button
 						label="Добавить"
-						width="163px"
-						height="36px"
 						onClick={() => {
 							const newCat: Cat = {
 								id: 0,

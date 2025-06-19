@@ -8,9 +8,6 @@ const meta: Meta<typeof Button> = {
 	argTypes: {
 		label: { control: "text" },
 		onClick: { action: "clicked" },
-		width: { control: "text" },
-		height: { control: "text" },
-		primary: { control: "boolean" },
 	},
 };
 export default meta;
@@ -20,17 +17,27 @@ type Story = StoryObj<typeof Button>;
 export const Primary: Story = {
 	args: {
 		label: "Primary Button",
-		primary: true,
-		width: "120px",
-		height: "40px",
+		variant: "primary",
 	},
 };
 
 export const Secondary: Story = {
 	args: {
 		label: "Secondary Button",
-		primary: false,
-		width: "120px",
-		height: "40px",
+		variant: "secondary",
+	},
+};
+
+export const Gray: Story = {
+	args: {
+		label: "Единоразово",
+		variant: "gray",
+	},
+};
+
+export const Yellow: Story = {
+	args: {
+		label: "Ежемесячно",
+		variant: "yellow",
 	},
 };
